@@ -9,7 +9,9 @@ StartupEvents.registry("block", event =>{
         .resistance(2).hardness(2)
         .tagBlock("mineable/pickaxe").requiresTool(true)
         .tagBlock("forge:stone")
+        .tagBlock("forge:stone/gabro")
         .tagBlock("minecraft:stone_ore_replaceables")
+        .tagBlock("gtceu:gabro_stone")
 })
 
 
