@@ -2,6 +2,20 @@
 
     "tagprefix.gabro":"Gabro %s Ore",
 
+    "gtceu.jei.ore_vein.overworld/emerald": "Emerald Vein (Overworld)",
+    "gtceu.jei.ore_vein.overworld/inferium": "Inferium Vein",
+
+    "material.gtceu.inferium" : "Inferium",
+    "material.gtceu.prudentium" : "Prudentium",
+    "material.gtceu.tertium" : "Tertium",
+    "material.gtceu.imperium" : "Imperium",
+    "material.gtceu.supremium" : "Supremium",
+    "material.gtceu.awakened_supremium" : "Awakened Supremium",
+    "material.gtceu.insanium" : "Insanium",
+    "material.gtceu.prosperity" : "Prosperity",
+    "material.gtceu.solium" : "Solium",
+    "material.gtceu.soularium" : "Soularium",
+
     "material.gtceu.avisium" : "Avisium",
     "material.gtceu.ballistic_steel" : "Ballistic Steel",
     "material.gtceu.vidium" : "Vidium",

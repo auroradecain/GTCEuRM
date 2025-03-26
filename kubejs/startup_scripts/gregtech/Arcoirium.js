@@ -3,7 +3,7 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
     event.create("gabro")
         .dust()
         .color(0x2f332d).iconSet('dull')
-        .components('2x iron', 'silicon', '3x oxygen', 'magnesium')
+        .components('2x iron', '3x silicon_dioxide', 'magnesium')
         .flags(GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING)
     
     event.create("vidium")
