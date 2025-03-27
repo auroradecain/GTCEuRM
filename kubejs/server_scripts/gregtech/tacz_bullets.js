@@ -2,58 +2,86 @@ ServerEvents.recipes(event => {
 
     /** ULV Recipies */
 
-    event.recipes.gtceu.assembler("kubejs:ammo/9mm")
-        .itemInputs("6x gtceu:ballistic_steel_foil", "gtceu:small_gunpowder_dust")
-        .itemOutputs(Item.of("15x tacz:ammo", {AmmoId:'tacz:9mm'}))
-        .duration(175)
-        .EUt(7)
-        .circuit(2)
+    const casing = [
+        "9mm",
+        "45acp",
+        "357mag",
+        "50ae",
+        "12g",
+        "338",
+        "308",
+        "30_06",
+        "40mm",
+        "57x28",
+        "58x42",
+        "46x30",
+        "68x51fury",
+        "556x45",
+        "762x25",
+        "762x39",
+        "762x54",
+        "50bmg"
+    ]
 
-    event.recipes.gtceu.assembler("kubejs:ammo/45acp")
-        .itemInputs("4x gtceu:copper_foil", "gtceu:ballistic_steel_plate", "gtceu:small_gunpowder_dust")
-        .itemOutputs(Item.of("20x tacz:ammo", {AmmoId:'tacz:45acp'}))
-        .duration(195)
-        .EUt(7)
+    casing.forEach(casing =>{
+        event.remove({id: `tacz:ammo/${casing}`})
+    })
 
-    event.recipes.gtceu.assembler("kubejs:ammo/12g")
-        .itemInputs("12x gtceu:ballistic_steel_foil", "6x gtceu:iron_round", "3x minecraft:gunpowder")
-        .itemOutputs(Item.of("18x tacz:ammo", {AmmoId:'tacz:12g'}))
-        .duration(245)
-        .EUt(7)
+    function createAmmo(ammo, light, mat, powder, circuit){
+        if(light==true){
+            event.recipes.gtceu.bender(`kubejs:${ammo}_casing`)
+                .itemInputs(`4x gtceu:${mat}_foil`)
+                .itemOutputs(`kubejs:${ammo}_casing`)
+                .duration(80)
+                .EUt(GTValues.VH[GTValues.LV])
+                .circuit(circuit)
+            event.recipes.gtceu.packer(`kubejs:${ammo}`)
+                .itemInputs(`kubejs:${ammo}_casing`, `${powder}x gtceu:small_gunpowder_dust`)
+                .itemOutputs(Item.of("5x tacz:ammo", {AmmoId:`tacz:${ammo}`}))
+                .duration(40)
+                .EUt(GTValues.VH[GTValues.LV])
+        }
+
+        if(light==false){
+            event.recipes.gtceu.bender(`kubejs:${ammo}_casing`)
+                .itemInputs(`2x gtceu:${mat}_plate`)
+                .itemOutputs(`kubejs:${ammo}_casing`)
+                .duration(80)
+                .EUt(GTValues.VH[GTValues.LV])
+                .circuit(circuit)
+            event.recipes.gtceu.packer(`kubejs:${ammo}`)
+                .itemInputs(`kubejs:${ammo}_casing`, `${powder}x minecraft:gunpowder`)
+                .itemOutputs(Item.of("5x tacz:ammo", {AmmoId:`tacz:${ammo}`}))
+                .duration(40)
+                .EUt(GTValues.VH[GTValues.LV])
+        }
+    }
+
+    createAmmo('9mm',true, 'copper', '1', 1)
+    createAmmo('45acp',true, 'copper', '1', 2)
+    createAmmo('357mag',true, 'ballistic_steel', '1', 1)
+    createAmmo('50ae',true, 'ballistic_steel', '1', 2)
+    
+    createAmmo('12g',false, 'brass', '1', 1)
+    createAmmo('338',false, 'brass', '2', 2)
+    createAmmo('308',false, 'brass', '2', 3)
+    createAmmo('30_06',false, 'copper', '1', 1)
+    createAmmo('57x28',false, 'copper', '2', 2)
+    createAmmo('40mm',false, 'steel', '8', 1)
+    createAmmo('58x42',false, 'ballistic_steel', '1', 1)
+    createAmmo('46x30',false, 'ballistic_steel', '1', 2)
+    createAmmo('68x51fury',false, 'ballistic_steel', '1', 3)
+    createAmmo('556x45',false, 'ballistic_steel', '1', 4)
+    createAmmo('762x25',false, 'invar', '1', 1)
+    createAmmo('762x39',false, 'invar', '1', 2)
+    createAmmo('762x54',false, 'invar', '1', 3)
+    createAmmo('50bmg',false, 'double_ballistic_steel', '1', 1)
 
     /** LV Recipies */
 
-    event.recipes.gtceu.assembler("kubejs:ammo/556x45")
-        .itemInputs("3x gtceu:ballistic_steel_plate", "2x gtceu:ballistic_steel_foil", "minecraft:gunpowder")
-        .itemOutputs(Item.of("25x tacz:ammo", {AmmoId:'tacz:556x45'}))
-        .duration(235)
-        .EUt(24)
-
-    event.recipes.gtceu.assembler("kubejs:ammo/762x39")
-        .itemInputs("4x gtceu:ballistic_steel_plate", "2x gtceu:ballistic_steel_foil", "2x gtceu:brass_bolt", "2x gtceu:small_gunpowder_dust")
-        .itemOutputs(Item.of("20x tacz:ammo", {AmmoId:'tacz:762x39'}))
-        .duration(255)
-        .EUt(24)
-    
-    event.recipes.gtceu.assembler("kubejs:ammo/308")
-        .itemInputs("3x gtceu:ballistic_steel_plate", "8x gtceu:brass_bolt", "minecraft:gunpowder")
-        .itemOutputs(Item.of("20x tacz:ammo", {AmmoId:'tacz:308'}))
-        .duration(265)
-        .EUt(24)
-
-    event.recipes.gtceu.assembler("kubejs:ammo/338")
-        .itemInputs("4x gtceu:ballistic_steel_plate", "gtceu:brass_plate", "6x gtceu:small_gunpowder_dust")
-        .itemOutputs(Item.of("20x tacz:ammo", {AmmoId:'tacz:338'}))
-        .duration(280)
-        .EUt(24)
     
     /** MV Recipies */
 
-    event.recipes.gtceu.assembler("kubejs:ammo/50ae")
-        .itemInputs("5x gtceu:double_ballistic_steel_plate", "gtceu:invar_plate",  "2x minecraft:gunpowder")
-        .itemOutputs(Item.of("36x tacz:ammo", {AmmoId:'tacz:50ae'}))
-        .duration(540)
-        .EUt(96)
 
     /** HV Recipies */
 
@@ -65,9 +93,4 @@ ServerEvents.recipes(event => {
         .EUt(480)
         .circuit(16)
 
-    event.recipes.gtceu.assembler("kubejs:ammo/50bmg")
-        .itemInputs("24x gtceu:copper_foil", "2x gtceu:invar_plate", "gtceu:double_brass_plate", "4x gtceu:ballistic_steel_foil", "6x minecraft:gunpowder")
-        .itemOutputs(Item.of("12x tacz:ammo", {AmmoId:'tacz:50bmg'}))
-        .duration(440)
-        .EUt(480)
 })
