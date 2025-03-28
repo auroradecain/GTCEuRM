@@ -79,4 +79,10 @@ ServerEvents.recipes(event =>{
                 .EUt(30)
         }
     }
+
+    event.recipes.gtceu.synthetic_solid('debug')
+        .itemInputs('minecraft:sugar')
+        .itemOutputs('minecraft:sugar')
+        .duration(40)
+        .EUt(24)
 })
