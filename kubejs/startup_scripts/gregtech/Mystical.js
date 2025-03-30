@@ -22,28 +22,28 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .ore(2, 3)
         .color(0x758d01).iconSet("metallic")
         .components("sodium", "aluminium", "silicon", "3x oxygen")
-        .toolStats(new ToolProperty(3.0, 3.0, 512, 2, []))
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE)
+        .toolStats(new ToolProperty(2.5, 2.3, 512, 2, []))
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_GEAR)
 
     function mysticalIngot(i, p, clr, a, b, c, d){
         event.create(`${i}`)
             .ingot().fluid()
             .color(clr).iconSet("metallic")
-            .components(`${p}`)
+            .components(`4x ${p}`)
             .toolStats(new ToolProperty(a, b, c, d, []))
-            .flags(GTMaterialFlags.DECOMPOSITION_BY_CENTRIFUGING, GTMaterialFlags.GENERATE_PLATE);
+            .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_GEAR);
     }
 
-    mysticalIngot('prudentium', '4x inferium', 0x008623, 3.0, 3.0, 512, 2);
-    mysticalIngot('tertium', '4x prudentium', 0xb34b02, 3.0, 3.0, 512, 2);
-    mysticalIngot('imperium', '4x tertium', 0x0380da, 3.0, 3.0, 512, 2);
-    mysticalIngot('supremium', '4x imperium', 0xcb0000, 3.0, 3.0, 512, 2);
+    mysticalIngot('prudentium', 'inferium', 0x008623, 3.2, 3.0, 768, 2);
+    mysticalIngot('tertium', 'prudentium', 0xb34b02, 4.0, 3.5, 1024, 3);
+    mysticalIngot('imperium', 'tertium', 0x0380da, 4.5, 3.8, 1320, 3);
+    mysticalIngot('supremium', 'imperium', 0xcb0000, 5.2, 4.5, 1536, 4);
     
     event.create("awakened_supremium")
         .ingot().fluid()
         .color(0xff3333).iconSet("radioactive")
         .components("supremium")
-        .toolStats(new ToolProperty(3.0, 3.0, 512, 2, []))
+        .toolStats(new ToolProperty(6.1, 5.6, 2048, 4, []))
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
 
     event.create("insanium")

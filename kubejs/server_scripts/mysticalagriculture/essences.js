@@ -1,77 +1,99 @@
 ServerEvents.recipes(event =>{
     
-    event.remove(/mysticalagriculture:seed/)
-
     const element_essences = ["air", "earth", "fire", "water"]
     const tier_inferium = [["inferium", 1], ["prudentium", 2], ["tertium", 4], ["imperium", 8], ["supremium", 16], ["insanium", 32]]
 
-    const basic_essences = [
-        // More basic essences
-        ["stone", ["fire", "water"]],
-        ["dirt", ["stone", "earth"]],
-        ["ice", ["stone", "water"]],
-        ["deepslate", ["stone", "fire"]],
-        ["nature", ["earth", "water"]],
-        ["fish", ["cow", "water"]],
-        ["squid", ["fish", "water"]],
-        ["pig", ["nature", "dirt", "water"]],
-        ["chicken", ["nature", "air", "water"]],
-        ["cow", ["nature", "ice", "water"]],
-        ["sheep", ["nature", "dye", "water"]],
-        ["coal", ["earth", "fire"]],
-        ["amethyst", ["stone", "deepslate"]],
-        ["dye", ["nature", "amethyst"]],
-        ["prismarine", ["water", "deepslate"]],
-        ["iron", ["coal", "deepslate"]],
-        ["copper", ["iron", "earth"]],
-        ["redstone", ["coal", "earth"]],
-        ["glowstone", ["redstone", "air"]],
-        ["obsidian", ["iron", "fire"]],
-        ["sulfur", ["glowstone", "earth"]],
-        ["rubber", ["nature", "sulfur"]],
-        ["saltpeter", ["sulfur", "earth"]],
-        ["apatite", ["saltpeter", "earth"]],
-        ["tin", ["copper", "earth"]],
-        ["zinc", ["tin", "earth"]]
+    
+    const allEssences = [
+        
+        // Basicas = Ar, Terra, Agua, Fogo, Pedra, Terra, Gelo, Deepslate, Nature, Dye, Coal, Honey, Amethyst, Prismarino, Porco, Galinha, Vaca, Ovelha, Squid, Peixe, Ferro, Cobre, Redstone, Glowstone, Obsidian, Borracha, Sulfur, Saltpeter, Apatite, Tin, Zinc.
+        ["stone", ["fire", "water"], 7],
+        ["dirt", ["stone", "earth"], 7],
+        ["ice", ["stone", "water"], 7],
+        ["deepslate", ["stone", "fire"], 24],
+        ["nature", ["earth", "water"], 7],
+        ["fish", ["cow", "water"], 24],
+        ["squid", ["fish", "water"], 24],
+        ["pig", ["nature", "dirt", "water"], 24],
+        ["chicken", ["nature", "air", "water"], 24],
+        ["cow", ["nature", "ice", "water"], 24],
+        ["sheep", ["nature", "dye", "water"], 24],
+        ["coal", ["earth", "fire"], 24],
+        ["amethyst", ["stone", "deepslate"], 24],
+        ["dye", ["nature", "amethyst"], 7],
+        ["prismarine", ["water", "deepslate"], 24],
+        ["iron", ["coal", "stone"], 24],
+        ["copper", ["iron", "earth"], 24],
+        ["redstone", ["coal", "earth"], 7],
+        ["glowstone", ["redstone", "air"], 7],
+        ["obsidian", ["iron", "fire"], 24],
+        ["sulfur", ["glowstone", "earth"], 24],
+        ["rubber", ["nature", "sulfur"], 24],
+        ["saltpeter", ["sulfur", "earth"], 24],
+        ["apatite", ["saltpeter", "earth"], 24],
+        ["tin", ["copper", "earth"], 24],
+        ["zinc", ["tin", "earth"], 24],
+
+        
+        // Avançadas = Nether, End, Experiencia, Slime, Zumbi, Esqueleto, Creeper, Aranha, Blaze, Ghast, Enderman, Wither Skeleton, Ouro, Lapis, Diamante, Esmeralda, Netherite, Aluminum, Silver, Lead, Graphite, Nickel, Tungsten, Titanium, Uranium, Chrome, Ruby, Sapphire, Solium, Platinum
+        ["nether", ["redstone", "glowstone", "obsidian"], 120],
+        ["end", ["nether", "enderman"], 480],
+        ["experience", ["zombie", "creeper", "skeleton", "spider"], 480],
+        ["slime", ["experience", "rubber"], 120],
+        ["zombie", ["stone", "dirt", "iron", "nature"], 120],
+        ["skeleton", ["tin", "zombie"], 120],
+        ["creeper", ["zombie", "sulfur", "saltpeter"], 120],
+        ["spider", ["stone", "copper", "nature"], 120],
+        ["blaze", ["nature", "fire", "nether"], 480],
+        ["ghast", ["nether", "air", "creeper"], 120],
+        ["enderman", ["experience", "diamond"], 480],
+        ["wither_skeleton", ["nether", "skeleton", "coal", "experience"], 480],
+        ["gold", ["stone", "iron", "glowstone"], 120],
+        ["lapis_lazuli", ["deepslate", "copper", "experience"], 120],
+        ["diamond", ["deepslate", "obsidian", "gold", "experience"], 480],
+        ["emerald", ["deepslate", "diamond"], 480],
+        ["netherite", ["nether", "diamond", "emerald", "gold"], 1920],
+        ["aluminum", ["stone", "iron", "water"], 120],
+        ["silver", ["aluminum", "gold"], 120],
+        ["lead", ["deepslate", "iron"], 120],
+        ["graphite", ["deepslate", "coal"], 120],
+        ["nickel", ["iron", "aluminum"], 120], 
+        ["tungsten", ["end", "iron", "chrome"], 1920],
+        ["titanium", ["end", "aluminum", "sapphire"], 1920],
+        ["uranium", ["nether", "end", "coal", "blaze", "lead", "fire"], 480],
+        ["chrome", ["end", "ruby"], 480],
+        ["ruby", ["deepslate", "redstone", "aluminum"], 120],
+        ["sapphire", ["deepslate", "lapis", "aluminum"], 120],
+        ["soulium", ["stone", "nether", "earth"], 120],
+        ["platinum", ["end", "tin"], 480],
+        ["certus_quartz", ["iron", "dirt", "air"], 120],
+        ["nether_quartz", ["nether", "certus_quartz"], 120],
+        ["fluix", ["certus_quartz", "nether_quartz", "redstone"], 120]
     ]
 
-    event.recipes.gtceu.centrifuge("gtceu:centrifuge_agglomeratio")
-        .itemInputs("#forge:dusts/inferium")
-        .chancedOutput(`mysticalagriculture:air_agglomeratio`, 2000, 1500)
-        .chancedOutput(`mysticalagriculture:fire_agglomeratio`, 2000, 1500)
-        .chancedOutput(`mysticalagriculture:earth_agglomeratio`, 2000, 1500)
-        .chancedOutput(`mysticalagriculture:water_agglomeratio`, 2000, 1500)
-        .duration(240)
-        .EUt(30)
-
-    event.recipes.gtceu.agricultural_fabrication("gtceu:essence_seeds/prosperity_base")
-        .itemInputs("#forge:seeds", "4x gtceu:prosperity_dust")
-        .itemOutputs("mysticalagriculture:prosperity_seed_base")
-        .duration(140)
-        .EUt(30)
-
-    event.recipes.gtceu.agricultural_fabrication("gtceu:essence_seeds/inferium")
-        .itemInputs("8x #forge:dusts/inferium", "mysticalagriculture:prosperity_seed_base")
-        .itemOutputs("mysticalagriculture:inferium_seeds")
-        .duration(140)
-        .EUt(30)
-
     element_essences.forEach(ele =>{
-        event.recipes.gtceu.agricultural_fabrication(`gtceu:essence_seeds/${ele}`)
+        event.recipes.gtceu.agricultural_fabrication(`essence_seeds/${ele}`)
             .itemInputs(`4x mysticalagriculture:${ele}_agglomeratio`, "mysticalagriculture:prosperity_seed_base")
             .itemOutputs(`mysticalagriculture:${ele}_seeds`)
             .duration(140)
             .EUt(30)
     })
 
-    for (const [target, [in0, in1, in2, in3]] of basic_essences){
-        event.recipes.gtceu.agricultural_fabrication(`gtceu:essence/${target}`)
-            .itemInputs(`mysticalagriculture:${in0}_essence`, `mysticalagriculture:${in1}_essence`, `mysticalagriculture:${in2}_essence`, `mysticalagriculture:${in3}_essence`)
+    for (const [target, [in0, in1, in2, in3, in4, in5], cost] of allEssences){
+        event.recipes.gtceu.agricultural_fabrication(`essence/${target}`)
+            .itemInputs(
+                `mysticalagriculture:${in0}_essence`, 
+                `mysticalagriculture:${in1}_essence`, 
+                `mysticalagriculture:${in2}_essence`, 
+                `mysticalagriculture:${in3}_essence`,
+                `mysticalagriculture:${in4}_essence`,
+                `mysticalagriculture:${in5}_essence`
+            )
             .itemOutputs(`mysticalagriculture:${target}_essence`)
-            .duration(280)
-            .EUt(20)
+            .duration(380)
+            .EUt(cost) 
         for (const [tier, mult] of tier_inferium){
-            event.recipes.gtceu.agricultural_fabrication(`gtceu:essence_seeds/${target}_${tier}`)
+            event.recipes.gtceu.agricultural_fabrication(`essence_seeds/${target}_${tier}`)
                 .itemInputs(`4x mysticalagriculture:${target}_essence`, "mysticalagriculture:prosperity_seed_base")
                 .inputFluids(`gtceu:${tier} 144`)
                 .itemOutputs(`${mult}x mysticalagriculture:${target}_seeds`)
@@ -80,9 +102,4 @@ ServerEvents.recipes(event =>{
         }
     }
 
-    event.recipes.gtceu.synthetic_solid('debug')
-        .itemInputs('minecraft:sugar')
-        .itemOutputs('minecraft:sugar')
-        .duration(40)
-        .EUt(24)
 })

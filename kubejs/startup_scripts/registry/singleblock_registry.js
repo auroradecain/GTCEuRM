@@ -10,7 +10,7 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event =>{
     event.create("seed_growth")
         .category("agricultural")
         .setEUIO("in")
-        .setMaxIOSize(1, 1, 1, 0)
+        .setMaxIOSize(2, 1, 1, 0)
         .setSlotOverlay(false, false, GuiTextures.EXTRACTOR_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, FillDirection.DOWN_TO_UP)
         .setSound(GTSoundEntries.CHEMICAL)

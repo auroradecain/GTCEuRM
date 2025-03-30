@@ -5,6 +5,34 @@
     "gtceu.jei.ore_vein.overworld/emerald": "Emerald Vein (Overworld)",
     "gtceu.jei.ore_vein.overworld/inferium": "Inferium Vein",
 
+    
+    "gtceu.greenhouse":"Greenhouse",
+    "gtceu.seed_growth":"Seed Growth",
+    "gtceu.synthetic_fluid":"Synthetic Fluid",
+    "gtceu.synthetic_solid":"Synthetic Solid",
+    "gtceu.synthetic_lifeform":"Synthetic Lifeform",
+    "gtceu.agricultural_fabrication":"Agricultural Fabrication",
+
+    "block.gtceu.mv_agricultural_fabricator":"§bAdvanced Agricultural Fabricator",
+    "block.gtceu.hv_agricultural_fabricator":"§6Advanced Agricultural Fabricator II",
+    "block.gtceu.ev_agricultural_fabricator":"§5Advanced Agricultural Fabricator III",
+    "block.gtceu.iv_agricultural_fabricator":"§9Elite Agricultural Fabricator",
+    "block.gtceu.luv_agricultural_fabricator":"§dElite Agricultural Fabricator II",
+    "block.gtceu.zpm_agricultural_fabricator":"§cElite Agricultural Fabricator III",
+    "block.gtceu.mv_hydroponic_unit":"§bAdvanced Hydroponic Unit",
+    "block.gtceu.hv_hydroponic_unit":"§6Advanced Hydroponic Unit II",
+    "block.gtceu.ev_hydroponic_unit":"§5Advanced Hydroponic Unit III",
+    "block.gtceu.vv_hydroponic_unit":"§9Elite Hydroponic Unit",
+    "block.gtceu.luv_hydroponic_unit":"§dElite Hydroponic Unit II",
+    "block.gtceu.zpm_hydroponic_unit":"§cElite Hydroponic Unit III",
+
+    "block.gtceu.greenhouse":"§bGreenhouse",
+    "block.gtceu.synthetic_fluid_rig":"§bSynthetic Fluid Rig",
+    "block.gtceu.synthetic_solid_rig":"§bSynthetic Solid Rig",
+    "block.gtceu.synthetic_lifeform_simulator":"§bSynthetic Lifeform Simulator",
+
+    "material.gtceu.gabro" : "Gabro",
+
     "material.gtceu.inferium" : "Inferium",
     "material.gtceu.prudentium" : "Prudentium",
     "material.gtceu.tertium" : "Tertium",
