@@ -6,12 +6,14 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .ore(2, 1)
         .addOreByproducts('magnesium')
         .color(0xddfbfa).iconSet('metallic')
-        .components("magnesium","2x aluminium","2x phosphorous", "silicon", "10x oxygen")
+        .components("magnesium","2x aluminium", "silicon", "2x phosphate", "2x oxygen")
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
     event.create("soulium")
         .dust()
         .color(0x5a3a2d)
         .components("copper", "3x hydrogen", "5x sulfur_dioxide")
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+        .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.dustSmall])
     event.create("soularium")
         .ingot()
         .color(0x7f6f55).secondaryColor(0x83715c).iconSet("dull")
@@ -29,7 +31,8 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
             .ingot().fluid()
             .color(clr).iconSet("metallic")
             .components(`4x ${p}`)
-            .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR);
+            .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
+            .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.dustSmall])
     }
     
     mysticalIngot('prudentium', 'inferium', 0x008623)
@@ -38,11 +41,12 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
     mysticalIngot('supremium', 'imperium', 0xcb0000)
     mysticalIngot('insanium', 'supremium', 0x560484)
 
-    event.create("awakened_supremium")
+    event.create("awakened_supremium") 
         .ingot().fluid()
         .color(0xff3333).iconSet("radioactive")
         .element(GTElements.get('awakened_supremium'))
-        // .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+        //.components("supremium")
+        //.flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
  
     // Mystical Agriculture exclusive chemicals [WIP]
     /*
