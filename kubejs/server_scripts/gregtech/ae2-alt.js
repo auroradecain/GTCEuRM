@@ -5,28 +5,28 @@ ServerEvents.recipes(event =>{
         .itemInputs("gtceu:diamond_plate")
         .notConsumable("ae2:engineering_processor_press")
         .itemOutputs("ae2:printed_engineering_processor")
-        .duration(190)
+        .duration(170)
         .EUt(24)
 
     event.recipes.gtceu.alloy_smelter('gtceu:ae2_gold_circuit')
         .itemInputs("gtceu:gold_plate")
         .notConsumable("ae2:logic_processor_press")
         .itemOutputs("ae2:printed_logic_processor")
-        .duration(190)
+        .duration(170)
         .EUt(24)
 
     event.recipes.gtceu.alloy_smelter('gtceu:ae2_certus_quartz_circuit')
         .itemInputs("gtceu:certus_quartz_plate")
         .notConsumable("ae2:calculation_processor_press")
         .itemOutputs("ae2:printed_calculation_processor")
-        .duration(190)
+        .duration(170)
         .EUt(24)
 
     event.recipes.gtceu.alloy_smelter('gtceu:ae2_printed_silicon')
         .itemInputs("ae2:silicon")
         .notConsumable("ae2:silicon_press")
         .itemOutputs("ae2:printed_silicon")
-        .duration(280)
+        .duration(130)
         .EUt(7)
 
     // Circuit Assembler for Soldering Alloy
