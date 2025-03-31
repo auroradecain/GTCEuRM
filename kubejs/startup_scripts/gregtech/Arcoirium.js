@@ -3,7 +3,7 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
     event.create("gabro")
         .dust()
         .color(0x2f332d).iconSet('dull')
-        .components('2x iron', '3x silicon_dioxide', 'magnesium')
+        .components('2x iron', '1x silicon_dioxide', 'magnesium', 'aluminium','3x oxygen')
         .flags(GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING)
     
     event.create("vidium")
@@ -61,5 +61,5 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
 })
 
 GTCEuStartupEvents.materialModification(event =>{
-    GTMaterials.get('gabro').setFormula('Fe2(SiO3)Mg')
+    GTMaterials.get('gabro').setFormula('Fe2(SiO2)(MgO3)Al?')
 })
