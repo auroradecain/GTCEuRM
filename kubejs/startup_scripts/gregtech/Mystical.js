@@ -1,16 +1,18 @@
 GTCEuStartupEvents.registry("gtceu:material", event=>{
+
+    
     event.create("prosperity")
-        .ingot()
-        .ore(2, 1)
-        .addOreByproducts('magnesium')
-        .color(0xddfbfa).iconSet('metallic')
-        .components("silicon", "3x oxygen", "magnesium")
+    .ingot()
+    .ore(2, 1)
+    .addOreByproducts('magnesium')
+    .color(0xddfbfa).iconSet('metallic')
+    .components("silicon", "3x oxygen", "magnesium")
 
     event.create("soulium")
         .dust()
         .color(0x5a3a2d)
         .components("copper", "3x hydrogen", "5x sulfur_dioxide")
-
+        
     event.create("soularium")
         .ingot()
         .color(0x7f6f55).secondaryColor(0x83715c).iconSet("dull")
@@ -31,9 +33,9 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
             .components(`4x ${p}`)
             .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR);
     }
-
-
-
+    
+    
+    
     mysticalIngot('prudentium', 'inferium', 0x008623)
     mysticalIngot('tertium', 'prudentium', 0xb34b02)
     mysticalIngot('imperium', 'tertium', 0x0380da)
@@ -45,14 +47,50 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
     .color(0xff3333).iconSet("radioactive")
     .components("supremium")
     .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
-    
-    /**  
-    event.create("insanium")
-    .dust().fluid()
-    .color().iconSet("metallic")
-    .components("4x supremium")
-    .flags(GTMaterialFlags.DECOMPOSITION_BY_CENTRIFUGING)
+ 
+    // Mystical Agriculture exclusive chemicals [WIP]
+    /*
+    event.create('air_elemental_solution')
+        .fluid()
+        .color()
+        .components()
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+    event.create('fire_elemental_solution')
+        .fluid()
+        .color()
+        .components()
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+    event.create('earth_elemental_solution')
+        .fluid()
+        .color()
+        .components()
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+    event.create('water_elemental_solution')
+        .fluid()
+        .color()
+        .components()
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+    event.create('earth_water_superelemental_solution')
+        .fluid()
+        .color()
+        .components()
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+    event.create('air_fire_superelemental_solution')
+        .fluid()
+        .color()
+        .components()
+        .flags()
+    event.create('mystical_hyperconcetrate')
+        .fluid()
+        .color()
+        .components()
+
+    event.create('elemental_sludge')
+        .dust()
+        .color()
+        .components("")
     */
+    
 })
 
 GTCEuStartupEvents.materialModification(event =>{
@@ -66,4 +104,4 @@ GTCEuStartupEvents.materialModification(event =>{
     GTMaterials.get('insanium').setFormula('(NaAl(SiO3))1024')
     GTMaterials.get('soulium').setFormula('Cu(SO2)5H3')
     GTMaterials.get('soularium').setFormula('CuMg(SO2)5(SiO3)H3')
-})
+    })

@@ -1,19 +1,22 @@
 ServerEvents.recipes(event =>{
     // Mystical Agriculture
-    event.remove(/mysticalagriculture:seed/)
-    event.remove(/mysticalagriculture:*_seeds/)
-    event.remove(/mysticalagriculture:*_essence/)
-    event.remove(/mysticalagriculture:essence/)
-    event.remove(/mysticalagriculture:soulium_spawner/)
+
+    // Previous changes are enought to remove all recipes without breaking, testing... 
+    event.remove({id: mysticalagriculture})
+    event.remove({id: mysticalagradditions})
+    //event.remove(/mysticalagriculture:*_seeds/)
+    //event.remove(/mysticalagriculture:*_essence/)
+    //event.remove(/mysticalagriculture:essence/)
+    //event.remove(/mysticalagriculture:soulium_spawner/)
     
-    event.remove(["mysticalagriculture:inferium_ingot", "mysticalagriculture:prudentium_ingot", "mysticalagriculture:tertium_ingot", "mysticalagriculture:imperium_ingot", "mysticalagriculture:supremium_ingot", "mysticalagriculture:insanium_ingot"])
-    event.remove(["mysticalagriculture:air_agglomeratio", "mysticalagriculture:fire_agglomeratio", "mysticalagriculture:earth_agglomeratio", "mysticalagriculture:water_agglomeratio", "mysticalagriculture:nether_agglomeratio", "mysticalagriculture:end_agglomeratio", "mysticalagriculture:nature_agglomeratio", "mysticalagriculture:dye_agglomeratio", "mysticalagriculture:coral_agglomeratio","mysticalagriculture:honey_agglomeratio", "mysticalagriculture:prismarine_agglomeratio"])
-    event.remove(["mysticalagriculture:watering_can", "mysticalagriculture:gear/inferium_watering_can", "mysticalagriculture:gear/prudentium_watering_can", "mysticalagriculture:gear/tertium_watering_can", "mysticalagriculture:gear/imperium_watering_can", "mysticalagriculture:gear/supremium_watering_can", "mysticalagriculture:gear/awakened_supremium_watering_can"])
-    event.remove(["mysticalagriculture:inferium_growth_accelerator", "mysticalagriculture:prudentium_growth_accelerator", "mysticalagriculture:tertium_growth_accelerator", "mysticalagriculture:imperium_growth_accelerator", "mysticalagriculture:supremium_growth_accelerator"])
-    event.remove(["mysticalagriculture:soul_jar", "mysticalagriculture:soulium_spawner", "mysticalagriculture:harvester", "mysticalagriculture:soul_extractor", "mysticalagriculture:seed_reprocessor", "mysticalagriculture:machine_frame", "mysticalagriculture:infusion_pedestal", "mysticalagriculture:infusion_altar", "mysticalagriculture:awakening_pedestal", "mysticalagriculture:awakening_altar", "mysticalagriculture:essence_vessel"])
-    event.remove("mysticalagriculture:prosperity_seed_base")
-    event.remove("mysticalagriculture:soulium_seed_base")
-    event.remove("mysticalagriculture:prosperity_gemstone")
+    // event.remove(["mysticalagriculture:inferium_ingot", "mysticalagriculture:prudentium_ingot", "mysticalagriculture:tertium_ingot", "mysticalagriculture:imperium_ingot", "mysticalagriculture:supremium_ingot", "mysticalagriculture:insanium_ingot"])
+    // event.remove(["mysticalagriculture:air_agglomeratio", "mysticalagriculture:fire_agglomeratio", "mysticalagriculture:earth_agglomeratio", "mysticalagriculture:water_agglomeratio", "mysticalagriculture:nether_agglomeratio", "mysticalagriculture:end_agglomeratio", "mysticalagriculture:nature_agglomeratio", "mysticalagriculture:dye_agglomeratio", "mysticalagriculture:coral_agglomeratio","mysticalagriculture:honey_agglomeratio", "mysticalagriculture:prismarine_agglomeratio"])
+    // event.remove(["mysticalagriculture:watering_can", "mysticalagriculture:gear/inferium_watering_can", "mysticalagriculture:gear/prudentium_watering_can", "mysticalagriculture:gear/tertium_watering_can", "mysticalagriculture:gear/imperium_watering_can", "mysticalagriculture:gear/supremium_watering_can", "mysticalagriculture:gear/awakened_supremium_watering_can"])
+    // event.remove(["mysticalagriculture:inferium_growth_accelerator", "mysticalagriculture:prudentium_growth_accelerator", "mysticalagriculture:tertium_growth_accelerator", "mysticalagriculture:imperium_growth_accelerator", "mysticalagriculture:supremium_growth_accelerator"])
+    // event.remove(["mysticalagriculture:soul_jar", "mysticalagriculture:soulium_spawner", "mysticalagriculture:harvester", "mysticalagriculture:soul_extractor", "mysticalagriculture:seed_reprocessor", "mysticalagriculture:machine_frame", "mysticalagriculture:infusion_pedestal", "mysticalagriculture:infusion_altar", "mysticalagriculture:awakening_pedestal", "mysticalagriculture:awakening_altar", "mysticalagriculture:essence_vessel"])
+    // event.remove("mysticalagriculture:prosperity_seed_base")
+    // event.remove("mysticalagriculture:soulium_seed_base")
+    // event.remove("mysticalagriculture:prosperity_gemstone")
     
     event.remove(["gtceu:extractor/extract_prudentium_dust", "gtceu:extractor/extract_tertium_dust", "gtceu:extractor/extract_imperium_dust", "gtceu:extractor/extract_supremium_dust"])
     
