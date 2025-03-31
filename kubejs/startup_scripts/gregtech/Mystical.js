@@ -2,23 +2,21 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
 
     
     event.create("prosperity")
-    .ingot()
-    .ore(2, 1)
-    .addOreByproducts('magnesium')
-    .color(0xddfbfa).iconSet('metallic')
-    .components("silicon", "3x oxygen", "magnesium")
-
+        .ingot()
+        .ore(2, 1)
+        .addOreByproducts('magnesium')
+        .color(0xddfbfa).iconSet('metallic')
+        .components("magnesium","2x aluminium","2x phosphorous", "silicon", "10x oxygen")
     event.create("soulium")
         .dust()
         .color(0x5a3a2d)
         .components("copper", "3x hydrogen", "5x sulfur_dioxide")
-        
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
     event.create("soularium")
         .ingot()
         .color(0x7f6f55).secondaryColor(0x83715c).iconSet("dull")
         .components("soulium", "prosperity")
         .flags(GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING)
-
     event.create("inferium")
         .ingot().fluid()
         .ore(2, 3)
@@ -34,8 +32,6 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
             .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR);
     }
     
-    
-    
     mysticalIngot('prudentium', 'inferium', 0x008623)
     mysticalIngot('tertium', 'prudentium', 0xb34b02)
     mysticalIngot('imperium', 'tertium', 0x0380da)
@@ -43,10 +39,10 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
     mysticalIngot('insanium', 'supremium', 0x560484)
 
     event.create("awakened_supremium")
-    .ingot().fluid()
-    .color(0xff3333).iconSet("radioactive")
-    .components("supremium")
-    .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+        .ingot().fluid()
+        .color(0xff3333).iconSet("radioactive")
+        .element(GTElements.get('awakened_supremium'))
+        // .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
  
     // Mystical Agriculture exclusive chemicals [WIP]
     /*
@@ -94,14 +90,14 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
 })
 
 GTCEuStartupEvents.materialModification(event =>{
-    GTMaterials.get('prosperity').setFormula('Mg(SiO3)')
-    GTMaterials.get('inferium').setFormula('NaAl(SiO3)')
-    GTMaterials.get('prudentium').setFormula('(NaAl(SiO3))4')
-    GTMaterials.get('tertium').setFormula('(NaAl(SiO3))16')
-    GTMaterials.get('imperium').setFormula('(NaAl(SiO3))64')
-    GTMaterials.get('supremium').setFormula('(NaAl(SiO3))256')
-    GTMaterials.get('awakened_supremium').setFormula('(NaAl(SiO3))256?')
-    GTMaterials.get('insanium').setFormula('(NaAl(SiO3))1024')
-    GTMaterials.get('soulium').setFormula('Cu(SO2)5H3')
-    GTMaterials.get('soularium').setFormula('CuMg(SO2)5(SiO3)H3')
+    GTMaterials.get('prosperity').setFormula('Mg(AlPO4)2(SiO2)')
+    GTMaterials.get('inferium').setFormula('NaAl(SiO2)')
+    GTMaterials.get('prudentium').setFormula('(NaAl(AlPO4)2(SiO2)2)4')
+    GTMaterials.get('tertium').setFormula('(NaAl(AlPO4)2(SiO2)2)16')
+    GTMaterials.get('imperium').setFormula('(NaAl(AlPO4)2(SiO2)2)64')
+    GTMaterials.get('supremium').setFormula('(NaAl(AlPO4)2(SiO2)2)256')
+    // GTMaterials.get('awakened_supremium').setFormula('(NaAl(AlPO4)2(SiO2)2)256?')
+    GTMaterials.get('insanium').setFormula('(NaAl(AlPO4)2(SiO2)2)1024')
+    GTMaterials.get('soulium').setFormula('Cu(SO2)5H3?')
+    GTMaterials.get('soularium').setFormula('CuMg(SO2)5(SiO3)H3?')
     })
