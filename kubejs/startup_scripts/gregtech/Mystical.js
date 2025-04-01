@@ -45,6 +45,8 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .ingot().fluid()
         .color(0xff3333).iconSet("radioactive")
         .element(GTElements.get('awakened_supremium'))
+        .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.dustSmall])
+        
         //.components("supremium")
         //.flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
  

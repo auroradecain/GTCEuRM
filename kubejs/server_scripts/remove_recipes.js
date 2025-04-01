@@ -26,16 +26,27 @@ ServerEvents.recipes(event =>{
     //event.replaceInput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
     //event.replaceOutput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
 
-    //const replace_tier = ["inferium", "prudentium", "tertium", "imperium", "supremium", "awakened_supremium"]
+    const replace_tier = ["inferium", "prudentium", "tertium", "imperium", "supremium", "awakened_supremium"]
 
-    //replace_tier.forEach(tier =>{
-    //    event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_essence`, `gtceu:${tier}_dust`)
-    //    event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_ingot`, `gtceu:${tier}_ingot`)
-    //    event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_nugget`, `gtceu:${tier}_nugget`)
-    //    event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_essence`, `gtceu:${tier}_dust`)
-    //    event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_ingot`, `gtceu:${tier}_ingot`)
-    //    event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_nugget`, `gtceu:${tier}_nugget`)
-    //})
+    replace_tier.forEach(tier =>{
+        event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_essence`, `gtceu:${tier}_dust`)
+        event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_ingot`, `gtceu:${tier}_ingot`)
+        event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_nugget`, `gtceu:${tier}_nugget`)
+        event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_essence`, `gtceu:${tier}_dust`)
+        event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_ingot`, `gtceu:${tier}_ingot`)
+        event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_nugget`, `gtceu:${tier}_nugget`)
+    })
+
+    // AE2
+
+    event.replaceInput({ mod: 'ae2'}, 'ae2:certus_quartz_crystal', 'gtceu:certus_quartz_gem')
+    event.replaceInput({ mod: 'ae2'}, 'ae2:charged_certus_quartz_crystal', 'gtceu:charged_certus_quartz_gem')
+    event.replaceInput({ mod: 'ae2'}, 'ae2:fluix_crystal', 'gtceu:fluix_gem')
+
+    event.remove(['ae2:network/blocks/inscriber', 'ae2:network/blocks/charger'])
+    event.remove(['expatternprovider:ex_inscriber', 'expatternprovider:ex_charger'])
+    event.remove(/expatternprovider:cutter/)
+    event.remove(/ae2:inscriber/)
 
     // GT
 })

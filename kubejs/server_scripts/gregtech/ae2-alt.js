@@ -1,6 +1,67 @@
 ServerEvents.recipes(event =>{
 
-    /** Laser Engraver Recipies */
+    // Materials
+    
+    event.remove({ id: "ae2:charger/charged_certus_quartz_crystal" })
+    event.remove({ id: "ae2:transform/certus_quartz_crystals" })
+    event.custom({
+        "type": "ae2:charger",
+        "ingredient": {
+            "item": "gtceu:certus_quartz_gem"
+        },
+        "result": {
+            "item": "gtceu:charged_certus_quartz_gem"
+        }
+    }).id("kubejs:ae2/charged_certus_quartz_gem")
+    
+    event.recipes.gtceu.autoclave("charged_autoclave")
+        .itemInputs("gtceu:certus_quartz_dust")
+        .inputFluids("gtceu:distilled_water 100")
+        .itemOutputs("gtceu:charged_certus_quartz_gem")
+        .duration(20)
+        .EUt(480)
+    event.recipes.gtceu.polarizer('gems/charged_certus_quartz')
+        .itemInputs('gtceu:certus_quartz_gem')
+        .itemOutputs('gtceu:charged_certus_quartz_gem')
+        .duration(70)
+        .EUt(7)
+    
+    event.recipes.gtceu.mixer('fluix_gem')
+        .itemInputs('#forge:gems/charged_certus_quartz', 'minecraft:redstone', '#forge:gems/nether_quartz')
+        .itemOutputs('2x gtceu:fluix_gem')
+        .duration(80)
+        .EUt(7)
+     event.recipes.gtceu.alloy_smelter('sky_steel')
+        .itemInputs('#forge:ingots/steel', 'ae2:sky_dust')
+        .itemOutputs('gtceu:sky_steel_ingot')
+        .duration(120)
+        .EUt(7)
+    event.recipes.gtceu.alloy_smelter('quartz_glass')
+        .itemInputs('2x #forge:dusts/certus_quartz', '#forge:glass')
+        .itemOutputs('2x ae2:quartz_glass')
+        .duration(90)
+        .EUt(7)
+
+    event.recipes.gtceu.cutter('water_fluix_plate')
+        .itemInputs('ae2:fluix_block')
+        .inputFluids('minecraft:water 6')
+        .itemOutputs('4x gtceu:fluix_plate')
+        .duration(48)
+        .EUt(30)
+    event.recipes.gtceu.cutter('dist_fluix_plate')
+        .itemInputs('ae2:fluix_block')
+        .inputFluids('gtceu:distilled_water 5')
+        .itemOutputs('4x gtceu:fluix_plate')
+        .duration(36)
+        .EUt(30)
+    event.recipes.gtceu.cutter('lub_fluix_plate')
+        .itemInputs('ae2:fluix_block')
+        .inputFluids('gtceu:lubricant 1')
+        .itemOutputs('4x gtceu:fluix_plate')
+        .duration(24)
+        .EUt(30)
+
+    // Circuits
     event.recipes.gtceu.alloy_smelter('gtceu:ae2_diamond_circuit')
         .itemInputs("gtceu:diamond_plate")
         .notConsumable("ae2:engineering_processor_press")
@@ -51,6 +112,111 @@ ServerEvents.recipes(event =>{
             .duration(135)
             .EUt(GTValues.VH[GTValues.LV])
     })
+
+    // ME Controller
+    event.remove('ae2:network/blocks/controller')
+    event.shaped('ae2:controller', [
+        'PCP',
+        'EHE',
+        'PCP'
+    ], {
+        P : "gtceu:sky_steel_plate",
+        C : "#ae2:glass_cable",
+        E : "ae2:engineering_processor",
+        H : "gtceu:lv_machine_hull" 
+    }).id('kubejs:ae2/controller')
+
+    // ME Drive
+    event.remove('ae2:network/blocks/storage_drive')
+    event.shaped('ae2:drive', [
+        'KEK',
+        'LHL',
+        'KEK'
+    ],{
+        K : "gtceu:sky_steel_plate",
+        E : "ae2:engineering_processor",
+        L : "ae2:logic_processor",
+        H : "gtceu:lv_machine_hull", 
+    }).id('kubejs:ae/storage_drive')
+
+    // Interface
+    event.remove('ae2:network/blocks/interface')
+    event.shaped('ae2:interface', [
+        'SAS',
+        'LHE',
+        'SSS'
+    ], {
+        S : "gtceu:sky_steel_plate",
+        A : "gtceu:lv_robot_arm",
+        L : "ae2:logic_processor",
+        H : "gtceu:lv_machine_hull",
+        E : "ae2:engineering_processor"
+    }).id('kubejs:ae2/interface')
+
+    // Import Bus
+    event.remove('ae2:network/parts/import_bus')
+    event.shaped('ae2:import_bus', [
+        ' LF',
+        ' CF',
+        ' LF'
+    ],{
+        L : "ae2:logic_processor",
+        F : "gtceu:fluix_plate",
+        C : "ae2:annihilation_core"
+    }).id('kubejs:ae2/import_bus')
+
+    // Export Bus
+    event.remove('ae2:network/parts/export_bus')
+    event.shaped('ae2:export_bus', [
+        'FL ',
+        'FC ',
+        'FL '
+    ],{
+        F : "gtceu:fluix_plate",
+        L : "ae2:logic_processor",
+        C : "ae2:formation_core"
+    }).id('kubejs:ae2/export_bus')
+
+    // Storage Bus
+    event.remove('ae2:network/parts/storage_bus')
+    event.shaped('ae2:storage_bus',[
+        'SGS',
+        'IBE',
+        'SGS'
+    ],{
+        S : "gtceu:sky_steel_plate",
+        G : "ae2:quartz_glass",
+        I : "ae2:import_bus",
+        B : "ae2:interface",
+        E : "ae2:export_bus",
+    }).id('kubejs:ae2/storage_bus')
+
+    // Charger
+    event.remove({ id: "ae2:network/blocks/crystal_processing_charger" })
+    event.shaped(Item.of("ae2:charger"), [
+        "ABA",
+        "A  ",
+        "ABA"
+    ], {
+        A: "gtceu:dark_steel_plate",
+        B: "gtceu:certus_quartz_plate"
+    }).id("kubejs:ae2/charger")
+
+    // Requester
+    event.remove({ id: "merequester:requester" })
+    event.shaped(Item.of("merequester:requester"), [
+        "ABA",
+        "CDC",
+        "AAA"
+    ], {
+        A: "gtceu:aluminium_plate",
+        B: "gtceu:mv_robot_arm",
+        C: "#gtceu:circuits/mv",
+        D: "gtceu:mv_machine_hull"
+    }).id("kubejs:ae2/requster")
+
+
+
 
     // Cables
     event.recipes.gtceu.wiremill("kubejs:ae2/quartz_fiber")
@@ -135,6 +301,12 @@ ServerEvents.recipes(event =>{
             .itemInputs("ae2:fluix_smart_dense_cable")
             .inputFluids(`gtceu:${color}_dye 18`)
             .itemOutputs(`ae2:${color}_smart_dense_cable`)
+            .duration(20)
+            .EUt(7)
+        event.recipes.gtceu.chemical_bath(`kubejs:ae2/${color}_glass_cable`)
+            .itemInputs("ae2:fluix_glass_cable")
+            .inputFluids(`gtceu:${color}_dye 18`)
+            .itemOutputs(`ae2:${color}_glass_cable`)
             .duration(20)
             .EUt(7)
     

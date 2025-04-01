@@ -119,7 +119,7 @@ ServerEvents.recipes(event =>{
     synthMat("solid", "prismarine/shard", "prismarine", 4, "8x minecraft:prismarine_shard", 80, GTValues.LV, 1)
     synthMat("solid", "prismarine/crystals", "prismarine", 4, "6x minecraft:prismarine_crystals", 80, GTValues.LV, 1)
 
-    synthMat("solid", "fluix", "fluix", 4, "6x ae2:fluix_crystal", 80, GTValues.LV, 1)
+    synthMat("solid", "fluix", "fluix", 4, "8x gtceu:fluix_gem", 80, GTValues.LV, 1)
 
     // Ores
     synthMat("solid", "coal", "coal", 8, "6x gtceu:raw_coal", 80, GTValues.LV, 1)

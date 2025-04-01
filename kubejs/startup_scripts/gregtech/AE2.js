@@ -5,6 +5,7 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
         .iconSet(GTMaterialIconSet.CERTUS)
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
         .components("certus_quartz")
+        .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.dustSmall, TagPrefix.gemExquisite, TagPrefix.gemFlawless, TagPrefix.gemFlawed, TagPrefix.block])
 
     event.create('fluix')
         .gem()
@@ -12,4 +13,13 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
         .iconSet(GTMaterialIconSet.CERTUS)
         .flags(GTMaterialFlags.GENERATE_PLATE)
         .components("charged_certus_quartz", "redstone", "nether_quartz")
+        .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.gemExquisite, TagPrefix.gemFlawless, TagPrefix.gemFlawed, TagPrefix.block])
+
+    event.create('sky_steel')
+        .ingot()
+        .color(0x060613)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_DENSE)
+        .components('steel')
+        .ignoredTagPrefixes([TagPrefix.dustTiny])
 })
