@@ -3,7 +3,7 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
         .gem()
         .color(0x9fd5e8)
         .iconSet(GTMaterialIconSet.CERTUS)
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.PHOSPHORESCENT)
         .components("certus_quartz")
         .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.dustSmall, TagPrefix.gemExquisite, TagPrefix.gemFlawless, TagPrefix.gemFlawed, TagPrefix.block])
 
@@ -11,7 +11,7 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
         .gem()
         .color(0x7f5bb3)
         .iconSet(GTMaterialIconSet.CERTUS)
-        .flags(GTMaterialFlags.GENERATE_PLATE)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.PHOSPHORESCENT)
         .components("charged_certus_quartz", "redstone", "nether_quartz")
         .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.gemExquisite, TagPrefix.gemFlawless, TagPrefix.gemFlawed, TagPrefix.block])
 
