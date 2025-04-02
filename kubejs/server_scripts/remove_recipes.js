@@ -26,17 +26,6 @@ ServerEvents.recipes(event =>{
     //event.replaceInput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
     //event.replaceOutput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
 
-    const replace_tier = ["inferium", "prudentium", "tertium", "imperium", "supremium", "awakened_supremium"]
-
-    replace_tier.forEach(tier =>{
-        event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_essence`, `gtceu:${tier}_dust`)
-        event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_ingot`, `gtceu:${tier}_ingot`)
-        event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_nugget`, `gtceu:${tier}_nugget`)
-        event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_essence`, `gtceu:${tier}_dust`)
-        event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_ingot`, `gtceu:${tier}_ingot`)
-        event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_nugget`, `gtceu:${tier}_nugget`)
-    })
-
     // AE2
 
     event.replaceInput({ mod: 'ae2'}, 'ae2:certus_quartz_crystal', 'gtceu:certus_quartz_gem')
