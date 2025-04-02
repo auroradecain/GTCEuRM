@@ -24,6 +24,17 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .ore(2, 3)
         .color(0x758d01).iconSet("metallic")
         .components("sodium", "aluminium", "silicon", "3x oxygen")
+        .toolStats(new ToolProperty(3.0, 2.5, 384, 2, [
+            GTToolType.SWORD, 
+            GTToolType.AXE, 
+            GTToolType.PICKAXE, 
+            GTToolType.SHOVEL, 
+            GTToolType.HOE, 
+            GTToolType.SPADE, 
+            GTToolType.MINING_HAMMER, 
+            GTToolType.SCYTHE, 
+            GTToolType.SHEARS
+        ]))
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
 
     function mysticalIngot(i, p, clr){
@@ -36,16 +47,17 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
     }
     
     mysticalIngot('prudentium', 'inferium', 0x008623)
-    mysticalIngot('tertium', 'prudentium', 0xb34b02)
-    mysticalIngot('imperium', 'tertium', 0x0380da)
-    mysticalIngot('supremium', 'imperium', 0xcb0000)
-    mysticalIngot('insanium', 'supremium', 0x560484)
+    mysticalIngot('tertium', 'prudentium',  0xb34b02)
+    mysticalIngot('imperium', 'tertium',    0x0380da)
+    mysticalIngot('supremium', 'imperium',  0xcb0000)
+    mysticalIngot('insanium', 'supremium',  0x560484)
 
     event.create("awakened_supremium") 
         .ingot().fluid()
         .color(0xff3333).iconSet("radioactive")
         .element(GTElements.get('awakened_supremium'))
         .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.dustSmall])
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
         
         //.components("supremium")
         //.flags(GTMaterialFlags.DISABLE_DECOMPOSITION)

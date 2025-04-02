@@ -18,8 +18,15 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
     event.create('sky_steel')
         .ingot()
         .color(0x060613)
-        .iconSet(GTMaterialIconSet.METALLIC)
+        .iconSet(GTMaterialIconSet.DULL)
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_DENSE)
+        .toolStats(new ToolProperty(4.0, 3.5, 768, 2, [
+            GTToolType.AXE, 
+            GTToolType.PICKAXE, 
+            GTToolType.SHOVEL,
+            GTToolType.MINING_HAMMER,
+            GTToolType.SPADE,
+        ]))
         .components('steel')
         .ignoredTagPrefixes([TagPrefix.dustTiny])
 })

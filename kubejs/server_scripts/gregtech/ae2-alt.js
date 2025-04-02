@@ -177,7 +177,7 @@ ServerEvents.recipes(event =>{
         S : "gtceu:sky_steel_plate",
         P : "gtceu:lv_electric_piston",
         F : "gtceu:fluix_gem",
-        H : "gtceu:mv_machine_hull"
+        H : "gtceu:ulv_machine_hull"
     }).id("kubejs:ae2/inscriber")
 
     // Patterns
