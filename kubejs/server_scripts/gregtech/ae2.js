@@ -13,7 +13,66 @@ ServerEvents.recipes(event =>{
             "item": "gtceu:charged_certus_quartz_gem"
         }
     }).id("kubejs:ae2/charged_certus_quartz_gem")
-    
+
+    // Certus
+    event.remove({ id: /^ae2:transform.*budding_quartz$/ })
+    event.replaceInput(
+        {},
+        "ae2:charged_certus_quartz_crystal",
+        "gtceu:charged_certus_quartz_gem"
+    )
+    event.custom({
+        "type": "ae2:transform",
+        "ingredients": [
+            {
+                "item": "gtceu:charged_certus_quartz_gem"
+            },
+            {
+                "tag": "forge:storage_blocks/certus_quartz"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "item": "ae2:damaged_budding_quartz"
+        }
+    })
+    event.custom({
+        "type": "ae2:transform",
+        "ingredients": [
+            {
+                "item": "gtceu:charged_certus_quartz_gem"
+            },
+            {
+                "item": "ae2:damaged_budding_quartz"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "item": "ae2:chipped_budding_quartz"
+        }
+    })
+    event.custom({
+        "type": "ae2:transform",
+        "ingredients": [
+            {
+                "item": "gtceu:charged_certus_quartz_gem"
+            },
+            {
+                "item": "ae2:chipped_budding_quartz"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "item": "ae2:flawed_budding_quartz"
+        }
+    })
+
+    event.recipes.gtceu.autoclave("flawless_budding")
+        .itemInputs(["ae2:flawed_budding_quartz"])
+        .inputFluids("gtceu:distilled_water 100")
+        .itemOutputs("ae2:flawless_budding_quartz")
+        .duration(20)
+        .EUt(480)
     event.recipes.gtceu.autoclave("charged_autoclave")
         .itemInputs("gtceu:certus_quartz_dust")
         .inputFluids("gtceu:distilled_water 100")
@@ -26,22 +85,38 @@ ServerEvents.recipes(event =>{
         .duration(70)
         .EUt(7)
     
+    // Fluix
     event.recipes.gtceu.mixer('fluix_gem')
         .itemInputs('#forge:gems/charged_certus_quartz', 'minecraft:redstone', '#forge:gems/nether_quartz')
         .itemOutputs('2x gtceu:fluix_gem')
         .duration(80)
         .EUt(7)
-     event.recipes.gtceu.alloy_smelter('sky_steel')
-        .itemInputs('#forge:ingots/steel', 'ae2:sky_dust')
-        .itemOutputs('gtceu:sky_steel_ingot')
-        .duration(120)
-        .EUt(7)
-    event.recipes.gtceu.alloy_smelter('quartz_glass')
-        .itemInputs('2x #forge:dusts/certus_quartz', '#forge:glass')
-        .itemOutputs('2x ae2:quartz_glass')
-        .duration(90)
-        .EUt(7)
-
+    event.remove({ id: "ae2:transform/fluix_crystal" })
+    event.remove({ id: "ae2:transform/fluix_crystals" })
+    event.remove({ id: "ae2:misc/deconstruction_fluix_block" })
+    event.custom({
+        "type": "ae2:transform",
+        "ingredients": [
+            {
+                "item": "gtceu:charged_certus_quartz_gem"
+            },
+            {
+                "item": "minecraft:redstone"
+            },
+            {
+                "item": "minecraft:quartz"
+            }
+        ],
+        "result": {
+            "count": 2,
+            "item": "gtceu:fluix_gem"
+        }
+    }).id("kubejs:ae2/fluix_gem")
+    event.recipes.gtceu.compressor("fluix_plate")
+        .itemInputs("gtceu:fluix_dust")
+        .itemOutputs("gtceu:fluix_plate")
+        .duration(400)
+        .EUt(2)
     event.recipes.gtceu.cutter('water_fluix_plate')
         .itemInputs('ae2:fluix_block')
         .inputFluids('minecraft:water 6')
@@ -60,6 +135,24 @@ ServerEvents.recipes(event =>{
         .itemOutputs('4x gtceu:fluix_plate')
         .duration(24)
         .EUt(30)
+
+    // Skystone
+    event.recipes.gtceu.macerator("sky_stone_dust")
+        .itemInputs("ae2:sky_stone_block")
+        .itemOutputs("ae2:sky_dust")
+        .duration(120)
+        .EUt(GTValues.VA[GTValues.ULV])
+    event.recipes.gtceu.alloy_smelter('sky_steel')
+        .itemInputs('#forge:ingots/steel', 'ae2:sky_dust')
+        .itemOutputs('gtceu:sky_steel_ingot')
+        .duration(120)
+        .EUt(7)
+    event.recipes.gtceu.alloy_smelter('quartz_glass')
+        .itemInputs('2x #forge:dusts/certus_quartz', '#forge:glass')
+        .itemOutputs('2x ae2:quartz_glass')
+        .duration(90)
+        .EUt(7)
+
 
     // Circuits
     event.recipes.gtceu.alloy_smelter('gtceu:ae2_diamond_circuit')
@@ -102,13 +195,13 @@ ServerEvents.recipes(event =>{
         event.recipes.gtceu.circuit_assembler(`ae2/poor/${circuit}`)
             .itemInputs(`ae2:printed_${circuit}`, "ae2:printed_silicon", "4x gtceu:fine_red_alloy_wire", "4x gtceu:annealed_copper_bolt")
             .inputFluids("gtceu:tin 72")
-            .itemOutputs(`ae2:${circuit}`)
+            .itemOutputs(Item.of(`ae2:${circuit}`, 2))
             .duration(240)
             .EUt(GTValues.VH[GTValues.LV])
         event.recipes.gtceu.circuit_assembler(`ae2/rich/${circuit}`)
             .itemInputs(`ae2:printed_${circuit}`, "ae2:printed_silicon", "4x gtceu:fine_red_alloy_wire", "4x gtceu:annealed_copper_bolt")
             .inputFluids("gtceu:soldering_alloy 36")
-            .itemOutputs(`ae2:${circuit}`)
+            .itemOutputs(Item.of(`ae2:${circuit}`, 2))
             .duration(135)
             .EUt(GTValues.VH[GTValues.LV])
     })
@@ -182,6 +275,16 @@ ServerEvents.recipes(event =>{
 
     // Patterns
     event.remove({ id: "ae2:network/crafting/patterns_blank" })
+    event.shaped(Item.of("ae2:blank_pattern", 4), [
+        "WWW",
+        "FCF",
+        "RRR"
+    ], {
+        W : "gtceu:fine_copper_wire",
+        F : "gtceu:fluix_plate",
+        C : "#gtceu:circuits/lv",
+        R : "gtceu:rubber_plate",
+    }).id("kubejs:ae2/blank_pattern/mv")
     event.shaped(Item.of("ae2:blank_pattern", 8), [
         "WWW",
         "FCF",
@@ -191,7 +294,7 @@ ServerEvents.recipes(event =>{
         F : "gtceu:fluix_plate",
         C : "#gtceu:circuits/mv",
         R : "gtceu:rubber_plate",
-    }).id("kubejs:ae2/blank_pattern")
+    }).id("kubejs:ae2/blank_pattern/mv")
 
     // Pattern Provider
     event.remove({ id: "ae2:network/blocks/pattern_providers_interface" })
@@ -324,8 +427,39 @@ ServerEvents.recipes(event =>{
         D: "gtceu:mv_machine_hull"
     }).id("kubejs:ae2/requster")
 
+    // Wireless Receiver
+    event.remove({ id: "ae2:network/wireless_part" })
+    event.shaped(Item.of("ae2:wireless_receiver"), [
+        " A ",
+        "BCB",
+        " B "
+    ], {
+        A: "gtceu:hv_emitter",
+        B: "gtceu:stainless_steel_plate",
+        C: "ae2:fluix_pearl"
+    }).id("kubejs:ae2/wirelss_receiver")
 
-
+    // AE2 Cards
+    event.remove({ id: "ae2:materials/basiccard" })
+    event.shaped("ae2:basic_card", [
+        "AB ",
+        "ACB",
+        "AB "
+    ], {
+        A: "gtceu:fine_copper_wire",
+        B: "gtceu:iron_plate",
+        C: "ae2:calculation_processor"
+    }).id("kubejs:ae2/basic_card")
+    event.remove({ id: "ae2:materials/advancedcard" })
+    event.shaped("ae2:advanced_card", [
+        "AB ",
+        "ACB",
+        "AB "
+    ], {
+        A: "gtceu:fine_aluminium_wire",
+        B: "gtceu:sky_steel_plate",
+        C: "ae2:calculation_processor"
+    }).id("kubejs:ae2/advanced_card")
 
     // Cables
     event.recipes.gtceu.wiremill("kubejs:ae2/quartz_fiber")
@@ -340,12 +474,7 @@ ServerEvents.recipes(event =>{
         .duration(50)
         .EUt(16)
 
-    // Skystone
-    event.recipes.gtceu.macerator("sky_stone_dust")
-        .itemInputs("ae2:sky_stone_block")
-        .itemOutputs("ae2:sky_dust")
-        .duration(120)
-        .EUt(GTValues.VA[GTValues.ULV])
+
 
     // Cable Recipes
     event.remove({ id: "ae2:network/cables/covered_fluix" })
