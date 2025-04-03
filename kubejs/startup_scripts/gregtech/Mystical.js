@@ -52,16 +52,16 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
             .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.dustSmall])
     }
     
-    mysticalIngot('prudentium', 'inferium', 0x008623,  5.0, 3.5,  768, 2, GTToolType.DRILL_MV)
-    mysticalIngot('tertium', 'prudentium',  0xb34b02,  8.0, 4.5, 1536, 3, GTToolType.DRILL_MV)
-    mysticalIngot('imperium', 'tertium',    0x0380da,  9.0, 5.5, 1920, 3, GTToolType.DRILL_HV)
-    mysticalIngot('supremium', 'imperium',  0xcb0000, 11.0, 7.5, 2304, 4, GTToolType.DRILL_EV)
+    mysticalIngot('prudentium', 'inferium', 0x008623,  5.0,  3.5,  768, 2, GTToolType.DRILL_MV)
+    mysticalIngot('tertium', 'prudentium',  0xb34b02,  8.0,  5.5, 1536, 3, GTToolType.DRILL_MV)
+    mysticalIngot('imperium', 'tertium',    0x0380da, 10.0,  8.0, 1920, 3, GTToolType.DRILL_HV)
+    mysticalIngot('supremium', 'imperium',  0xcb0000, 14.0, 10.5, 2304, 4, GTToolType.DRILL_EV)
 
     event.create("insanium")
         .ingot().fluid()
         .color(0x560484).iconSet('metallic')
         .components('4x supremium')
-        .toolStats($ToolProperty.Builder.of(15.0, 10.0, 3072, 4).types([
+        .toolStats($ToolProperty.Builder.of(19.0, 13.0, 3072, 4).types([
             GTToolType.SWORD,
             GTToolType.PICKAXE,
             GTToolType.AXE,
@@ -79,7 +79,7 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .ingot().fluid()
         .color(0xff3333).iconSet('radioactive')
         .element(GTElements.get('awakened_supremium'))
-        .toolStats($ToolProperty.Builder.of(24.0, 14.0, 4608, 5).types([
+        .toolStats($ToolProperty.Builder.of(27.0, 18.0, 4608, 5).types([
             GTToolType.SWORD,
             GTToolType.PICKAXE,
             GTToolType.AXE,

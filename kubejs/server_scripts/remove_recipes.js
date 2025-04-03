@@ -3,7 +3,6 @@ ServerEvents.recipes(event =>{
 
     // Previous changes are enought to remove all recipes without breaking, testing... 
     event.remove({mod: 'mysticalagriculture'})
-    event.remove({mod: 'mysticalagradditions'})
     //event.remove(/mysticalagriculture:*_seeds/)
     //event.remove(/mysticalagriculture:*_essence/)
     //event.remove(/mysticalagriculture:essence/)
@@ -18,14 +17,8 @@ ServerEvents.recipes(event =>{
     // event.remove("mysticalagriculture:soulium_seed_base")
     // event.remove("mysticalagriculture:prosperity_gemstone")
     
-    event.remove(["gtceu:extractor/extract_prudentium_dust", "gtceu:extractor/extract_tertium_dust", "gtceu:extractor/extract_imperium_dust", "gtceu:extractor/extract_supremium_dust"])
+    event.remove(["gtceu:extractor/extract_prudentium_dust", "gtceu:extractor/extract_tertium_dust", "gtceu:extractor/extract_imperium_dust", "gtceu:extractor/extract_supremium_dust", "gtceu:extractor/extract_insanium_dust"])
     
-    // event.replaceInput({ mod: 'mysticalagriculture' }, 'mysticalagriculture:prosperity_shard', 'gtceu:prosperity_dust')
-    //event.replaceInput({ mod: 'mysticalagriculture' }, 'mysticalagriculture:prosperity_ingot', 'gtceu:prosperity_ingot')
-
-    //event.replaceInput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
-    //event.replaceOutput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
-
     // AE2
 
     event.replaceInput({ mod: 'ae2'}, 'ae2:certus_quartz_crystal', 'gtceu:certus_quartz_gem')

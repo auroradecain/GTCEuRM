@@ -270,8 +270,8 @@ ServerEvents.recipes(event =>{
             .itemOutputs(`mysticalagriculture:${tier}_gemstone`)
             .duration(310)
             .EUt(7)
-    })
     
+        })
 
     event.recipes.gtceu.electric_blast_furnace("kubejs:prudentium_ingot")
         .itemInputs("gtceu:prudentium_dust", "gtceu:prosperity_ingot")
@@ -297,6 +297,12 @@ ServerEvents.recipes(event =>{
         .blastFurnaceTemp(2987)
         .duration(630)
         .EUt(1920)
+    event.recipes.gtceu.electric_blast_furnace("kubejs:insanium_ingot")
+        .itemInputs("gtceu:insanium_dust", "gtceu:prosperity_ingot")
+        .itemOutputs("gtceu:instanium_ingot", "gtceuu:platinum_sludge_residue_dust")
+        .blastFurnaceTemp(4500)
+        .duration(745)
+        .EUt(7680)
     
     event.recipes.gtceu.fusion_reactor("kubejs:awakened_supremium_ingot")
         .inputFluids("gtceu:insanium 16", "gtceu:supremium 16")
