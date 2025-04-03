@@ -2,8 +2,8 @@ ServerEvents.recipes(event =>{
     // Mystical Agriculture
 
     // Previous changes are enought to remove all recipes without breaking, testing... 
-    event.remove({id: mysticalagriculture})
-    event.remove({id: mysticalagradditions})
+    event.remove({mod: 'mysticalagriculture'})
+    event.remove({mod: 'mysticalagradditions'})
     //event.remove(/mysticalagriculture:*_seeds/)
     //event.remove(/mysticalagriculture:*_essence/)
     //event.remove(/mysticalagriculture:essence/)
@@ -20,22 +20,22 @@ ServerEvents.recipes(event =>{
     
     event.remove(["gtceu:extractor/extract_prudentium_dust", "gtceu:extractor/extract_tertium_dust", "gtceu:extractor/extract_imperium_dust", "gtceu:extractor/extract_supremium_dust"])
     
-    event.replaceInput({ mod: 'mysticalagriculture' }, 'mysticalagriculture:prosperity_shard', 'gtceu:prosperity_dust')
-    event.replaceInput({ mod: 'mysticalagriculture' }, 'mysticalagriculture:prosperity_ingot', 'gtceu:prosperity_ingot')
+    // event.replaceInput({ mod: 'mysticalagriculture' }, 'mysticalagriculture:prosperity_shard', 'gtceu:prosperity_dust')
+    //event.replaceInput({ mod: 'mysticalagriculture' }, 'mysticalagriculture:prosperity_ingot', 'gtceu:prosperity_ingot')
 
-    event.replaceInput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
-    event.replaceOutput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
+    //event.replaceInput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
+    //event.replaceOutput({ mod: 'mysticalagraddition'}, 'mysticalagradditions:insanium_essence', 'gtceu:insanium_dust')
 
-    const replace_tier = ["inferium", "prudentium", "tertium", "imperium", "supremium", "awakened_supremium"]
+    // AE2
 
-    replace_tier.forEach(tier =>{
-        event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_essence`, `gtceu:${tier}_dust`)
-        event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_ingot`, `gtceu:${tier}_ingot`)
-        event.replaceInput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_nugget`, `gtceu:${tier}_nugget`)
-        event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_essence`, `gtceu:${tier}_dust`)
-        event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_ingot`, `gtceu:${tier}_ingot`)
-        event.replaceOutput({ mod: 'mysticalagriculture' }, `mysticalagriculture:${tier}_nugget`, `gtceu:${tier}_nugget`)
-    })
+    event.replaceInput({ mod: 'ae2'}, 'ae2:certus_quartz_crystal', 'gtceu:certus_quartz_gem')
+    event.replaceInput({ mod: 'ae2'}, 'ae2:charged_certus_quartz_crystal', 'gtceu:charged_certus_quartz_gem')
+    event.replaceInput({ mod: 'ae2'}, 'ae2:fluix_crystal', 'gtceu:fluix_gem')
+
+    event.remove(['ae2:network/blocks/inscriber', 'ae2:network/blocks/charger'])
+    event.remove(['expatternprovider:ex_inscriber', 'expatternprovider:ex_charger'])
+    event.remove(/expatternprovider:cutter/)
+    event.remove(/ae2:inscriber/)
 
     // GT
 })

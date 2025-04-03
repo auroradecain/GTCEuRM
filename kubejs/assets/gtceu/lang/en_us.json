@@ -33,6 +33,10 @@
 
     "material.gtceu.gabro" : "Gabro",
 
+    "material.gtceu.sky_steel" : "Sky Steel",
+    "material.gtceu.fluix" : "Fluix Crystal",
+    "material.gtceu.charged_certus_quartz" : "Charged Certus Quartz",
+
     "material.gtceu.inferium" : "Inferium",
     "material.gtceu.prudentium" : "Prudentium",
     "material.gtceu.tertium" : "Tertium",
@@ -41,7 +45,7 @@
     "material.gtceu.awakened_supremium" : "Awakened Supremium",
     "material.gtceu.insanium" : "Insanium",
     "material.gtceu.prosperity" : "Prosperity",
-    "material.gtceu.solium" : "Solium",
+    "material.gtceu.soulium" : "Soulium",
     "material.gtceu.soularium" : "Soularium",
 
     "material.gtceu.avisium" : "Avisium",

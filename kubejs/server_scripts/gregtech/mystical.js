@@ -8,7 +8,7 @@ ServerEvents.recipes(event =>{
     ],{
         G: "#forge:glass",
         P: "gtceu:lv_electric_pump",
-        D: "gtceu:prosperity_dust",
+        D: "gtceu:steel_gear",
         R: "farmersdelight:rich_soil",
         C: "#gtceu:circuits/lv",
         M: "gtceu:lv_machine_hull"
@@ -21,7 +21,7 @@ ServerEvents.recipes(event =>{
     ],{
         G: "#forge:glass",
         P: "gtceu:mv_electric_pump",
-        D: "gtceu:inferium_dust",
+        D: "gtceu:inferium_gear",
         R: "farmersdelight:rich_soil",
         C: "#gtceu:circuits/mv",
         M: "gtceu:mv_machine_hull"
@@ -34,7 +34,7 @@ ServerEvents.recipes(event =>{
     ],{
         G: "gtceu:tempered_glass",
         P: "gtceu:hv_electric_pump",
-        D: "gtceu:prudentium_dust",
+        D: "gtceu:prudentium_gear",
         R: "farmersdelight:rich_soil",
         C: "#gtceu:circuits/hv",
         M: "gtceu:hv_machine_hull"
@@ -47,7 +47,7 @@ ServerEvents.recipes(event =>{
     ],{
         G: "gtceu:tempered_glass",
         P: "gtceu:ev_electric_pump",
-        D: "gtceu:tertium_dust",
+        D: "gtceu:tertium_gear",
         R: "farmersdelight:rich_soil",
         C: "#gtceu:circuits/ev",
         M: "gtceu:ev_machine_hull"
@@ -60,7 +60,7 @@ ServerEvents.recipes(event =>{
     ],{
         G: "gtceu:laminated_glass",
         P: "gtceu:iv_electric_pump",
-        D: "gtceu:imperium_dust",
+        D: "gtceu:imperium_gear",
         R: "farmersdelight:rich_soil",
         C: "#gtceu:circuits/iv",
         M: "gtceu:iv_machine_hull"
@@ -73,7 +73,7 @@ ServerEvents.recipes(event =>{
     ],{
         G: "gtceu:laminated_glass",
         P: "gtceu:luv_electric_pump",
-        D: "gtceu:supremium_dust",
+        D: "gtceu:supremium_gear",
         R: "farmersdelight:rich_soil",
         C: "#gtceu:circuits/luv",
         M: "gtceu:luv_machine_hull"
@@ -86,7 +86,7 @@ ServerEvents.recipes(event =>{
     ],{
         G: "gtceu:fusion_glass",
         P: "gtceu:zpm_electric_pump",
-        D: "gtceu:insanium_dust",
+        D: "gtceu:insanium_gear",
         R: "farmersdelight:rich_soil",
         C: "#gtceu:circuits/zpm",
         M: "gtceu:zpm_machine_hull"
@@ -262,38 +262,48 @@ ServerEvents.recipes(event =>{
         .duration(200)
         .EUt(30720)
 
-    event.recipes.gtceu.electric_blast_furnace("kubejs:ebf/prudentium_ingot")
+    const dusts = ["inferium", "prudentium", "tertium", "imperium", "supremium", "awakened_supremium"]
+
+    dusts.forEach(tier =>{
+        event.recipes.gtceu.alloy_smelter(`gemstone/${tier}`)
+            .itemInputs(`2x #forge:ingots/${tier}`, "mysticalagriculture:prosperity_gemstone")
+            .itemOutputs(`mysticalagriculture:${tier}_gemstone`)
+            .duration(310)
+            .EUt(7)
+    })
+    
+
+    event.recipes.gtceu.electric_blast_furnace("kubejs:prudentium_ingot")
         .itemInputs("gtceu:prudentium_dust", "gtceu:prosperity_ingot")
         .itemOutputs("gtceu:prudentium_ingot", "gtceu:small_rare_earth_dust")
         .blastFurnaceTemp(1700)
         .duration(570)
         .EUt(120)
-    event.recipes.gtceu.electric_blast_furnace("kubejs:ebf/tertium_ingot")
+    event.recipes.gtceu.electric_blast_furnace("kubejs:tertium_ingot")
         .itemInputs("gtceu:tertium_dust", "gtceu:prosperity_ingot")
         .itemOutputs("gtceu:tertium_ingot", "gtceu:rare_earth_dust")
         .blastFurnaceTemp(1700)
         .duration(740)
         .EUt(480)
-    event.recipes.gtceu.electric_blast_furnace("kubejs:ebf/imperium_ingot")
+    event.recipes.gtceu.electric_blast_furnace("kubejs:imperium_ingot")
         .itemInputs("gtceu:imperium_dust", "gtceu:prosperity_ingot")
         .itemOutputs("gtceu:imperium_ingot", "gtceu:rare_earth_dust")
         .blastFurnaceTemp(1847)
         .duration(912)
         .EUt(480)
-    event.recipes.gtceu.electric_blast_furnace("kubejs:ebf/supremium_ingot")
+    event.recipes.gtceu.electric_blast_furnace("kubejs:supremium_ingot")
         .itemInputs("gtceu:supremium_dust", "gtceu:prosperity_ingot")
         .itemOutputs("gtceu:supremium_ingot", "gtceu:small_platinum_sludge_residue_dust")
         .blastFurnaceTemp(2987)
         .duration(630)
         .EUt(1920)
-    event.recipes.gtceu.electric_blast_furnace("kubejs:ebf/awakened_supremium_ingot")
-        .itemInputs("gtceu:insanium_dust", "gtceu:supremium_ingot")
-        .itemOutputs("gtceu:awakened_supremium_ingot")
-        .blastFurnaceTemp(4326)
-        .duration(510)
-        .EUt(1920)
-
-
+    
+    event.recipes.gtceu.fusion_reactor("kubejs:awakened_supremium_ingot")
+        .inputFluids("gtceu:insanium 16", "gtceu:supremium 16")
+        .outputFluids("gtceu:awakened_supremium 16")
+        .duration(64)
+        .fusionStartEU(80)
+        .EUt(GTValues.VH[GTValues.LuV])
 
     // Agglomeratios
     event.recipes.gtceu.centrifuge("centrifuge_agglomeratio")

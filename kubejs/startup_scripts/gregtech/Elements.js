@@ -20,9 +20,11 @@ GTCEuStartupEvents.registry('gtceu:element', event => {
         .neutrons(28)
         .symbol('Av')
 
+})
+
+GTCEuStartupEvents.registry('gtceu:element', event=>{
     event.create('awakened_supremium')
         .protons(139)
         .neutrons(211)
-        .symbol('×(Š)×')
-
+        .symbol('Š')
 })
