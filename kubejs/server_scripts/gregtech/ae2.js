@@ -284,7 +284,7 @@ ServerEvents.recipes(event =>{
         F : "gtceu:fluix_plate",
         C : "#gtceu:circuits/lv",
         R : "gtceu:rubber_plate",
-    }).id("kubejs:ae2/blank_pattern/mv")
+    }).id("kubejs:ae2/blank_pattern/lv")
     event.shaped(Item.of("ae2:blank_pattern", 8), [
         "WWW",
         "FCF",

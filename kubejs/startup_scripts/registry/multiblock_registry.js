@@ -32,11 +32,20 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
         .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_RECYCLER, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.BATH)
+
+    event.create('elemental_generator')
+        .category('multiblock')
+        .setEUIO('out')
+        .setMaxIOSize(1, 1, 1, 1)
+        .setSlotOverlay(false, false, GuiTextures.TURBINE_OVERLAY)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.TURBINE)
 })
 
 GTCEuStartupEvents.registry('gtceu:machine', event=>{
 
     // Mystical Agriculture
+    // Synthetic Fluid Rig
     event.create('synthetic_fluid_rig', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes('synthetic_fluid')
@@ -58,6 +67,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
             .build())
         .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel", "gtceu:block/multiblock/large_chemical_reactor", false)
 
+    // Synthetic Solid Rig
     event.create('synthetic_solid_rig', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes('synthetic_solid')
@@ -79,7 +89,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
             .build())
         .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel", "gtceu:block/multiblock/large_miner", false)
 
-
+    // Synthetic Lifeform Simulator
     event.create('synthetic_lifeform_simulator', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes('synthetic_lifeform')
@@ -98,6 +108,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
             .build())
         .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel", "gtceu:block/multiblock/network_switch", false)
 
+    // 5x5x5 Greenhouse
     event.create('greenhouse', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes('greenhouse')
@@ -121,4 +132,24 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
             .where(' ', Predicates.air())
             .build())
         .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_heatproof", "gtceu:block/multiblock/large_chemical_reactor", false)
+
+    // It works!
+    event.create('elemental_turbine', 'multiblock')
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeTypes('elemental_generator')
+        .appearanceBlock(() => Block.getBlock("kubejs:supremium_casing"))
+        .generator(true)
+        .pattern(definition => FactoryBlockPattern.start()
+            .aisle('AAAA', 'ABBA', 'AAAA')
+            .aisle('ABBA', 'CAAD', 'ABEA')
+            .aisle('AAAA', 'A@AA', 'AAAA')
+            .where('@', Predicates.controller(Predicates.blocks(definition.get())))
+            .where('A', Predicates.blocks("kubejs:supremium_casing"))
+            .where('B', Predicates.autoAbilities(definition.getRecipeTypes())
+                .or(Predicates.abilities(PartAbility.MAINTENANCE).setMaxGlobalLimited(1)))
+            .where('C', Predicates.abilities(PartAbility.ROTOR_HOLDER))
+            .where('D', Predicates.abilities(PartAbility.OUTPUT_ENERGY))
+            .where('E', Predicates.abilities(PartAbility.MUFFLER))
+            .build())
+        .workableCasingRenderer("kubejs:block/supremium/supremium_casing", "gtceu:block/multiblock/distillation_tower", false)
 })

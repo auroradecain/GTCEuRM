@@ -12,6 +12,20 @@ StartupEvents.registry("block", event =>{
         .tagBlock("forge:stone/gabro")
         .tagBlock("minecraft:stone_ore_replaceables")
         .tagBlock("gtceu:gabro_stone")
+
+    const casings = [
+      "supremium"
+    ]
+
+    casings.forEach(casing =>{
+      event.create(`${casing}_casing`)
+          .displayName(`${casing} Casing`)
+          .soundType("metal")
+          .resistance(6).hardness(5)
+          .tagBlock("mineable/pickaxe")
+          .tagBlock("forge:mineable/wrench")
+          .requiresTool(true);
+    })
 })
 
 

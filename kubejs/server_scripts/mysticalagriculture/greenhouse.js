@@ -1,5 +1,53 @@
 ServerEvents.recipes(event=>{
 
+    const growNormal = [
+        {
+            id: 'oak',
+            ins: 'minecraft:oak_sapling',
+            outs: ['8x minecraft:oak_log', 'minecraft:oak_sapling']
+        },
+        {
+            id: 'birch',
+            ins: 'minecraft:birch_sapling',
+            outs: ['8x minecraft:birch_log', 'minecraft:birch_sapling']
+        },
+        {
+            id: 'spruce',
+            ins: 'minecraft:spruce_sapling',
+            outs: ['8x minecraft:spruce_log', 'minecraft:spruce_sapling']
+        },
+        {
+            id: 'acacia',
+            ins: 'minecraft:acacia_sapling',
+            outs: ['8x minecraft:acacia_log', 'minecraft:acacia_sapling']
+        },
+        {
+            id: 'jungle',
+            ins: 'minecraft:jungle_sapling',
+            outs: ['8x minecraft:jungle_log', 'minecraft:jungle_sapling']
+        },
+        {
+            id: 'mangrove',
+            ins: 'minecraft:mangrove_propagule',
+            outs: ['8x minecraft:mangrove_log', 'minecraft:mangrove_propagule']
+        },
+        {
+            id: 'dark_oak',
+            ins: 'minecraft:dark_oak_sapling',
+            outs: ['8x minecraft:dark_oak_log', 'minecraft:dark_oak_sapling']
+        },
+        {
+            id: 'cherry',
+            ins: 'minecraft:cherry_sapling',
+            outs: ['8x minecraft:cherry_log', 'minecraft:cherry_sapling']
+        },
+        {
+            id: 'resin',
+            ins: 'gtceu:rubber_sapling',
+            outs: ['8x gtceu:rubber_log', 'gtceu:rubber_sapling', '3x gtceu:sticky_resin']
+        }
+    ]
+
     function grow(id, ins, outs, boost){
         if(boost == true){
             event.recipes.gtceu.greenhouse(`grow/boosted/${id}`)
