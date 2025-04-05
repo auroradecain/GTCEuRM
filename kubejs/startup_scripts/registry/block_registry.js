@@ -14,7 +14,9 @@ StartupEvents.registry("block", event =>{
         .tagBlock("gtceu:gabro_stone")
 
     const casings = [
-      "supremium"
+      "supremium",
+      "draconitium",
+      "draconitium_fusion"
     ]
 
     casings.forEach(casing =>{

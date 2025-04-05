@@ -345,4 +345,38 @@ ServerEvents.recipes(event =>{
         .duration(300)
         .EUt(24)
 
+    // Plasma Generation
+
+    const plasmas = ['air', 'fire', 'earth', 'water']
+    
+    plasmas.forEach(plasma => {
+        event.recipes.gtceu.fusion_reactor(`${plasma}_plasma`)
+            .inputFluids(`gtceu:${plasma}_elemental_solution 125`, 'gtceu:supremium 125')
+            .outputFluids(`gtceu:${plasma}_elemental_solution_plasma 125`)
+            .duration(16)
+            .EUt(4096)
+            .fusionStartEU(40)
+        event.recipes.gtceu.plasma_generator(`${plasma}_plasma`)
+            .inputFluids(`gtceu:${plasma}_elemental_solution_plasma 1`)
+            .outputFluids(`gtceu:${plasma}_elemental_solution 1`)
+            .duration(32)
+            .EUt(-1 * GTValues.V[GTValues.EV])
+        event.recipes.gtceu.elemental_generator(`${plasma}_energy`)
+            .inputFluids(`gtceu:${plasma}_elemental_solution 1`)
+            .outputFluids(`gtceu:${plasma}_elemental_slurry 1`)
+            .duration(54)
+            .EUt(-1 * GTValues.VH[GTValues.EV])
+
+    })
+
+    // Draconitium Reactor
+
+    event.recipes.gtceu.draconitium_fusion(`draconitium_energy`)
+        .inputFluids("gtceu:draconic_matter 8")
+        .outputFluids("gtceu:strange_matter 8")
+        .duration(64)
+        .EUt(-1 * GTValues.V[GTValues.LuV])
+        .fusionStartEU(120)
+
+    
 })
