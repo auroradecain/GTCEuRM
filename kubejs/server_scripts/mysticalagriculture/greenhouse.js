@@ -55,13 +55,13 @@ ServerEvents.recipes(event=>{
                 .inputFluids('minecraft:water 200')
                 .itemOutputs(outs)
                 .duration(760)
-                .EUt(96)
+                .EUt(64)
             event.recipes.gtceu.seed_growth(`grow/boosted/${id}`)
                 .itemInputs(InputItem.of(ins))
                 .inputFluids('minecraft:water 200')
                 .itemOutputs(outs)
                 .duration(760)
-                .EUt(96)
+                .EUt(64)
         }else{
             event.recipes.gtceu.greenhouse(`grow/${id}`)
                 .itemInputs(InputItem.of(ins))
@@ -80,7 +80,7 @@ ServerEvents.recipes(event=>{
     }
 
     // Oak
-    grow('oak', "minecraft:oak_sapling", ['8x minecraft:oak_log', 'minecraft:oak_sapling'])
+    grow('oak', "minecraft:oak_sapling", ['8x minecraft:oak_log', 'minecraft:oak_sapling', 'minecraft:apple'])
     // Birch
     grow('birch', 'minecraft:birch_sapling', ['8x minecraft:birch_log', 'minecraft:birch_sapling'])
     // Spruce

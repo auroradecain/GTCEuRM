@@ -235,33 +235,69 @@ ServerEvents.recipes(event =>{
         D: "gtceu:aluminium_drum"
     }).id('gtceu:shaped/greenhouse')
 
+    
 
+    // Master Infusion Crystal
+    event.recipes.gtceu.agricultural_fabrication('mystical_crystal')
+        .itemInputs('mysticalagriculture:prosperity_gemstone', '64x gtceu:air_elementia_gem', '64x gtceu:fire_elementia_gem', '64x gtceu:earth_elementia_gem', '64x gtceu:water_elementia_gem')
+        .itemOutputs('mysticalagriculture:master_infusion_crystal')
+        .duration(600)
+        .EUt(480)
+
+    // Enrichment 
     event.recipes.gtceu.mixer("enrichment/prudentium")
-        .itemInputs("2x #forge:dusts/inferium", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
-        .itemOutputs("#forge:dusts/prudentium")
+        .itemInputs("2x gtceu:inferium_dust", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
+        .itemOutputs("gtceu:prudentium_dust")
+        .duration(200)
+        .EUt(30)
+    event.recipes.gtceu.mixer("enrichment/tertium")
+        .itemInputs("2x gtceu:prudentium_dust", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
+        .itemOutputs("gtceu:tertium_dust")
         .duration(200)
         .EUt(120)
-    event.recipes.gtceu.mixer("enrichment/tertium")
-        .itemInputs("2x #forge:dusts/prudentium", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
-        .itemOutputs("#forge:dusts/tertium")
+    event.recipes.gtceu.mixer("enrichment/imperium")
+        .itemInputs("2x gtceu:tertium_dust", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
+        .itemOutputs("gtceu:imperium_dust")
         .duration(200)
         .EUt(480)
-    event.recipes.gtceu.mixer("enrichment/imperium")
-        .itemInputs("2x #forge:dusts/tertium", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
-        .itemOutputs("#forge:dusts/imperium")
+    event.recipes.gtceu.mixer("enrichment/supremium")
+        .itemInputs("2x gtceu:imperium_dust", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
+        .itemOutputs("gtceu:supremium_dust")
         .duration(200)
         .EUt(1920)
-    event.recipes.gtceu.mixer("enrichment/supremium")
-        .itemInputs("2x #forge:dusts/imperium", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
-        .itemOutputs("#forge:dusts/supremium")
+    event.recipes.gtceu.mixer("enrichment/insanium")
+        .itemInputs("2x gtceu:supremium_dust", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
+        .itemOutputs("gtceu:insanium_dust")
         .duration(200)
         .EUt(7680)
-    event.recipes.gtceu.mixer("enrichment/insanium")
-        .itemInputs("2x #forge:dusts/supremium", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
-        .itemOutputs("#forge:dusts/insanium")
+
+    event.recipes.gtceu.agricultural_fabrication("enrichment/prudentium")
+        .itemInputs("gtceu:inferium_dust", "16x gtceu:air_elementia_gem", "16x gtceu:fire_elementia_gem", "16x gtceu:earth_elementia_gem", "16x gtceu:water_elementia_gem")
+        .itemOutputs("gtceu:prudentium_dust")
+        .duration(200)
+        .EUt(120)
+    event.recipes.gtceu.agricultural_fabrication("enrichment/tertium")
+        .itemInputs("gtceu:prudentium_dust", "16x gtceu:air_elementia_gem", "16x gtceu:fire_elementia_gem", "16x gtceu:earth_elementia_gem", "16x gtceu:water_elementia_gem")
+        .itemOutputs("gtceu:tertium_dust")
+        .duration(200)
+        .EUt(480)
+    event.recipes.gtceu.agricultural_fabrication("enrichment/imperium")
+        .itemInputs("gtceu:tertium_dust", "16x gtceu:air_elementia_gem", "16x gtceu:fire_elementia_gem", "16x gtceu:earth_elementia_gem", "16x gtceu:water_elementia_gem")
+        .itemOutputs("gtceu:imperium_dust")
+        .duration(200)
+        .EUt(1920)
+    event.recipes.gtceu.agricultural_fabrication("enrichment/supremium")
+        .itemInputs("gtceu:imperium_dust", "16x gtceu:air_elementia_gem", "16x gtceu:fire_elementia_gem", "16x gtceu:earth_elementia_gem", "16x gtceu:water_elementia_gem")
+        .itemOutputs("gtceu:supremium_dust")
+        .duration(200)
+        .EUt(7680)
+    event.recipes.gtceu.agricultural_fabrication("enrichment/insanium")
+        .itemInputs("gtceu:supremium_dust", "16x gtceu:air_elementia_gem", "16x gtceu:fire_elementia_gem", "16x gtceu:earth_elementia_gem", "16x gtceu:water_elementia_gem")
+        .itemOutputs("gtceu:insanium_dust")
         .duration(200)
         .EUt(30720)
 
+    // Gemstone crafting
     const dusts = ["inferium", "prudentium", "tertium", "imperium", "supremium", "awakened_supremium"]
 
     dusts.forEach(tier =>{
@@ -270,9 +306,10 @@ ServerEvents.recipes(event =>{
             .itemOutputs(`mysticalagriculture:${tier}_gemstone`)
             .duration(310)
             .EUt(7)
-    
         })
 
+
+    // EBF
     event.recipes.gtceu.electric_blast_furnace("kubejs:prudentium_ingot")
         .itemInputs("gtceu:prudentium_dust", "gtceu:prosperity_ingot")
         .itemOutputs("gtceu:prudentium_ingot", "gtceu:small_rare_earth_dust")
@@ -304,6 +341,7 @@ ServerEvents.recipes(event =>{
         .duration(745)
         .EUt(7680)
     
+    // Awk. Supremium
     event.recipes.gtceu.fusion_reactor("kubejs:awakened_supremium_ingot")
         .inputFluids("gtceu:insanium 16", "gtceu:supremium 16")
         .outputFluids("gtceu:awakened_supremium 16")
@@ -321,6 +359,7 @@ ServerEvents.recipes(event =>{
         .duration(240)
         .EUt(30)
 
+    // Basic components
     event.recipes.gtceu.agricultural_fabrication("essence_seeds/prosperity_base")
         .itemInputs("#forge:seeds", "4x gtceu:prosperity_dust")
         .itemOutputs("mysticalagriculture:prosperity_seed_base")
@@ -344,39 +383,109 @@ ServerEvents.recipes(event =>{
         .itemOutputs('mysticalagriculture:prosperity_gemstone')
         .duration(300)
         .EUt(24)
-
-    // Plasma Generation
-
-    const plasmas = ['air', 'fire', 'earth', 'water']
     
-    plasmas.forEach(plasma => {
-        event.recipes.gtceu.fusion_reactor(`${plasma}_plasma`)
-            .inputFluids(`gtceu:${plasma}_elemental_solution 125`, 'gtceu:supremium 125')
-            .outputFluids(`gtceu:${plasma}_elemental_solution_plasma 125`)
+    // Elementia
+    const elementia = ['air', 'fire', 'earth', 'water']
+    
+    elementia.forEach(elem => {
+
+        // Elementia crafting
+        event.recipes.gtceu.chemical_reactor(`${elem}`)
+            .itemInputs(`4x mysticalagriculture:${elem}_essence`, 'gtceu:carbon_dust')
+            .inputFluids('gtceu:hydrochloric_acid 100')
+            .itemOutputs(`2x gtceu:${elem}_elementia_gem`)
+            .duration(216)
+            .EUt(120)
+        event.recipes.gtceu.large_chemical_reactor(`${elem}`)
+            .notConsumable(`gtceu:${elem}_elementia_gem`)
+            .itemInputs(`16x mysticalagriculture:${elem}_essence`, 'gtceu:fertilizer')
+            .inputFluids('gtceu:inferium 36')
+            .itemOutputs(`4x gtceu:${elem}_elementia_gem`)
+            .duration(248)
+            .EUt(1920)
+        event.recipes.gtceu.crystal_matrix(`${elem}`)
+            .notConsumable(`gtceu:${elem}_elementia_gem`)
+            .inputFluids(`gtceu:${elem}_elemental_solution 120`)
+            .itemOutputs(`gtceu:${elem}_elementia_gem`)
+            .outputFluids(`gtceu:${elem}_elemental_slurry 120`)
+            .duration(132)
+            .EUt(30720)
+        // Solution
+        event.recipes.gtceu.chemical_reactor(`${elem}_solution`)
+            .itemInputs(`gtceu:${elem}_elementia_gem`, 'gtceu:prosperity_dust')
+            .inputFluids('minecraft:water 500')
+            .outputFluids(`gtceu:${elem}_elemental_solution 200`)
+            .duration(186)
+            .EUt(30)
+        // Recycle slurry
+        event.recipes.gtceu.distillery(`${elem}_solution_recycle`)
+            .inputFluids(`gtceu:${elem}_elemental_slurry 90`)
+            .itemOutputs(`gtceu:small_prosperity_dust`)
+            .outputFluids(`gtceu:${elem}_elemental_solution 60`)
+            .duration(200)
+            .EUt(7)
+        // Plasma
+        event.recipes.gtceu.fusion_reactor(`${elem}_plasma`)
+            .inputFluids(`gtceu:${elem}_elemental_solution 125`, 'gtceu:supremium 16')
+            .outputFluids(`gtceu:${elem}_elemental_solution_plasma 125`)
             .duration(16)
             .EUt(4096)
             .fusionStartEU(40)
-        event.recipes.gtceu.plasma_generator(`${plasma}_plasma`)
-            .inputFluids(`gtceu:${plasma}_elemental_solution_plasma 1`)
-            .outputFluids(`gtceu:${plasma}_elemental_solution 1`)
+        // Plasma turbine
+        event.recipes.gtceu.plasma_generator(`${elem}_plasma`)
+            .inputFluids(`gtceu:${elem}_elemental_solution_plasma 1`)
+            .outputFluids(`gtceu:${elem}_elemental_solution 1`)
             .duration(32)
             .EUt(-1 * GTValues.V[GTValues.EV])
-        event.recipes.gtceu.elemental_generator(`${plasma}_energy`)
-            .inputFluids(`gtceu:${plasma}_elemental_solution 1`)
-            .outputFluids(`gtceu:${plasma}_elemental_slurry 1`)
+        // Elemental Turbine
+        event.recipes.gtceu.elemental_generator(`${elem}_energy`)
+            .inputFluids(`gtceu:${elem}_elemental_solution 1`)
+            .outputFluids(`gtceu:${elem}_elemental_slurry 1`)
             .duration(54)
             .EUt(-1 * GTValues.VH[GTValues.EV])
 
     })
 
-    // Draconitium Reactor
+    // Superelemental Line
+    event.recipes.gtceu.large_chemical_reactor(`superelemental/fire_air`)
+        .notConsumable('mysticalagriculture:master_infusion_crystal')
+        .inputFluids('gtceu:fire_elemental_solution 1000', 'gtceu:air_elemental_solution 1000')
+        .outputFluids('gtceu:prometheus_ouranos_superelemental_solution 2000')
+        .duration(600)
+        .EUt(480)
+    event.recipes.gtceu.large_chemical_reactor(`superelemental/earth_water`)
+        .notConsumable('mysticalagriculture:master_infusion_crystal')
+        .inputFluids('gtceu:earth_elemental_solution 1000', 'gtceu:water_elemental_solution 1000')
+        .outputFluids('gtceu:gaia_oceanus_superelemental_solution 2000')
+        .duration(600)
+        .EUt(480)
+    event.recipes.gtceu.distillation_tower('superelemental/fire_air')
+        .inputFluids('gtceu:prometheus_ouranos_superelemental_solution 20000')
+        .outputFluids('gtceu:coal_gas 12000','gtceu:hydrogen_sulfide 10500','gtceu:deuterium 7000', 'gtceu:argon 3000', 'gtceu:tritium 2000', 'gtceu:radon 500')
+        .duration(2000)
+        .EUt(1920)
+    event.recipes.gtceu.distillation_tower('superelemental/earth_water')
+        .inputFluids('gtceu:gaia_oceanus_superelemental_solution 30000')
+        .outputFluids('gtceu:oil 24000', 'gtceu:oil_heavy 19000', 'gtceu:oil_light 15000', 'gtceu:charcoal_byproducts 13000')
+        .duration(2000)
+        .EUt(1920)
+    
+    // Hyperconcentrate
+    event.recipes.gtceu.large_chemical_reactor('mystical_hyperconcentrate')
+        .notConsumable('mysticalagriculture:master_infusion_crystal')
+        .itemInputs('gtceu:small_netherite_dust')
+        .inputFluids('gtceu:air_elemental_solution 1000', 'gtceu:fire_elemental_solution 1000', 'gtceu:earth_elemental_solution 1000', 'gtceu:water_elemental_solution 1000')
+        .outputFluids('gtceu:mystical_hyperconcentrate 2000')
+        .duration(416)
+        .EUt(7680)
 
+    // Draconitium Reactor
     event.recipes.gtceu.draconitium_fusion(`draconitium_energy`)
-        .inputFluids("gtceu:draconic_matter 8")
-        .outputFluids("gtceu:strange_matter 8")
+        .inputFluids("gtceu:draconic_matter 16", "gtceu:insanium 8")
+        .outputFluids("gtceu:strange_matter 32")
         .duration(64)
         .EUt(-1 * GTValues.V[GTValues.LuV])
-        .fusionStartEU(120)
+        .fusionStartEU(80)
 
     
 })

@@ -2,6 +2,10 @@ ServerEvents.recipes(event =>{
 
     // Materials
     
+    // Temporary solution for ae2 : gtceu certus conversion
+    event.shapeless('gtceu:charged_certus_quartz_gem',['ae2:charged_certus_quartz_crystal'])
+    event.shapeless('gtceu:certus_quartz_gem', ['ae2:certus_quartz_crystal'])
+
     event.remove({ id: "ae2:charger/charged_certus_quartz_crystal" })
     event.remove({ id: "ae2:transform/certus_quartz_crystals" })
     event.custom({

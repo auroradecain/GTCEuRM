@@ -14,7 +14,7 @@
     "gtceu.agricultural_fabrication":"Agricultural Fabrication",
     "gtceu.elemental_generator":"Elemental Turbine",
     "gtceu.crystal_matrix":"Critical Point Crystal Matrix",
-    "gtceu.draconitium_fusion":"Draconitium Fusion Reactor",
+    "gtceu.draconitium_fusion":"Draconitium Collider",
 
     "block.gtceu.mv_agricultural_fabricator":"§bAdvanced Agricultural Fabricator",
     "block.gtceu.hv_agricultural_fabricator":"§6Advanced Agricultural Fabricator II",
@@ -35,7 +35,7 @@
     "block.gtceu.synthetic_lifeform_simulator":"§bSynthetic Lifeform Simulator",
     "block.gtceu.elemental_turbine":"§9Large Elemental Turbine",
     "block.gtceu.critical_point_crystal_matrix":"§9Critical Point Crystal Matrix",
-    "block.gtceu.draconitium_reactor":"§cDraconitium Fusion Reactor",
+    "block.gtceu.draconitium_collider":"§cDraconitium Collider",
 
     "material.gtceu.gabro" : "Gabro",
 
@@ -50,6 +50,7 @@
     "material.gtceu.supremium" : "Supremium",
     "material.gtceu.awakened_supremium" : "Awakened Supremium",
     "material.gtceu.insanium" : "Insanium",
+    "material.gtceu.draconitium" : "Draconitium",
     "material.gtceu.prosperity" : "Prosperity",
     "material.gtceu.soulium" : "Soulium",
     "material.gtceu.soularium" : "Soularium",
@@ -59,7 +60,7 @@
     "material.gtceu.earth_elemental_solution" : "Earth Elemental Solution",
     "material.gtceu.water_elemental_solution" : "Water Elemental Solution",
     "material.gtceu.air_elemental_slurry" : "Air Elemental Slurry",
-    "material.gtceu:fire_elemental_slurry":"Fire Elemental Slurry",
+    "material.gtceu:fire_elemental_slurry": "Fire Elemental Slurry",
     "material.gtceu.earth_elemental_slurry" : "Earth Elemental Slurry",
     "material.gtceu.water_elemental_slurry" : "Water Elemental Slurry",
     "material.gtceu.air_elementia" : "Air Elementia",
