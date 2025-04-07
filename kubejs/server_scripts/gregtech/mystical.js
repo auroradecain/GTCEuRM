@@ -235,6 +235,30 @@ ServerEvents.recipes(event =>{
         D: "gtceu:aluminium_drum"
     }).id('gtceu:shaped/greenhouse')
 
+    event.shaped('gtceu:elemental_turbine', [
+        "ABA",
+        "BDB",
+        "CBC"
+    ], {
+        A: "#gtceu:circuits/ev",
+        B: "gtceu:supremium_gear",
+        C: "gtceu:stainless_steel_large_fluid_pipe",
+        D: "gtceu:ev_machine_hull"
+    }).id('gtceu:shaped/elemental_turbine')
+
+    event.shaped('gtceu:critical_point_crystal_matrix', [
+        "AEA",
+        "FDF",
+        "CBC"
+    ], {
+        A: "gtceu:iv_electric_pump",
+        B: "gtceu:tungsten_steel_drum",
+        C: "#gtceu:circuits/iv",
+        D: "gtceu:iv_autoclave",
+        E: "gtceu:laminated_glass",
+        F: "gtceu:supremium_plate"
+    })
+
     
 
     // Master Infusion Crystal
@@ -327,19 +351,19 @@ ServerEvents.recipes(event =>{
         .itemOutputs("gtceu:imperium_ingot", "gtceu:rare_earth_dust")
         .blastFurnaceTemp(1847)
         .duration(912)
-        .EUt(480)
+        .EUt(1920)
     event.recipes.gtceu.electric_blast_furnace("kubejs:supremium_ingot")
         .itemInputs("gtceu:supremium_dust", "gtceu:prosperity_ingot")
         .itemOutputs("gtceu:supremium_ingot", "gtceu:small_platinum_sludge_residue_dust")
         .blastFurnaceTemp(2987)
         .duration(630)
-        .EUt(1920)
+        .EUt(7680)
     event.recipes.gtceu.electric_blast_furnace("kubejs:insanium_ingot")
         .itemInputs("gtceu:insanium_dust", "gtceu:prosperity_ingot")
         .itemOutputs("gtceu:instanium_ingot", "gtceuu:platinum_sludge_residue_dust")
         .blastFurnaceTemp(4500)
         .duration(745)
-        .EUt(7680)
+        .EUt(30720)
     
     // Awk. Supremium
     event.recipes.gtceu.fusion_reactor("kubejs:awakened_supremium_ingot")
@@ -429,8 +453,8 @@ ServerEvents.recipes(event =>{
             .inputFluids(`gtceu:${elem}_elemental_solution 125`, 'gtceu:supremium 16')
             .outputFluids(`gtceu:${elem}_elemental_solution_plasma 125`)
             .duration(16)
-            .EUt(4096)
-            .fusionStartEU(40)
+            .EUt(GTValues.VH[GTValues.IV])
+            .fusionStartEU(60)
         // Plasma turbine
         event.recipes.gtceu.plasma_generator(`${elem}_plasma`)
             .inputFluids(`gtceu:${elem}_elemental_solution_plasma 1`)

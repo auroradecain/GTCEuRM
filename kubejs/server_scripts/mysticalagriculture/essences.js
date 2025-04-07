@@ -63,7 +63,7 @@ ServerEvents.recipes(event =>{
         ["uranium", ["nether", "end", "coal", "blaze", "lead", "fire"], 480],
         ["chrome", ["end", "ruby"], 480],
         ["ruby", ["deepslate", "redstone", "aluminum"], 120],
-        ["sapphire", ["deepslate", "lapis", "aluminum"], 120],
+        ["sapphire", ["deepslate", "lapis_lazuli", "aluminum"], 120],
         ["soulium", ["stone", "nether", "earth"], 120],
         ["platinum", ["end", "tin"], 480],
         ["certus_quartz", ["iron", "dirt", "air"], 120],
