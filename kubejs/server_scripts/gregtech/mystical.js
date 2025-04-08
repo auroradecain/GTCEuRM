@@ -259,7 +259,19 @@ ServerEvents.recipes(event =>{
         F: "gtceu:supremium_plate"
     })
 
-    
+
+    // Supremium Casing
+    event.recipes.gtceu.assembler('supremium_casing')
+        .itemInputs('6x gtceu:supremium_plate', 'gtceu:prosperity_frame')
+        .itemOutputs('2x kubejs:supremium_casing')
+        .duration(240)
+        .EUt(30)
+
+    event.recipes.gtceu.assembler('draconitium_casing')
+        .itemInputs('6x gtceu:draconitium_plate', 'gtceu:draconitium_frame')
+        .itemOutputs('2x kubejs:draconitium_casing')
+        .duration(240)
+        .EUt(30)
 
     // Master Infusion Crystal
     event.recipes.gtceu.agricultural_fabrication('mystical_crystal')
@@ -504,7 +516,7 @@ ServerEvents.recipes(event =>{
         .EUt(7680)
 
     // Draconitium Reactor
-    event.recipes.gtceu.draconitium_fusion(`draconitium_energy`)
+    event.recipes.gtceu.draconitium_energy(`draconic`)
         .inputFluids("gtceu:draconic_matter 16", "gtceu:insanium 8")
         .outputFluids("gtceu:strange_matter 32")
         .duration(64)
