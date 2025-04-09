@@ -11,6 +11,9 @@ const FusionReactorMachine = Java.loadClass("com.gregtechceu.gtceu.common.machin
 
 GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
 
+    // GTCEu RM
+
+    
     // Mystical Agriculture
     event.create('synthetic_fluid')
         .category('multiblock')

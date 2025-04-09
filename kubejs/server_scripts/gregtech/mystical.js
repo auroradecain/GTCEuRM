@@ -520,7 +520,7 @@ ServerEvents.recipes(event =>{
         .inputFluids("gtceu:draconic_matter 16", "gtceu:insanium 8")
         .outputFluids("gtceu:strange_matter 32")
         .duration(64)
-        .EUt(-1 * GTValues.V[GTValues.LuV])
+        .outputEnergy(64 * GTValues.V[GTValues.LuV])
         .fusionStartEU(80)
 
     
