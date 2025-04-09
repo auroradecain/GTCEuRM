@@ -57,25 +57,25 @@ ServerEvents.recipes(event => {
         }
     }
 
-    createAmmo('9mm',true, 'copper', '1', 1)
-    createAmmo('45acp',true, 'copper', '1', 2)
-    createAmmo('357mag',true, 'ballistic_steel', '1', 1)
-    createAmmo('50ae',true, 'ballistic_steel', '1', 2)
+    createAmmo('9mm',true, 'copper', '1', 4)
+    createAmmo('45acp',true, 'copper', '1', 5)
+    createAmmo('357mag',true, 'ballistic_steel', '1', 4)
+    createAmmo('50ae',true, 'ballistic_steel', '1', 5)
     
-    createAmmo('12g',false, 'brass', '1', 1)
-    createAmmo('338',false, 'brass', '2', 2)
-    createAmmo('308',false, 'brass', '2', 3)
-    createAmmo('30_06',false, 'copper', '1', 1)
-    createAmmo('57x28',false, 'copper', '2', 2)
-    createAmmo('40mm',false, 'steel', '8', 1)
-    createAmmo('58x42',false, 'ballistic_steel', '1', 1)
-    createAmmo('46x30',false, 'ballistic_steel', '1', 2)
-    createAmmo('68x51fury',false, 'ballistic_steel', '1', 3)
-    createAmmo('556x45',false, 'ballistic_steel', '1', 4)
-    createAmmo('762x25',false, 'invar', '1', 1)
-    createAmmo('762x39',false, 'invar', '1', 2)
-    createAmmo('762x54',false, 'invar', '1', 3)
-    createAmmo('50bmg',false, 'double_ballistic_steel', '1', 1)
+    createAmmo('12g',false, 'brass', '1', 4)
+    createAmmo('338',false, 'brass', '2', 5)
+    createAmmo('308',false, 'brass', '2', 6)
+    createAmmo('30_06',false, 'copper', '1', 6)
+    createAmmo('57x28',false, 'copper', '2', 7)
+    createAmmo('40mm',false, 'steel', '8', 4)
+    createAmmo('58x42',false, 'ballistic_steel', '1', 6)
+    createAmmo('46x30',false, 'ballistic_steel', '1', 7)
+    createAmmo('68x51fury',false, 'ballistic_steel', '1', 9)
+    createAmmo('556x45',false, 'ballistic_steel', '1', 11)
+    createAmmo('762x25',false, 'invar', '1', 4)
+    createAmmo('762x39',false, 'invar', '1', 5)
+    createAmmo('762x54',false, 'invar', '1', 6)
+    createAmmo('50bmg',false, 'double_ballistic_steel', '1', 4)
 
     /** LV Recipies */
 
