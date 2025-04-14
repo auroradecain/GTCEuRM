@@ -12,6 +12,12 @@
 /mods/.connector
 /mods/memoryleakfix*
 
+!/config
+/config/jei
+/config/enderio
+/config/ae2
+/config/*-client.toml
+
 # VSCode
 !/.vscode
 /.vscode/*

@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name":"Root",
+			"path": "../",
+		},{
+			"name": "KubeJS",
+			"path": "../kubejs",
+		},{
+			"name": "Config",
+			"path": "../config",
+		},{
+			"name": "Default Configs",
+			"path": "../defaultconfigs",
+		}
+	],
+	"settings": {}
+}
