@@ -1,13 +1,9 @@
 GTCEuStartupEvents.registry('gtceu:material', event=>{
     
-    
-    // event.create('aluminium_phosphate')
-    //     .gem()
-    //     .color()
+    //
+    // Mystical Chemicals
+    //
 
-    // event.create('ammonium_nitrate')
-    //     .dust()
-    //     .color()
     // Superelemental line
     event.create('gaia_oceanus_superelemental_solution')
         .liquid(184)
@@ -48,8 +44,8 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
     event.create('mystical_hyperconcentrate')
         .liquid(300)
         .color(0x944dff).secondaryColor(0x1f004d)
-    event.create('innert_elemental_mixture')
-        .liquid(317)
+    event.create('inert_elemental_mixture')
+        .dust()
         .color(0x332600)
 
     // Draconic Matter line
@@ -62,17 +58,20 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
     event.create('altered_life_source')
         .liquid(297)
         .color(0x6e5d89)
+    event.create('unstable_draconic_matter')
+        .liquid(2189)
+        .color(0x12002f).secondaryColor(0xaaaaaa)
     event.create('draconic_matter')
-        .liquid(9987)
+        .liquid(3364)
         .color(0x140033).secondaryColor(0x000000)
     event.create('strange_matter')
-        .liquid(31)
+        .liquid(81)
         .color(0xf2e6ff).secondaryColor(0xffffff)
-    event.create('strange_uranic_matter')
-        .gas(3363)
+    event.create('strange_uranium_matter')
+        .gas(144)
         .color(0x004d1a)
     event.create('strange_naquadah_matter')
-        .gas(1910)
+        .gas(153)
         .color(0x1a3300)
     
     // Misc output
@@ -80,4 +79,31 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
         .dust()
         .color(0xe6ccff).secondaryColor(0x806000)
     
+})
+
+GTCEuStartupEvents.registry('gtceu:material', event =>{
+    //
+    // Arcoirium Chemicals
+    //
+
+    event.create("travinitic_acid")
+        .dust()
+        .color(0xffff1a)
+        .components("2x hydrogen", "avisium", "4x oxygen")
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
+
+    event.create('igneous_mixture')
+        .dust()
+        .color(0x331400)
+
+    event.create('molybdenum_disulfide')
+        .dust()
+        .color(0x3d3d29)
+})
+
+GTCEuStartupEvents.registry('gtceu:material', event =>{
+    //
+    // GTCEu RM
+    //
+
 })

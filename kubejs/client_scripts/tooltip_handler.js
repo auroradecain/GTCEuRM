@@ -1,10 +1,16 @@
 ItemEvents.tooltip(tooltip => {
 	// Custom conduits	
-	tooltip.add('enderio:viadium_conduit', Text.translatable('Transfer rate: 512 RF/t'))
-	tooltip.add('enderio:sapatanium_conduit', Text.translatable('Transfer rate: 2048 RF/t'))
-    tooltip.add('enderio:fechantium_conduit', Text.translatable('Transfer rate: 8192 RF/t'))
-    tooltip.add('enderio:yottrium_conduit', Text.translatable('Transfer rate: 32768 RF/t'))
-    tooltip.add('enderio:denisium_conduit', Text.translatable('Transfer rate: 131072 RF/t'))
+	tooltip.add('enderio:viadium_conduit', Text.translatable('item.enderio.viadium_conduit.desc'))
+	tooltip.add('enderio:sapatanium_conduit', Text.translatable('item.enderio.sapatanium_conduit.desc'))
+    tooltip.add('enderio:fechantium_conduit', Text.translatable('item.enderio.fechantium_conduit.desc'))
+    tooltip.add('enderio:yottrium_conduit', Text.translatable('item.enderio.yottrium_conduit.desc'))
+    tooltip.add('enderio:denisium_conduit', Text.translatable('item.enderio.denisium_conduit.desc'))
+    tooltip.add('enderio:avisium_conduit', Text.translatable('item.enderio.avisium_conduit.desc'))
+
+    tooltip.add('enderio:conductive_conduit', Text.translatable('item.enderio.conductive_conduit.desc'))
+    tooltip.add('enderio:energetic_conduit', Text.translatable('item.enderio.energetic_conduit.desc'))
+    tooltip.add('enderio:vibrant_conduit', Text.translatable('item.enderio.vibrant_conduit.desc'))
+    tooltip.add('enderio:endsteel_conduit', Text.translatable('item.enderio.endsteel_conduit.desc'))
 
     // Custom materials
     tooltip.add('gtceu:viadium_ingot', Text.of('This time the faggot crushed').color(0xe2bbfd))

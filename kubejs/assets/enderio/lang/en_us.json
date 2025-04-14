@@ -4,4 +4,22 @@
     "item.enderio.fechantium_conduit": "Fechantiuml Energy Conduit",
     "item.enderio.yottrium_conduit": "Yottrium Energy Conduit",
     "item.enderio.denisium_conduit": "Denisium Energy Conduit",
+    "item.enderio.avisium_conduit": "Avisium Energy Conduit",
+
+    "item.enderio.conductive_conduit":"Conductive Alloy Energy Conduit",
+    "item.enderio.energetic_conduit":"Energetic Alloy Energy Conduit",
+    "item.enderio.vibrant_conduit":"Vibrant Alloy Energy Conduit",
+    "item.enderio.endsteel_conduit":"End Steel Energy Conduit",
+
+    "item.enderio.viadium_conduit.desc": "§bTransfer rate: 1024 RF/t",
+    "item.enderio.sapatanium_conduit.desc": "§bTransfer rate: 4096 RF/t",
+    "item.enderio.fechantium_conduit.desc": "§bTransfer rate: 16384 RF/t",
+    "item.enderio.yottrium_conduit.desc": "§bTransfer rate: 65536 RF/t",
+    "item.enderio.denisium_conduit.desc": "§bTransfer rate: 262144 RF/t",
+    "item.enderio.avisium_conduit.desc": "§bTransfer rate: 1048576 RF/t",
+
+    "item.enderio.conductive_conduit.desc":"§bTransfer rate: 512 RF/t",
+    "item.enderio.energetic_conduit.desc":"§bTransfer rate: 2048 RF/t",
+    "item.enderio.vibrant_conduit.desc":"§bTransfer rate: 8192 RF/t",
+    "item.enderio.endsteel_conduit.desc":"§bTransfer rate: 32768 RF/t"
 }

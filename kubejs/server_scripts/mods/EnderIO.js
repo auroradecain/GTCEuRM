@@ -1,3 +1,7 @@
+/**
+ * Arcoirium Conduits
+ */
+
 ServerEvents.recipes(event =>{
 
     /** Avoids shenenigans */
@@ -18,7 +22,7 @@ ServerEvents.recipes(event =>{
         .itemOutputs("4x enderio:viadium_conduit")
         .duration(80)
         .EUt(GTValues.VH[GTValues.LV])
-    
+
     /** Sapatanium */
     event.shaped('3x enderio:sapatanium_conduit', [
         'BBB',
@@ -87,6 +91,90 @@ ServerEvents.recipes(event =>{
         .duration(80)
         .EUt(GTValues.VH[GTValues.LV])
 
-    /** GT cheaper recipies */
+    event.shaped('3x enderio:avisium_conduit', [
+        'BBB',
+        'DCD',
+        'BBB'
+    ], {
+        B: "enderio:conduit_binder",
+        D: "gtceu:avisium_single_wire",
+        C: "enderio:denisium_conduit"
+    }).id("kubejs:avisium_conduit")
 
+    event.recipes.gtceu.assembler('enderio:avisium_conduit')
+        .itemInputs("6x enderio:conduit_binder", "2x gtceu:avisium_single_wire", "enderio:denisium_conduit")
+        .itemOutputs("4x enderio:avisium_conduit")
+        .duration(80)
+        .EUt(GTValues.VH[GTValues.LV])
+
+})
+
+/**
+ * Enderio Conduits
+ */
+
+ServerEvents.recipes(event =>{
+    
+    event.shaped('3x enderio:conductive_conduit', [
+        'BBB',
+        'AAA',
+        'BBB'
+    ], {
+        A: "gtceu:conductive_alloy_single_wire",
+        B: "enderio:conduit_binder",
+    }).id('kubejs:conductive_conduit')
+
+    event.recipes.gtceu.assembler('enderio:conductive_conduit')
+        .itemInputs("6x enderio:conduit_binder", "3x gtceu:conductive_alloy_single_wire")
+        .itemOutputs("4x enderio:conductive_conduit")
+        .duration(80)
+        .EUt(GTValues.VH[GTValues.LV])
+
+    event.shaped('3x enderio:energetic_conduit', [
+        'BBB',
+        'ACA',
+        'BBB'
+    ], {
+        A: "gtceu:energetic_alloy_single_wire",
+        B: "enderio:conduit_binder",
+        C: "enderio:conductive_conduit"
+    }).id("kubejs:energetic_conduit")
+
+    event.recipes.gtceu.assembler('enderio:energetic_conduit')
+        .itemInputs("6x enderio:conduit_binder", "2x gtceu:energetic_alloy_single_wire", "enderio:conductive_conduit")
+        .itemOutputs("4x enderio:energetic_conduit")
+        .duration(80)
+        .EUt(GTValues.VH[GTValues.LV])
+
+    event.shaped('3x enderio:vibrant_conduit', [
+        'BBB',
+        'ACA',
+        'BBB'
+    ], {
+        A: "gtceu:vibrant_alloy_single_wire",
+        B: "enderio:conduit_binder",
+        C: "enderio:energetic_conduit"
+    }).id("kubejs:vibrant_conduit")
+
+    event.recipes.gtceu.assembler('enderio:vibrant_conduit')
+        .itemInputs("6x enderio:conduit_binder", "2x gtceu:vibrant_alloy_single_wire", "enderio:energetic_conduit")
+        .itemOutputs("4x enderio:vibrant_conduit")
+        .duration(80)
+        .EUt(GTValues.VH[GTValues.LV])
+
+    event.shaped('3x enderio:endsteel_conduit', [
+        'BBB',
+        'ACA',
+        'BBB'
+    ], {
+        A: "gtceu:end_steel_single_wire",
+        B: "enderio:conduit_binder",
+        C: "enderio:vibrant_conduit"
+    }).id("kubejs:endsteel_conduit")
+
+    event.recipes.gtceu.assembler('enderio:endsteel_conduit')
+        .itemInputs("6x enderio:conduit_binder", "2x gtceu:end_steel_single_wire", "enderio:vibrant_conduit")
+        .itemOutputs("4x enderio:endsteel_conduit")
+        .duration(80)
+        .EUt(GTValues.VH[GTValues.LV])
 })

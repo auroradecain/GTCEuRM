@@ -12,7 +12,7 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event =>{
         .setEUIO("in")
         .setMaxIOSize(2, 3, 1, 1)
         .setSlotOverlay(false, false, GuiTextures.EXTRACTOR_OVERLAY)
-        .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, FillDirection.DOWN_TO_UP)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_RECYCLER, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.CHEMICAL)
 })
 

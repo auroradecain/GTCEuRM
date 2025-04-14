@@ -72,22 +72,30 @@ ServerEvents.recipes(event =>{
     ]
 
     element_essences.forEach(ele =>{
-        event.recipes.gtceu.agricultural_fabrication(`essence_seeds/${ele}`)
-            .itemInputs(`4x mysticalagriculture:${ele}_agglomeratio`, "mysticalagriculture:prosperity_seed_base")
+        event.recipes.gtceu.agricultural_fabrication(`elemental_seeds/${ele}`)
+            .itemInputs(`2x mysticalagriculture:${ele}_agglomeratio`, "mysticalagriculture:prosperity_seed_base")
             .itemOutputs(`mysticalagriculture:${ele}_seeds`)
             .duration(140)
             .EUt(30)
+        for (const [tier, mult] of tier_inferium){
+            event.recipes.gtceu.agricultural_fabrication(`essence_seeds/${ele}_${tier}`)
+                .itemInputs(`4x mysticalagriculture:${ele}_essence`, 'mysticalagriculture:prosperity_seed_base')
+                .inputFluids(`gtceu:${tier} 144`)
+                .itemOutputs(`${mult}x mysticalagriculture:${ele}_seeds`)
+                .duration(320)
+                .EUt(30)
+        }
     })
 
-    for (const [target, [in0, in1, in2, in3, in4, in5], cost] of allEssences){
+    for (const [target, inputs, cost] of allEssences){
         event.recipes.gtceu.agricultural_fabrication(`essence/${target}`)
             .itemInputs(
-                `mysticalagriculture:${in0}_essence`, 
-                `mysticalagriculture:${in1}_essence`, 
-                `mysticalagriculture:${in2}_essence`, 
-                `mysticalagriculture:${in3}_essence`,
-                `mysticalagriculture:${in4}_essence`,
-                `mysticalagriculture:${in5}_essence`
+                `mysticalagriculture:${inputs[0]}_essence`, 
+                `mysticalagriculture:${inputs[1]}_essence`, 
+                `mysticalagriculture:${inputs[2]}_essence`, 
+                `mysticalagriculture:${inputs[3]}_essence`,
+                `mysticalagriculture:${inputs[4]}_essence`,
+                `mysticalagriculture:${inputs[5]}_essence`
             )
             .itemOutputs(`mysticalagriculture:${target}_essence`)
             .duration(380)

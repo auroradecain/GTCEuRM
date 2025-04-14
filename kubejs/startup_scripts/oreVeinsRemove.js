@@ -5,6 +5,7 @@ WorldgenEvents.remove(event =>{
         "mysticalagriculture:end_inferium_ore",
         "mysticalagriculture:end_prosperity_ore",
         "mysticalagriculture:nether_inferium_ore",
-        "mysticalagriculture:nether_prosperity_ore"
+        "mysticalagriculture:nether_prosperity_ore",
+        "mysticalagriculture:soulium_ore"
     ])
 })
