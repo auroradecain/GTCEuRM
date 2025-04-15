@@ -3,13 +3,9 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
     event.create("gabro")
         .dust()
         .color(0x2f332d).iconSet('dull')
-        .components('2x iron', '1x silicon_dioxide', 'magnesium', '3x aluminium')
+        .components('2x iron', '1x silicon_dioxide', 'magnesium', '3x aluminium', 'vidium')
         .flags(GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING)
-    
-    event.create("vidium")
-        .dust()
-        .color(0xd89251).secondaryColor(0xc0c0c0)
-        .element(GTElements.get("vidium"))
+
 
     // Viadium + Viadium superconduit + Viadium Special Steel
     event.create("viadium")
@@ -66,12 +62,6 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .element(GTElements.get("fechantium"))
         .cableProperties(512, 2, 0, true)
 
-    event.create("altered_fechantium")
-        .ingot().fluid()
-        .color(0xbce3f5).iconSet('metallic')
-        .blastTemp(2200, 'mid', 1920, 635)
-        .components('2x fechantium', 'gallium', 'boron')
-
     // Yottrium
     event.create("yottrium")
         .ingot().fluid()
@@ -90,7 +80,7 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .components('2x uranium', 'yottrium', 'tungsten', '3x oxygen')
         .cableProperties(8192, 4, 0, true)
 
-    // Avisium + ?
+    // Avisium
     event.create("avisium")
         .ingot().fluid()
         .color(0xf8ed62).iconSet('metallic')
@@ -103,10 +93,10 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
     event.create("queenium")
         .ingot().fluid()
         .color(0x4d004d).iconSet('shiny')
+        .element(GTElements.get("queenium"))
         .flags(GTMaterialFlags.GENERATE_PLATE)
         .blastTemp(6300, 'high', 7680, 1340)
-        .cableProperties(GTValues.VLVH[GTValues.ZPM], 6, 0, true)
-
+        .cableProperties(GTValues.VLVA[GTValues.ZPM], 6, 0, true)
 
 
     // Ores
@@ -116,12 +106,4 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
 
 })
 
-GTCEuStartupEvents.materialModification(event =>{
-    GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)?')
-    //GTMaterials.get('sapatanium_viadium_steel').setFormula('*Vi*2Cr2MnFe')
-    GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)?')
-    
-    GTMaterials.get('yottrium').setFormula('Mo2FcPt2S')
-    GTMaterials.get('denisium').setFormula('U2(Mo2FcPt2S)WO3')
-    GTMaterials.get('travinite').setFormula('Li2(AvO3)O')
-})
+// Formulae fix moved to "MissingForms.js"

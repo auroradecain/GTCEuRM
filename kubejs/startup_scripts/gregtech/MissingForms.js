@@ -59,8 +59,19 @@ GTCEuStartupEvents.materialModification(event=>{
     GTMaterials.Zirconium.setMaterialARGB(0xe8e8e8)
     GTMaterials.Zirconium.addFlags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.GENERATE_RING, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_BOLT_SCREW)
 
-    // might need to add Builder.of()
-    //GTMaterials.get('insanium').setProperty(new $ToolProperty(19.0, 13.0, 4096, 4, [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe, ev_drill]).enchantability(23).build())
-    //GTMaterials.get('awakened_supremium').setProperty(new $ToolProperty(27.0, 18.0, 4608, 5, [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe, iv_drill]).unbreakable().enchantability(31).build())
 
+    // Fixes incorrect formulae
+
+    // Arcoirium
+    GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)(Vd2O(OH))')
+    GTMaterials.get('vidium').setFormula('Vd2O(OH)')
+    
+    GTMaterials.get('yottrium').setFormula('Mo2FcPt2S')
+    GTMaterials.get('denisium').setFormula('U2(Mo2FcPt2S)WO3')
+    GTMaterials.get('travinite').setFormula('Li2(AvO3)O')
+
+    // Enderio Materials
+    GTMaterials.get('energetic_alloy').setFormula("Au2(Si(FeS2)5(CrAl2O3)Hg3)(AuCa3(PO4)2)")
+    GTMaterials.get('vibrant_alloy').setFormula("Au2(Si(FeS2)5(CrAl2O3)Hg3)(AuCa3(PO4)2)(BeK4N5)")
+    GTMaterials.get('end_steel').setFormula("Fe(SiO2)(Au2(Si(FeS2)5(CrAl2O3)Hg3)(AuCa3(PO4)2)(BeK4N5))")
 })

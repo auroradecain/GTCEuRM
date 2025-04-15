@@ -3,22 +3,22 @@ GTCEuStartupEvents.registry('gtceu:element', event => {
     
     /** Elements registry for superconductor concurrent line to EnderIO counterparts */
 
-    event.create('vidium')
-        .protons(29)
-        .neutrons(65)
-        .symbol('Vi')
     event.create('viadium') 
-        .protons(29)
-        .neutrons(69)
-        .symbol('*Vi*')
+        .protons(46)
+        .neutrons(73)
+        .symbol('Vd')
     event.create('fechantium')
         .protons(74)
-        .neutrons(186)
-        .symbol('Fc')
+        .neutrons(112)
+        .symbol('Fn')
     event.create('avisium')
-        .protons(22)
-        .neutrons(28)
+        .protons(77)
+        .neutrons(123)
         .symbol('Av')
+    event.create('queenium')
+        .protons(125)
+        .neutrons(125)
+        .symbol('Q')
 
 })
 

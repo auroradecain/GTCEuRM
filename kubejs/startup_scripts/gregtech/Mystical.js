@@ -107,13 +107,3 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .ignoredTagPrefixes([TagPrefix.dustTiny])
 
 })
-
-GTCEuStartupEvents.materialModification(event =>{
-    // GTMaterials.get('prosperity').setFormula('Mg(AlPO4)2(SiO2)')
-    // GTMaterials.get('inferium').setFormula('NaAl(SiO2)')
-    // GTMaterials.get('prudentium').setFormula('(NaAl(AlPO4)2(SiO2)2)4')
-    // GTMaterials.get('tertium').setFormula('(NaAl(AlPO4)2(SiO2)2)16')
-    // GTMaterials.get('imperium').setFormula('(NaAl(AlPO4)2(SiO2)2)64')
-    // GTMaterials.get('supremium').setFormula('(NaAl(AlPO4)2(SiO2)2)256')
-    // GTMaterials.get('insanium').setFormula('(NaAl(AlPO4)2(SiO2)2)1024')
-})

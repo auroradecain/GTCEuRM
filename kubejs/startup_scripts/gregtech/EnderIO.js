@@ -67,7 +67,6 @@ GTCEuStartupEvents.registry("gtceu:material", event => {
         .color(0xd6d980).iconSet("metallic")
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_GEAR)
         .blastTemp(3600, "mid", 480, 900)
-        //.toolStats(new ToolProperty(4.0, 3.5, 1024, 3, []))
         .toolStats(new ToolProperty(4.0, 3.5, 1024, 3, [
             GTToolType.SWORD,
             GTToolType.PICKAXE,
@@ -104,8 +103,4 @@ GTCEuStartupEvents.registry("gtceu:material", event => {
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_DENSE, GTMaterialFlags.DISABLE_DECOMPOSITION)
 })
 
-GTCEuStartupEvents.materialModification(event =>{
-    GTMaterials.get('energetic_alloy').setFormula("Au2(Si(FeS2)5(CrAl2O3)Hg3)(AuCa3(PO4)2)")
-    GTMaterials.get('vibrant_alloy').setFormula("Au2(Si(FeS2)5(CrAl2O3)Hg3)(AuCa3(PO4)2)(BeK4N5)")
-    GTMaterials.get('end_steel').setFormula("Fe(SiO2)(Au2(Si(FeS2)5(CrAl2O3)Hg3)(AuCa3(PO4)2)(BeK4N5))")
-})
+// Formulae fix moved to "MissingForms.js"
