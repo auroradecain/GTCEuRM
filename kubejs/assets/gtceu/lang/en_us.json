@@ -96,11 +96,18 @@
 
     "material.gtceu.igneous_mixture" : "Igneous Mixture",
     "material.gtceu.molybdenum_disulfide" : "Molybdenum Disulfide",
-    "material.gtceu.travinitic_acid" : "Travinitic Acid",
+    "material.gtceu.trevinitic_acid" : "Trevinitic Acid",
 
-    "material.gtceu.travinite" : "Travinite",
+    "material.gtceu.trevinite" : "Trevinite",
     "material.gtceu.zircon" : "Zircon",
     "material.gtceu.vidium" : "Vidium",
+    "material.gtceu.dionitase" : "Dionitase",
+    "material.gtceu.tadanite_earth" : "Tadanite's Earth",
+    "material.gtceu.torbenite" : "Torbenite",
+    "material.gtceu.dioptase" : "Dioptase",
+    "material.gtceu.argentite" : "Argentite",
+    "material.gtceu.fluorspar" : "Fluorspar",
+
 
     "material.gtceu.cupric_viadium_semielement" : "Cupric Viadium Semielement",
     "material.gtceu.sapatanium_viadium_steel": "Sapatanium Viadium Steel",

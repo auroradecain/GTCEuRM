@@ -59,16 +59,23 @@ GTCEuStartupEvents.materialModification(event=>{
     GTMaterials.Zirconium.setMaterialARGB(0xe8e8e8)
     GTMaterials.Zirconium.addFlags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.GENERATE_RING, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_BOLT_SCREW)
 
+    GTMaterials.Glowstone.setComponents('1x tricalcium_phosphate', '1x gold')
+    GTMaterials.Glowstone.setFormula('AuCa3(PO4)2', true)
+
+    // Gears for Thermal Expansion
+    GTMaterials.Copper.addFlags(GTMaterialFlags.GENERATE_GEAR)
 
     // Fixes incorrect formulae
 
     // Arcoirium
-    GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)(Vd2O(OH))')
-    GTMaterials.get('vidium').setFormula('Vd2O(OH)')
+    GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)(Vd2O3(OH)2)')
+    GTMaterials.get('vidium').setFormula('Vd2O3(OH)2')
+    GTMaterials.get('dioptase').setFormula('CuSiO2(OH)2')
+    GTMaterials.get('torbenite').setFormula('Cu(UO2)2(PO4)2O5H4')
     
     GTMaterials.get('yottrium').setFormula('Mo2FcPt2S')
     GTMaterials.get('denisium').setFormula('U2(Mo2FcPt2S)WO3')
-    GTMaterials.get('travinite').setFormula('Li2(AvO3)O')
+    GTMaterials.get('trevinite').setFormula('Li2(AvO3)O')
 
     // Enderio Materials
     GTMaterials.get('energetic_alloy').setFormula("Au2(Si(FeS2)5(CrAl2O3)Hg3)(AuCa3(PO4)2)")

@@ -86,7 +86,7 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
     // Arcoirium Chemicals
     //
 
-    event.create("travinitic_acid")
+    event.create("trevinitic_acid")
         .dust()
         .color(0xffff1a)
         .components("2x hydrogen", "avisium", "4x oxygen")
@@ -99,6 +99,7 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
     event.create('molybdenum_disulfide')
         .dust()
         .color(0x3d3d29)
+        .components('molybdenum', '2x sulfur')
 })
 
 GTCEuStartupEvents.registry('gtceu:material', event =>{
