@@ -4,6 +4,7 @@
 
     "gtceu.jei.ore_vein.overworld/emerald": "Emerald Vein (Overworld)",
     "gtceu.jei.ore_vein.overworld/inferium": "Inferium Vein",
+    "gtceu.jei.ore_vein.overworld/vidium": "Vidium Vein",
 
     
     "gtceu.greenhouse":"Greenhouse",
@@ -98,12 +99,21 @@
     "material.gtceu.travinitic_acid" : "Travinitic Acid",
 
     "material.gtceu.travinite" : "Travinite",
+    "material.gtceu.zircon" : "Zircon",
+    "material.gtceu.vidium" : "Vidium",
+
+    "material.gtceu.cupric_viadium_semielement" : "Cupric Viadium Semielement",
+    "material.gtceu.sapatanium_viadium_steel": "Sapatanium Viadium Steel",
+    "material.gtceu.svs_blue": "SVS-B",
+    "material.gtceu.svs_green": "SVS-G",
+    "material.gtceu.svs_red": "SVS-R",
+
     "material.gtceu.avisium" : "Avisium",
     "material.gtceu.ballistic_steel" : "Ballistic Steel",
-    "material.gtceu.vidium" : "Vidium",
     "material.gtceu.viadium" : "Viadium",
     "material.gtceu.sapatanium" : "Sapatanium",
     "material.gtceu.fechantium" : "Fechantium",
     "material.gtceu.yottrium" : "Yottrium",
-    "material.gtceu.denisium" : "Denisium"
+    "material.gtceu.denisium" : "Denisium",
+    "material.gtceu.queenium" : "Queenium"
 }

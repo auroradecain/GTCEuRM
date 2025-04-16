@@ -2,14 +2,14 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
     
     // Arcoirium Ores
     event.create("vidium")
-        .dust().ore().addOreByproducts('copper', 'iron')
-        .color(0xd89251).secondaryColor(0xc0c0c0)
-        .flags(GTMaterialFlags.DECOMPOSITION_BY_CENTRIFUGING)
-        .components('2x viadium', '2x oxygen', 'hydrogen')
+        .dust().ore()
+        .addOreByproducts('copper', 'iron')
+        .color(0xd89251)
     
     event.create("travinite")
-        .dust().ore().addOreByproducts('magnetite', 'chromite')
+        .dust().ore()
         .color(0x666600)
+        .addOreByproducts('magnetite', 'chromite')
 
     event.create("zircon")
         .gem()

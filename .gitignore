@@ -12,10 +12,6 @@
 /mods/.connector
 /mods/memoryleakfix*
 
-!/config
-/config/*-client.toml
-/config/*/*-client.toml
-
 # VSCode
 !/.vscode
 /.vscode/*

@@ -1,5 +1,3 @@
-
-
 GTCEuStartupEvents.registry("gtceu:material", event=>{
 
     

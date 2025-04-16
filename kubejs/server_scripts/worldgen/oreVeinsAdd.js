@@ -21,7 +21,7 @@ GTCEuServerEvents.oreVeins(event =>{
         )
     })
     event.add("overworld/inferium", vein => {
-        vein.weight(20)
+        vein.weight(25)
         vein.density(0.25)
         vein.clusterSize(35)
         vein.layer("stone")
@@ -35,6 +35,26 @@ GTCEuServerEvents.oreVeins(event =>{
         )
         vein.surfaceIndicatorGenerator(indicator => indicator
             .surfaceRock(GTMaterials.get("inferium"))
+            .placement("above")
+        )
+    })
+
+    event.add("overworld/vidium", vein=>{
+        vein.weight(30)
+        vein.density(0.25)
+        vein.clusterSize(30)
+        vein.layer("stone")
+        vein.dimensions("minecraft:overworld")
+        vein.heightRangeUniform(10, 30)
+        vein.layeredVeinGenerator(generator => generator
+            .buildLayerPattern(pattern => pattern
+                .layer(l => l.weight(1).mat(GTMaterials.get("zircon")).size(1, 2))
+                .layer(l => l.weight(2).mat(GTMaterials.get("vidium")).size(2, 3))
+                .layer(l => l.weight(1).mat(GTMaterials.get("zircon")).size(1, 2))
+            )
+        )
+        vein.surfaceIndicatorGenerator(indicator => indicator
+            .surfaceRock(GTMaterials.get("vidium"))
             .placement("above")
         )
     })

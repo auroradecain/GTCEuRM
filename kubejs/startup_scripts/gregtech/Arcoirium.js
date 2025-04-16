@@ -1,9 +1,10 @@
 
 GTCEuStartupEvents.registry('gtceu:material', event =>{
+
     event.create("gabro")
         .dust()
         .color(0x2f332d).iconSet('dull')
-        .components('2x iron', '1x silicon_dioxide', 'magnesium', '3x aluminium', 'vidium')
+        .components('2x iron', '1x silicon_dioxide', 'magnesium', '3x aluminium')
         .flags(GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING)
 
 
@@ -22,22 +23,8 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .blastTemp(1350,'low', 120, 430)
         .components("viadium", "2x copper", "silicon", "3x oxygen")
 
-    event.create("vss_blue")
-        .ingot()
-        .color(0x3f2aa7).iconSet('metallic')
-        .components('viadium', '3x molybdenum', 'cobalt', '2x steel')
-
-    event.create("vss_green")
-        .ingot()
-        .color(0x3f844d).iconSet('metallic')
-        .components('viadium', '3x manganese', 'beryllium', '2x steel')
-
-    event.create("vss_red")
-        .ingot()
-        .color(0x982a4d).iconSet('metallic')
-        .components('viadium', '3x chromium', 'gallium', '2x steel')
-
-    // Sapatanium
+        
+        // Sapatanium
     event.create("sapatanium")
         .ingot().fluid()
         .color(0xffb866).iconSet('metallic')
@@ -52,6 +39,21 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .color(0x602043).iconSet('dull')
         .blastTemp(1700, 'low', 480, 430)
         .components('sapatanium', 'viadium', 'steel')
+    
+    event.create("svs_blue")
+        .ingot()
+        .color(0x3f2aa7).iconSet('metallic')
+        .components('3x molybdenum', 'cobalt', '2x sapatanium_viadium_steel')
+
+    event.create("svs_green")
+        .ingot()
+        .color(0x3f844d).iconSet('metallic')
+        .components('3x manganese', 'beryllium', '2x sapatanium_viadium_steel')
+
+    event.create("svs_red")
+        .ingot()
+        .color(0x982a4d).iconSet('metallic')
+        .components('3x chromium', 'gallium', '2x sapatanium_viadium_steel')
 
     // Fechantium
     event.create("fechantium")
@@ -92,17 +94,12 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
     // Queenium
     event.create("queenium")
         .ingot().fluid()
-        .color(0x4d004d).iconSet('shiny')
+        .color(0xbfbfbf).iconSet(GTMaterialIconSet.BRIGHT)
         .element(GTElements.get("queenium"))
         .flags(GTMaterialFlags.GENERATE_PLATE)
         .blastTemp(6300, 'high', 7680, 1340)
-        .cableProperties(GTValues.VLVA[GTValues.ZPM], 6, 0, true)
+        .cableProperties(131072, 6, 0, true)
 
-
-    // Ores
-    event.create("travinite")
-        .ore().addOreByproducts('magnetite', 'chromite', 'lithium')
-        .color(0x666600)
 
 })
 
