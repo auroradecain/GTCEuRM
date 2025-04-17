@@ -101,6 +101,31 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .cableProperties(131072, 6, 0, true)
 
 
-})
+    // Ores
 
-// Formulae fix moved to "MissingForms.js"
+    event.create("vidium")
+        .dust().ore()
+        .addOreByproducts('copper', 'iron')
+        .color(0xd89251)
+        .components('2x viadium', '5x oxygen', '2x hydrogen')
+
+    event.create("tadanite_earth")
+        .dust().ore()
+        .addOreByproducts('barite', 'clay')
+        .color(0x33334d)
+        .components('5x lithium', '2x fechantium', '2x oxygen', '3x fluorine', 'barite', '3x clay')
+        
+    event.create("dionitase")
+        .dust().ore()
+        .addOreByproducts('chromium')
+        .color(0xb366ff)
+        .components('1x fechantium', '2x oxygen')
+        .oreSmeltInto('fechantium')
+
+    event.create("trevinite")
+        .dust().ore()
+        .color(0x666600)
+        .addOreByproducts('magnetite', 'chromite')
+
+
+})

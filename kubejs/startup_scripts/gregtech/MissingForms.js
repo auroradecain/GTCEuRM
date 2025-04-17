@@ -59,8 +59,9 @@ GTCEuStartupEvents.materialModification(event=>{
     GTMaterials.Zirconium.setMaterialARGB(0xe8e8e8)
     GTMaterials.Zirconium.addFlags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.GENERATE_RING, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_BOLT_SCREW)
 
-    GTMaterials.Glowstone.setComponents('1x tricalcium_phosphate', '1x gold')
-    GTMaterials.Glowstone.setFormula('AuCa3(PO4)2', true)
+    // GTMaterials.Glowstone.setComponents('1x tricalcium_phosphate', '1x gold')
+    // GTMaterials.Glowstone.setFormula('AuCa3(PO4)2', true)
+
 
     // Gears for Thermal Expansion
     GTMaterials.Copper.addFlags(GTMaterialFlags.GENERATE_GEAR)

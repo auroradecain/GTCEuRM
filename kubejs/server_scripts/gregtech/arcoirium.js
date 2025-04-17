@@ -32,9 +32,10 @@ ServerEvents.recipes(event =>{
 
     /** Viadium dust */
     event.recipes.gtceu.chemical_reactor('kubejs:viadium_dust')
-        .itemInputs('gtceu:vidium_dust', 'gtceu:copper_dust')
-        .inputFluids('gtceu:sodium_persulfate 500')
-        .itemOutputs('2x gtceu:viadium_dust')
+        .itemInputs('2x gtceu:vidium_dust', '4x gtceu:copper_dust')
+        .inputFluids('gtceu:chlorine 2000')
+        .itemOutputs('2x gtceu:viadium_dust', '4x gtceu:cupric_oxide_dust')
+        .outputFluids('gtceu:hydrochloric_acid 2000')
         .duration(140)
         .EUt(24)
 
