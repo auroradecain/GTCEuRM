@@ -97,6 +97,9 @@
     "material.gtceu.igneous_mixture" : "Igneous Mixture",
     "material.gtceu.molybdenum_disulfide" : "Molybdenum Disulfide",
     "material.gtceu.trevinitic_acid" : "Trevinitic Acid",
+    "material.gtceu.copper_ii_hydroxide" : "Copper II Hydroxide",
+    "material.gtceu.chlorine_dioxide" : "Chlorine Dioxide",
+
 
     "material.gtceu.trevinite" : "Trevinite",
     "material.gtceu.zircon" : "Zircon",

@@ -68,6 +68,9 @@ GTCEuStartupEvents.materialModification(event=>{
 
     // Fixes incorrect formulae
 
+    // GTCEu RM
+    GTMaterials.get('copper_ii_hydroxide').setFormula('Cu(OH)2')
+
     // Arcoirium
     GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)(Vd2O3(OH)2)')
     GTMaterials.get('vidium').setFormula('Vd2O3(OH)2')

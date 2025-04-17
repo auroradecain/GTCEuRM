@@ -96,15 +96,26 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .dust()
         .color(0x331400)
 
-    event.create('molybdenum_disulfide')
-        .dust()
-        .color(0x3d3d29)
-        .components('molybdenum', '2x sulfur')
 })
 
 GTCEuStartupEvents.registry('gtceu:material', event =>{
     //
     // GTCEu RM
     //
+
+    event.create('molybdenum_disulfide')
+        .dust()
+        .color(0x3d3d29)
+        .components('molybdenum', '2x sulfur')
+
+    event.create("copper_ii_hydroxide")
+        .dust(284)
+        .color(0x86bc9d)
+        .components("1x cupric_oxide", "water")
+
+    event.create("chlorine_dioxide")
+        .gas(298)
+        .color(0xbea902)
+        .components("chlorine", "2x oxygen")
 
 })

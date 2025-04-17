@@ -31,13 +31,13 @@ ServerEvents.recipes(event =>{
         .EUt(30)
 
     /** Viadium dust */
-    event.recipes.gtceu.chemical_reactor('kubejs:viadium_dust')
-        .itemInputs('2x gtceu:vidium_dust', '4x gtceu:copper_dust')
-        .inputFluids('gtceu:chlorine 2000')
-        .itemOutputs('2x gtceu:viadium_dust', '4x gtceu:cupric_oxide_dust')
-        .outputFluids('gtceu:hydrochloric_acid 2000')
+    event.recipes.gtceu.chemical_reactor('kubejs:viadium_dust_poor')
+        .itemInputs('5x gtceu:vidium_dust', 'gtceu:copper_dust')
+        .inputFluids('gtceu:hydrochloric_acid 2000')
+        .itemOutputs('1x gtceu:viadium_dust', '4x gtceu:copper_ii_hydroxide_dust')
+        .outputFluids('gtceu:diluted_hydrochloric_acid 2000')
         .duration(140)
-        .EUt(24)
+        .EUt(30)
 
     /** Sapatanium dust */
     event.recipes.gtceu.mixer('kubejs:sapatanium_dust')
@@ -81,15 +81,15 @@ ServerEvents.recipes(event =>{
         .EUt(480)
 
     // Avisium line
-    event.recipes.gtceu.chemical_bath("travinitic_acid_from_travinite")
-        .itemInputs("7x gtceu:travinite_dust")
+    event.recipes.gtceu.chemical_bath("trevinitic_acid_from_travinite")
+        .itemInputs("7x gtceu:trevinite_dust")
         .inputFluids("gtceu:hydrochloric_acid 2000")
-        .itemOutputs("7x gtceu:travinitic_acid_dust", "4x gtceu:lithium_chloride_dust")
+        .itemOutputs("7x gtceu:trevinitic_acid_dust", "4x gtceu:lithium_chloride_dust")
         .duration(210)
         .EUt(960)
 
-    event.recipes.gtceu.electrolyzer("travinitic_acid_electrolysis")
-        .itemInputs("7x gtceu:travinitic_acid_dust")
+    event.recipes.gtceu.electrolyzer("trevinitic_acid_electrolysis")
+        .itemInputs("7x gtceu:trevinitic_acid_dust")
         .itemOutputs("gtceu:avisium_dust")
         .outputFluids("gtceu:hydrogen 2000", "gtceu:oxygen 4000")
         .duration(210)

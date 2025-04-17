@@ -117,7 +117,8 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         
     event.create("dionitase")
         .dust().ore()
-        .addOreByproducts('chromium')
+        // 'fechantium' may crash, remove if needed
+        .addOreByproducts('fechantium', 'tungstate')
         .color(0xb366ff)
         .components('1x fechantium', '2x oxygen')
         .oreSmeltInto('fechantium')
@@ -126,6 +127,8 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .dust().ore()
         .color(0x666600)
         .addOreByproducts('magnetite', 'chromite')
+
+    // Chemicals
 
 
 })
