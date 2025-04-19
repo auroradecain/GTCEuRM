@@ -25,17 +25,16 @@ ServerEvents.recipes(event =>{
 
     /** Vidium dust */
     event.recipes.gtceu.centrifuge('vidium_dust')
-        .itemInputs('15x gtceu:gabro_dust')
-        .itemOutputs('14x gtceu:stone_dust', '1x gtceu:vidium_dust')
+        .itemInputs('13x gtceu:gabro_dust')
+        .itemOutputs('10x gtceu:basalt_dust', '2x gtceu:granite_dust', '1x gtceu:vidium_dust')
         .duration(210)
         .EUt(30)
 
     /** Viadium dust */
-    event.recipes.gtceu.chemical_reactor('kubejs:viadium_dust_poor')
-        .itemInputs('5x gtceu:vidium_dust', 'gtceu:copper_dust')
-        .inputFluids('gtceu:hydrochloric_acid 2000')
-        .itemOutputs('1x gtceu:viadium_dust', '4x gtceu:copper_ii_hydroxide_dust')
-        .outputFluids('gtceu:diluted_hydrochloric_acid 2000')
+    event.recipes.gtceu.chemical_reactor('kubejs:viadium_from_copper')
+        .itemInputs('2x gtceu:vidium_dust', '3x gtceu:copper_dust')
+        .inputFluids('minecraft:water 3000')
+        .itemOutputs('1x gtceu:viadium_dust', '6x gtceu:copper_ii_hydroxide_dust')
         .duration(140)
         .EUt(30)
 
@@ -69,16 +68,6 @@ ServerEvents.recipes(event =>{
         .itemOutputs("6x gtceu:denisium_dust")
         .duration(216)
         .EUt(1920)
-
-
-    // Molybdenum disulfide
-    event.recipes.gtceu.chemical_reactor("kubejs:molybdenum_disulfide")
-        .itemInputs("8x gtceu:purified_molybdenite_ore", "8x gtceu:purified_pyrite_ore")
-        .inputFluids("gtceu:sulfuric_acid 2000")
-        .itemOutputs("8x gtceu:molybdenum_disulfide_dust", "8x gtceu:iron_dust")
-        .outputFluids("gtceu:diluted_sulfuric_acid 2000")
-        .duration(155)
-        .EUt(480)
 
     // Avisium line
     event.recipes.gtceu.chemical_bath("trevinitic_acid_from_travinite")

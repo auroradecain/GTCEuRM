@@ -45,10 +45,10 @@ GTCEuStartupEvents.materialModification(event=>{
  
     const mysticalTools = [
         ["inferium", [3.0, 2.5, 384, 2], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe, lv_drill]],
-        ["prudentium", [5.0,  3.5,  1024, 2], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe, mv_drill]],
-        ["tertium", [8.0,  5.5, 1920, 3], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe, mv_drill]],
-        ["imperium", [10.0,  8.0, 2304, 3], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe, hv_drill]],
-        ["supremium", [14.0, 10.5, 3072, 4], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe, ev_drill]]
+        ["prudentium", [5.0,  3.5,  1024, 2], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe,  lv_drill, mv_drill]],
+        ["tertium", [8.0,  5.5, 1920, 3], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe,  lv_drill, mv_drill]],
+        ["imperium", [10.0,  8.0, 2304, 3], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe,  lv_drill, mv_drill, hv_drill]],
+        ["supremium", [14.0, 10.5, 3072, 4], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe,  lv_drill, mv_drill, hv_drill, ev_drill]]
     ]
 
     for(const [id, props, types] of mysticalTools){
@@ -59,8 +59,7 @@ GTCEuStartupEvents.materialModification(event=>{
     GTMaterials.Zirconium.setMaterialARGB(0xe8e8e8)
     GTMaterials.Zirconium.addFlags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.GENERATE_RING, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_BOLT_SCREW)
 
-    // GTMaterials.Glowstone.setComponents('1x tricalcium_phosphate', '1x gold')
-    // GTMaterials.Glowstone.setFormula('AuCa3(PO4)2', true)
+    GTMaterials.Netherite.setFormula('(FeWO4)4Au4', true)
 
 
     // Gears for Thermal Expansion
@@ -70,9 +69,11 @@ GTCEuStartupEvents.materialModification(event=>{
 
     // GTCEu RM
     GTMaterials.get('copper_ii_hydroxide').setFormula('Cu(OH)2')
-
+    GTMaterials.get('aluminium_hydroxide').setFormula('Al(OH)3')
+    GTMaterials.get('silver_nitrate').setFormula('AgNO3', true)
+    GTMaterials.get('silver_nitrate_solution').setFormula('AgNO3(H2O)', true)
     // Arcoirium
-    GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)(Vd2O3(OH)2)')
+    //GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)(Vd2O3(OH)2)')
     GTMaterials.get('vidium').setFormula('Vd2O3(OH)2')
     GTMaterials.get('dioptase').setFormula('CuSiO2(OH)2')
     GTMaterials.get('torbenite').setFormula('Cu(UO2)2(PO4)2O5H4')

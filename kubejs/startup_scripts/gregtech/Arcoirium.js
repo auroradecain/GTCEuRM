@@ -1,13 +1,6 @@
 
 GTCEuStartupEvents.registry('gtceu:material', event =>{
 
-    event.create("gabro")
-        .dust()
-        .color(0x2f332d).iconSet('dull')
-        .components('2x iron', '1x silicon_dioxide', 'magnesium', '3x aluminium')
-        .flags(GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING)
-
-
     // Viadium + Viadium superconduit + Viadium Special Steel
     event.create("viadium")
         .ingot().fluid()
@@ -102,26 +95,32 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
 
 
     // Ores
-
+    
     event.create("vidium")
         .dust().ore()
-        .addOreByproducts('copper', 'iron')
+        .addOreByproducts("iron", "copper", "gallium")
+        .washedIn('sodium_persulfate', 100)
         .color(0xd89251)
         .components('2x viadium', '5x oxygen', '2x hydrogen')
-
+    
     event.create("tadanite_earth")
         .dust().ore()
-        .addOreByproducts('barite', 'clay')
+        .addOreByproducts('arsenic', 'rare_earth')
         .color(0x33334d)
-        .components('5x lithium', '2x fechantium', '2x oxygen', '3x fluorine', 'barite', '3x clay')
+        .components('2x fechantium', '2x oxygen', 'barite', '3x clay')
+    
+    event.create("gabro")
+        .dust()
+        .color(0x2f332d).iconSet('dull')
+        .components('7x basalt', '3x granite', '2x calcite', 'vidium')
+        .flags(GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING)
         
     event.create("dionitase")
         .dust().ore()
         // 'fechantium' may crash, remove if needed
-        .addOreByproducts('fechantium', 'tungstate')
+        .addOreByproducts('tungstate', 'chromite')
         .color(0xb366ff)
         .components('1x fechantium', '2x oxygen')
-        .oreSmeltInto('fechantium')
 
     event.create("trevinite")
         .dust().ore()

@@ -1,5 +1,7 @@
 JEIEvents.hideItems(event =>{
     
+    // GTCEu Bucket Clenaup
+    event.hide(/gtceu:.*_bucket/)
     // AE2 Cleanup
     event.hide(/ae2:facade/)
 

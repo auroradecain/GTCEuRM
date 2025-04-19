@@ -50,6 +50,9 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
             GTToolType.MINING_HAMMER,
             GTToolType.SPADE,
             GTToolType.SCYTHE,
+            GTToolType.DRILL_LV,
+            GTToolType.DRILL_MV,
+            GTToolType.DRILL_HV,
             GTToolType.DRILL_EV
         ]).enchantability(23).build())
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_ROD)
@@ -67,6 +70,10 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
             GTToolType.MINING_HAMMER,
             GTToolType.SPADE,
             GTToolType.SCYTHE,
+            GTToolType.DRILL_LV,
+            GTToolType.DRILL_MV,
+            GTToolType.DRILL_HV,
+            GTToolType.DRILL_EV,
             GTToolType.DRILL_IV
         ]).unbreakable().enchantability(31).magnetic().build())
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)

@@ -257,7 +257,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
                 .setMaxGlobalLimited(8)
                 .or(Predicates.blocks("kubejs:draconitium_fusion_casing"))
                 .or(Predicates.abilities(PartAbility.INPUT_ENERGY)
-                    .setMaxGlobalLimited(4)))
+                    .setMaxGlobalLimited(8)))
             .where('D', Predicates.abilities(PartAbility.IMPORT_FLUIDS)
                 .setMinGlobalLimited(4)
                 .setMaxGlobalLimited(8)

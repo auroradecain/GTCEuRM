@@ -17,6 +17,10 @@
 /.vscode/*
 !/.vscode/*.code-workspace
 
+# Config 
+/config
+/config/*
+
 # Probe js
 /kubejs/probe
 /kubejs/config/probejs.json
