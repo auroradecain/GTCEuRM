@@ -1,9 +1,103 @@
 ServerEvents.recipes(event=>{
 
+    // Disable EnderIO machinery
+    event.remove({ id: "enderio:primitive_alloy_smelter" })
+    event.remove({ id: "enderio:alloy_smelter" })
+    event.remove({ id: "enderio:sag_mill" })
+    event.remove({ id: "enderio:stirling_generator" })
+
+    // Capacitors
+    event.remove({ output: "enderio:basic_capacitor" })
+
+    const capacitorCores = [
+        ["#gtceu:circuits/ulv", 1],
+        ["gtceu:capacitor", 2],
+        ["gtceu:smd_capacitor", 3],
+        ["gtceu:advanced_smd_capacitor", 3 * 4],
+    ]
+
+    capacitorCores.forEach(core => {
+        event.shaped(`${core[1]}x enderio:basic_capacitor`, [
+            " N ",
+            "NCN",
+            "W W"
+        ], {
+            N: "#forge:ingots/electrical_steel",
+            C: core[0],
+            W: "gtceu:tin_single_wire"
+        }).id(`kubejs:basic_capacitor_${Item.of(core[0]).idLocation.path}`)
+    })
+    
+
+    // Fused Quartz
+    event.recipes.gtceu.alloy_smelter("kubejs:fused_quartz")
+        .itemInputs("3x minecraft:quartz")
+        .notConsumable("gtceu:block_casting_mold")
+        .itemOutputs("enderio:fused_quartz")
+        .duration(80)
+        .EUt(16)
+
+    // Clear Glass
+    event.recipes.gtceu.alloy_smelter("kubejs:clear_glass_soda_ash")
+        .itemInputs("minecraft:glass", "gtceu:tiny_soda_ash_dust")
+        .itemOutputs("enderio:clear_glass")
+        .duration(80)
+        .EUt(16)
+    event.recipes.gtceu.alloy_smelter("kubejs:clear_glass_quicklime")
+        .itemInputs("minecraft:glass", "gtceu:tiny_quicklime_dust")
+        .itemOutputs("enderio:clear_glass")
+        .duration(80)
+        .EUt(16)
+
+    // Enlightened fused quartz
+    event.recipes.gtceu.alloy_smelter("kubejs:enlightened_fused_quartz")
+        .itemInputs("#enderio:fused_quartz", "minecraft:glowstone")
+        .itemOutputs("enderio:fused_quartz_e")
+        .duration(160)
+        .EUt(16)
+
+    // dark fused quartz
+    event.recipes.gtceu.alloy_smelter("kubejs:dark_fused_quartz")
+        .itemInputs("#enderio:fused_quartz", "gtceu:black_quartz_gem")
+        .itemOutputs("enderio:fused_quartz_d")
+        .duration(200)
+        .EUt(30)
+
+    // Enlightened clear glass
+    event.recipes.gtceu.alloy_smelter("kubejs:enlightened_clear_glass")
+        .itemInputs("#enderio:clear_glass", "minecraft:glowstone")
+        .itemOutputs("enderio:clear_glass_e")
+        .duration(160)
+        .EUt(16)
+
+    // dark clear glass
+    event.recipes.gtceu.alloy_smelter("kubejs:dark_clear_glass")
+        .itemInputs("#enderio:clear_glass", "gtceu:black_quartz_gem")
+        .itemOutputs("enderio:clear_glass_d")
+        .duration(200)
+        .EUt(30)
+
+    // Glider Wing
+    event.replaceInput({ id: "enderio:glider_wing" }, "#forge:ingots/dark_steel", "#forge:nuggets/dark_steel")
+
+    // Staff of Traveling
+    event.replaceInput({ id: "enderio:staff_of_travelling" }, "#forge:ingots/dark_steel", "#forge:rods/dark_steel")
+    event.replaceInput({ id: "enderio:staff_of_travelling" }, "enderio:ender_crystal", "enderio:pulsating_crystal")
+
+    // Travel Anchor
+    event.replaceInput({ id: "enderio:travel_anchor" }, "enderio:conduit_binder", "#forge:plates/vibrant_alloy")
+    event.replaceInput({ id: "enderio:travel_anchor" }, "iron_ingot", "#forge:plates/dark_steel")
+    
+    // Clear tanks
+    event.shapeless("enderio:fluid_tank", ["enderio:fluid_tank"])
+    event.shapeless("enderio:pressurized_fluid_tank", ["enderio:pressurized_fluid_tank"])
+
+    // Material section
+
+    // Material remove & replace
     event.remove({id:/enderio:copper_alloy.*/})
-    event.replaceInput({mod: 'enderio'}, 'enderio:copper_alloy_ingot', 'gtceu:electrical_steel_ingot')
+    event.replaceInput({mod: 'enderio'}, 'enderio:copper_alloy_ingot', 'gtceu:pulsating_iron_ingot')
     event.replaceInput({mod: 'enderio'}, 'enderio:redstone_alloy_ingot', 'gtceu:red_alloy_ingot')
-    event.replaceInput({mod: 'enderio'}, 'enderio:copper_alloy_ingot', 'gtceu:electrical_steel_ingot')
     
     // Electrical Steel
     event.remove({id:'enderio:grindingball/copper_alloy_grinding_ball'})

@@ -3,7 +3,7 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
     
     event.create("zircon")
         .gem().ore()
-        .addOreByproducts('lead', 'silicon')
+        .addOreByproducts('lead', 'zirconium')
         .flags(GTMaterialFlags.HIGH_SIFTER_OUTPUT)
         .color(0xb32d00).iconSet(GTMaterialIconSet.FINE)
         .components('zirconium', 'silicon', '4x oxygen')

@@ -138,8 +138,11 @@
     "material.gtceu.svs_green": "SVS-G",
     "material.gtceu.svs_red": "SVS-R",
 
-    "material.gtceu.avisium" : "Avisium",
     "material.gtceu.ballistic_steel" : "Ballistic Steel",
+
+
+
+    "material.gtceu.avisium" : "Avisium",
     "material.gtceu.viadium" : "Viadium",
     "material.gtceu.sapatanium" : "Sapatanium",
     "material.gtceu.fechantium" : "Fechantium",

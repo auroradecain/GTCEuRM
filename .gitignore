@@ -18,8 +18,8 @@
 !/.vscode/*.code-workspace
 
 # Config 
-/config
-/config/*
+!/config/gtceu.yaml
+
 
 # Probe js
 /kubejs/probe

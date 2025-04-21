@@ -1,9 +1,8 @@
 {
   "modPriorities": [
-    "minecraft",
     "kubejs",
     "gtceu",
-    "nuclearcraft"
+    "minecraft"
   ],
   "stoneStrata": [
     "stone",
@@ -11,7 +10,8 @@
     "deepslate",
     "granite",
     "diorite",
-    "andesite"
+    "andesite",
+    "gabro"
   ],
   "tags": [
     "forge:nuggets/{material}",
@@ -30,6 +30,7 @@
   "materials": [
     "aeternium",
     "aluminum",
+    "aluminium",
     "amber",
     "apatite",
     "bitumen",
@@ -74,7 +75,39 @@
     "tin",
     "tungsten",
     "uranium",
-    "zinc"
+    "zinc",
+    "zircon",
+    "netherite",
+    "ruby",
+    "sapphire",
+    "tungsten",
+    "uranium",
+    "dark_steel",
+    "neutronium",
+    "certus_quartz",
+    "energetic_alloy",
+    "vibrant_alloy",
+    "pulsating_alloy",
+    "conductive_alloy",
+    "soularium",
+    "end_steel",
+    "fluix",
+    "nether_star",
+    "thorium",
+    "palladium",
+    "beryllium",
+    "stainless_steel",
+    "titanium",
+    "manganese",
+    "chromium",
+    "osmiridium",
+    "nichrome",
+    "quartz",
+    "nether_quartz",
+    "niobium",
+    "niobium_titanium",
+    "tungsten_carbide",
+    "yttrium"
   ],
   "priorityOverrides": {},
   "customTags": {},

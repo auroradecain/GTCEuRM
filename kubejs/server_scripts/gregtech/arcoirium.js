@@ -1,13 +1,5 @@
 ServerEvents.recipes(event =>{
 
-    /** Balistic Steel */
-    event.recipes.gtceu.mixer("gtceu:ballistic_steel_dust")
-        .itemInputs("#forge:dusts/steel", "#forge:dusts/bronze", "#forge:dusts/nickel")
-        .itemOutputs("2x gtceu:ballistic_steel_dust")
-        .circuit(2)
-        .duration(56)
-        .EUt(GTValues.VH[GTValues.LV]) 
-
     /** Gabro Dust */
     event.recipes.gtceu.macerator('gabro_dust')
         .itemInputs("kubejs:gabro")
