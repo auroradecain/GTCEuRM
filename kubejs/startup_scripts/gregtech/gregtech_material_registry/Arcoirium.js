@@ -23,7 +23,7 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .color(0xffb866).iconSet('metallic')
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_ROD)
         .blastTemp(1650, 'low', 480, 710)
-        .components('viadium', '2x chromium', 'manganese')
+        .components('viadium', '2x nickel', 'manganese')
         .cableProperties(128, 2, 0, true)
 
     // Sapatanium-Viadium Steel
@@ -31,22 +31,28 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .ingot().fluid()
         .color(0x602043).iconSet('dull')
         .blastTemp(1700, 'low', 480, 430)
-        .components('sapatanium', 'viadium', 'steel')
+        .components('2x sapatanium', 'viadium', 'steel')
     
-    event.create("svs_blue")
-        .ingot()
-        .color(0x3f2aa7).iconSet('metallic')
-        .components('3x molybdenum', 'cobalt', '2x sapatanium_viadium_steel')
+    event.create("svs_g")
+        .ingot().fluid()
+        .color(0x883a53).iconSet('metallic')
+        .components('3x sapatanium_viadium_steel', '2x chromium', 'gallium', 'silicon')
+        .blastTemp(3000, 'mid', 960, 1100)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_BOLT_SCREW, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SPRING)
 
-    event.create("svs_green")
-        .ingot()
-        .color(0x3f844d).iconSet('metallic')
-        .components('3x manganese', 'beryllium', '2x sapatanium_viadium_steel')
+    event.create("svs_l")
+        .ingot().fluid()
+        .color(0x603772).iconSet('metallic')
+        .components('5x svs_g', '3x molybdenum', 'cobalt')
+        .blastTemp(4200, 'high', 960, 1200)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_BOLT_SCREW, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SPRING)
 
-    event.create("svs_red")
-        .ingot()
-        .color(0x982a4d).iconSet('metallic')
-        .components('3x chromium', 'gallium', '2x sapatanium_viadium_steel')
+    event.create("svs_s")
+        .ingot().fluid()
+        .color(0x4e3295).iconSet('metallic')
+        .components('5x svs_g', '2x vanadium', 'titanium', 'zirconium')
+        .blastTemp(4200, 'high', 960, 1300)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_BOLT_SCREW, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SPRING)
 
     // Fechantium
     event.create("fechantium")
@@ -79,18 +85,18 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
     event.create("avisium")
         .ingot().fluid()
         .color(0xf8ed62).iconSet('metallic')
-        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_ROD)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_FINE_WIRE)
         .blastTemp(6300, 'high', 7680, 830)
         .element(GTElements.get("avisium"))
         .cableProperties(32768, 6, 0, true)
     
     // Queenium
     event.create("queenium")
-        .ingot().fluid()
+        .ingot().liquid(1843)
         .color(0xbfbfbf).iconSet(GTMaterialIconSet.BRIGHT)
         .element(GTElements.get("queenium"))
-        .flags(GTMaterialFlags.GENERATE_PLATE)
-        .blastTemp(6300, 'high', 7680, 1340)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FINE_WIRE)
+        // .blastTemp(6300, 'high', 7680, 1340)
         .cableProperties(131072, 6, 0, true)
 
 

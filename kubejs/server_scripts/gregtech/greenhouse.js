@@ -23,7 +23,7 @@ ServerEvents.recipes(event=>{
         }
 
         event.recipes.gtceu.greenhouse(`grow/${recipeID}`)
-            .chancedInput(InputItem.of(recipeInput), 9000, -750)
+            .chancedInput(InputItem.of(recipeInput), 8500, -450)
             .itemOutputs(recipeOutput)
             .inputFluids(fluid)
             .duration(468)
@@ -83,6 +83,7 @@ ServerEvents.recipes(event=>{
         ['ice', 'mysticalagriculture:ice_seeds', ['8x mysticalagriculture:ice_essence']],
         ['deepslate', 'mysticalagriculture:deepslate_seeds', ['8x mysticalagriculture:deepslate_essence']],
         ['nature', 'mysticalagriculture:nature_seeds', ['8x mysticalagriculture:nature_essence']],
+        ['sky_stone', 'mysticalagriculture:sky_stone_seeds', ['8x mysticalagriculture:sky_stone_essence']],
 
         // Dyes & Ores
         ['dye', 'mysticalagriculture:dye_seeds', ['8x mysticalagriculture:dye_essence']],
@@ -112,6 +113,7 @@ ServerEvents.recipes(event=>{
         ['zinc', 'mysticalagriculture:zinc_seeds', ['8x mysticalagriculture:zinc_essence']],
         ['fluix', 'mysticalagriculture:fluix_seeds', ['8x mysticalagriculture:fluix_essence']],
         ['nether', 'mysticalagriculture:nether_seeds', ['8x mysticalagriculture:nether_essence']],
+        ['nether_quartz', 'mysticalagriculture:nether_quartz_seeds', ['8x mysticalagriculture:nether_quartz_essence']],
         ['certus_quartz', 'mysticalagriculture:certus_quartz_seeds', ['8x mysticalagriculture:certus_quartz_essence']],
         ['end', 'mysticalagriculture:end_seeds', ['8x mysticalagriculture:end_essence']],
 

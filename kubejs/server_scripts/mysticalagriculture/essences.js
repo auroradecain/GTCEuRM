@@ -11,6 +11,7 @@ ServerEvents.recipes(event =>{
         ["dirt", ["stone", "earth"], [2, 1], 7],
         ["ice", ["stone", "water"], [1, 2], 7],
         ["deepslate", ["stone", "fire"], [4, 4], 24],
+        ["sky_stone", ["stone", "obsidian"], [4, 4], 24],
         ["nature", ["earth", "water"], [3, 4], 7],
         ["fish", ["cow", "water"], [3, 4], 24],
         ["squid", ["fish", "water"], [2, 3], 24],

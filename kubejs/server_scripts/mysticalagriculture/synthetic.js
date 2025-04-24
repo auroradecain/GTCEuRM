@@ -52,6 +52,8 @@ ServerEvents.recipes(event =>{
         ["fluid", "end/deuterium", "end", 1, "gtceu:deuterium", 2400, 90, GTValues.MV, 2],
         ["fluid", "end/helium", "end", 1, "gtceu:helium", 3600, 90, GTValues.MV, 3],
         ["fluid", "end/tritium", "end", 1, "gtceu:tritium", 500, 160, GTValues.EV, 4]
+        // Experience
+        ["fluid", "experience/xp_juice", "experience", 1, "enderio:xp_juice", 2000, 160, GTValues.HV, 1]
     ]
 
     for(const [type, id, inputEssence, amountRecipe, output, amountOutput, duration, voltage, circuit] of fluidEssence){
@@ -66,18 +68,21 @@ ServerEvents.recipes(event =>{
         ["solid", "earth/fullers", "earth", 8, "gtceu:raw_fullers_earth", 6, 70, GTValues.MV, 2],
         ["solid", "earth/lithium", "earth", 8, "gtceu:raw_lithium", 4, 90, GTValues.EV, 3],
         ["solid", "earth/asbestos", "earth", 8, "gtceu:raw_asbestos", 4, 90, GTValues.HV, 4],
-        ["solid", "earth/magnesite", "earth", 8, "gtceu:raw_magnesite", 4, 110, GTValues.HV, 5]
+        ["solid", "earth/magnesite", "earth", 8, "gtceu:raw_magnesite", 4, 110, GTValues.HV, 5],
         ["solid", "earth/calcite", "earth", 8, "gtceu:raw_calcite", 6, 110, GTValues.MV, 6],
         ["solid", "earth/tadanite_earth", "earth", 8, "gtceu:raw_tadanite_earth", 6, 130, GTValues.HV, 7],
     
         // Stone category
-        ["solid", "stone/stone", "stone", 4, "minecraft:stone", 48, 40, GTValues.MV, 1],
-        ["solid", "stone/granite", "stone", 4, "minecraft:granite", 16, 120, GTValues.MV, 2],
-        ["solid", "stone/diorite", "stone", 4, "minecraft:diorite", 16, 120, GTValues.MV, 3],
-        ["solid", "stone/andesite", "stone", 4, "minecraft:andesite", 16, 120, GTValues.MV, 4],
-        ["solid", "stone/gabro", "stone", 4, "kubejs:gabro", 16, 120, GTValues.HV, 5],
-        ["solid", "stone/marble", "stone", 4, "gtceu:marble", 16, 120, GTValues.HV, 6],
-        ["solid", "stone/red_granite", "stone", 4, "gtceu:red_granite", 16, 120, GTValues.HV, 7],
+        ["solid", "stone/stone", "stone", 1, "minecraft:stone", 48, 40, GTValues.LV, 1],
+        ["solid", "stone/granite", "stone", 1, "minecraft:granite", 16, 120, GTValues.HV, 2],
+        ["solid", "stone/diorite", "stone", 1, "minecraft:diorite", 16, 120, GTValues.HV, 3],
+        ["solid", "stone/andesite", "stone", 1, "minecraft:andesite", 16, 120, GTValues.HV, 4],
+        ["solid", "stone/gabro", "stone", 1, "kubejs:gabro", 16, 120, GTValues.HV, 5],
+        ["solid", "stone/marble", "stone", 1, "gtceu:marble", 16, 120, GTValues.HV, 6],
+        ["solid", "stone/red_granite", "stone", 1, "gtceu:red_granite", 16, 120, GTValues.EV, 7],
+
+        // Sky stone
+        ["solid", "sky_stone/sky_stone", "sky_stone", 1, "ae2:sky_stone_block", 8, 144, GTValues.MV, 1],
     
         // Dirt category
         ["solid", "dirt/dirt", "dirt", 4, "minecraft:dirt", 48, 80, GTValues.MV, 1],

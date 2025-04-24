@@ -1,7 +1,8 @@
 
 const $PropertyKey = Java.loadClass("com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey");
-const $IngotProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.IngotProperty')
+const $IngotProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.IngotProperty');
 const $ToolProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty');
+const $RotorProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.RotorProperty');
 
 GTCEuStartupEvents.materialModification(event=>{
     
@@ -73,6 +74,9 @@ GTCEuStartupEvents.materialModification(event=>{
     GTMaterials.get('silver_nitrate').setFormula('AgNO3', true)
     GTMaterials.get('silver_nitrate_solution').setFormula('AgNO3(H2O)', true)
     // Arcoirium
+    GTMaterials.get('svs_g').setProperty($PropertyKey.ROTOR, new $RotorProperty(190, 155, 4.5, 5000))
+    GTMaterials.get('svs_l').setProperty($PropertyKey.ROTOR, new $RotorProperty(240, 155, 7.0, 7680))
+    GTMaterials.get('svs_s').setProperty($PropertyKey.ROTOR, new $RotorProperty(210, 195, 6.0, 3800))
     //GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)(Vd2O3(OH)2)')
     GTMaterials.get('vidium').setFormula('Vd2O3(OH)2')
     GTMaterials.get('dioptase').setFormula('CuSiO2(OH)2')

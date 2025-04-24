@@ -4,6 +4,7 @@ JEIEvents.hideItems(event =>{
     event.hide(/enderio:copper_alloy.*/)
     event.hide(/enderio:clear_glass_.*_.*/)
     event.hide(/enderio:fused_quartz_.*_.*/)
+    event.hide('enderio:energy_conduit')
     // GTCEu Bucket Clenaup
     event.hide(/gtceu:.*_bucket/)
     // AE2 Cleanup

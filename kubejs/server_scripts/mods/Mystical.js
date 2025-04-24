@@ -185,7 +185,7 @@ ServerEvents.recipes(event =>{
     }).id('gtceu:shaped/zpm_agricultural_fabricator')
 
     event.shaped('gtceu:synthetic_fluid_rig', [
-        "PPP",
+        "pPp",
         "CMC",
         "RFE"
     ],{
@@ -193,8 +193,9 @@ ServerEvents.recipes(event =>{
         P: "gtceu:mv_electric_pump",
         C: "#gtceu:circuits/mv",
         R: "gtceu:mv_robot_arm",
-        F: "gtceu:mv_field_generator",
-        E: "gtceu:mv_emitter"
+        F: "gtceu:mv_fluid_regulator",
+        E: "gtceu:mv_emitter",
+        p: "gtceu:steel_normal_fluid_pipe"
     }).id('gtceu:shaped/synthetic_fluid_rig')
 
     event.shaped('gtceu:synthetic_solid_rig', [

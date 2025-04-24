@@ -2,7 +2,7 @@
 
 GTCEuServerEvents.oreVeins(event =>{
     event.add("overworld/emerald", vein => {
-        vein.weight(25)
+        vein.weight(40)
         vein.density(0.25)
         vein.clusterSize(30)
         vein.layer("deepslate")
@@ -22,7 +22,7 @@ GTCEuServerEvents.oreVeins(event =>{
     })
 
     event.add("overworld/quartz", vein => {
-        vein.weight(25)
+        vein.weight(60)
         vein.density(0.25)
         vein.clusterSize(25)
         vein.layer("stone")
@@ -42,7 +42,7 @@ GTCEuServerEvents.oreVeins(event =>{
     })
 
     event.add("overworld/dioptase", vein =>{
-        vein.weight(25)
+        vein.weight(60)
         vein.density(0.25)
         vein.clusterSize(30)
         vein.layer("stone")
@@ -51,15 +51,32 @@ GTCEuServerEvents.oreVeins(event =>{
         vein.layeredVeinGenerator(generator => generator
             .buildLayerPattern(pattern => pattern
                 .layer(l => l.weight(1).mat(GTMaterials.Malachite).size(1, 2))
-                .layer(l => l.weight(2).mat(GTMaterials.get("dioptase")).size(1, 2))
+                .layer(l => l.weight(3).mat(GTMaterials.get("dioptase")).size(1, 2))
                 .layer(l => l.weight(2).mat(GTMaterials.Hematite).size(1, 3))
                 .layer(l => l.weight(1).mat(GTMaterials.Malachite).size(1, 2))
             )
         )
     })
 
+    event.add("overworld/uraninite", vein =>{
+        vein.weight(40)
+        vein.density(0.20)
+        vein.clusterSize(40)
+        vein.layer("deepslate")
+        vein.dimensions("minecraft:overworld")
+        vein.heightRangeUniform(-50, -15)
+        vein.layeredVeinGenerator(generator => generator
+            .buildLayerPattern(pattern => pattern
+                .layer(l => l.weight(2).mat(GTMaterials.Pitchblende).size(1, 2))
+                .layer(l => l.weight(2).mat(GTMaterials.Thorium).size(1, 2))
+                .layer(l => l.weight(3).mat(GTMaterials.Uraninite).size(1, 3))
+                .layer(l => l.weight(1).mat(GTMaterials.Lead).size(1, 2))
+            )
+        )
+    })
+
     event.add("overworld/inferium", vein => {
-        vein.weight(25)
+        vein.weight(80)
         vein.density(0.25)
         vein.clusterSize(30)
         vein.layer("stone")
@@ -80,7 +97,7 @@ GTCEuServerEvents.oreVeins(event =>{
     })
 
     event.add("overworld/vidium", vein=>{
-        vein.weight(30)
+        vein.weight(40)
         vein.density(0.25)
         vein.clusterSize(30)
         vein.layer("stone")
@@ -100,17 +117,18 @@ GTCEuServerEvents.oreVeins(event =>{
     })
 
     event.add("nether/argentite", vein =>{
-        vein.weight(30)
+        vein.weight(60)
         vein.density(0.25)
         vein.clusterSize(30)
         vein.layer("netherrack")
         vein.dimensions("minecraft:the_nether")
-        vein.heightRangeUniform(95, 110)
+        vein.heightRangeUniform(90, 110)
         vein.layeredVeinGenerator(generator => generator
             .buildLayerPattern(pattern => pattern
-                .layer(l => l.weight(1).mat(GTMaterials.Pyrite).size(1, 2))
-                .layer(l => l.weight(2).mat(GTMaterials.get("argentite")).size(2, 3))
+                .layer(l => l.weight(1).mat(GTMaterials.Pyrite).size(2, 3))
+                .layer(l => l.weight(4).mat(GTMaterials.get("argentite")).size(2, 4))
                 .layer(l => l.weight(2).mat(GTMaterials.Sphalerite).size(1, 2))
+                .layer(l => l.weight(1).mat(GTMaterials.Sulfur).size(1, 2))
             )
         )
         vein.surfaceIndicatorGenerator(indicator => indicator
@@ -120,7 +138,7 @@ GTCEuServerEvents.oreVeins(event =>{
     })
 
     event.add("nether/torbenite", vein =>{
-        vein.weight(30)
+        vein.weight(40)
         vein.density(0.25)
         vein.clusterSize(30)
         vein.layer("netherrack")
@@ -136,7 +154,7 @@ GTCEuServerEvents.oreVeins(event =>{
     })
 
     event.add("nether/terraemantine", vein =>{
-        vein.weight(30)
+        vein.weight(80)
         vein.density(0.5)
         vein.clusterSize(15)
         vein.layer("netherrack")
@@ -144,9 +162,10 @@ GTCEuServerEvents.oreVeins(event =>{
         vein.heightRangeUniform(5, 20)
         vein.layeredVeinGenerator(generator => generator
             .buildLayerPattern(pattern => pattern
-                .layer(l => l.weight(2).mat(GTMaterials.TricalciumPhosphate).size(1, 2))
-                .layer(l => l.weight(3).mat(GTMaterials.get("terraemantine")).size(2, 3))
-                .layer(l => l.weight(1).mat(GTMaterials.Chalcopyrite).size(1, 2))
+                .layer(l => l.weight(1).mat(GTMaterials.TricalciumPhosphate).size(1, 2))
+                .layer(l => l.weight(2).mat(GTMaterials.get("terraemantine")).size(2, 3))
+                .layer(l => l.weight(2).mat(GTMaterials.get("terraemantine")).size(2, 3))
+                .layer(l => l.weight(3).mat(GTMaterials.Chalcopyrite).size(1, 3))
             )
         )
         vein.surfaceIndicatorGenerator(indicator => indicator

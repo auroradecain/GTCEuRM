@@ -3,8 +3,14 @@
     "tagprefix.gabro":"Gabro %s Ore",
 
     "gtceu.jei.ore_vein.overworld/emerald": "Emerald Vein (Overworld)",
+    "gtceu.jei.ore_vein.overworld/quartz": "Quartz Vein (Overworld)",
+    "gtceu.jei.ore_vein.overworld/dioptase": "Dioptase Vein",
+    "gtceu.jei.ore_vein.overworld/uraninite": "Uraninite Vein",
     "gtceu.jei.ore_vein.overworld/inferium": "Inferium Vein",
     "gtceu.jei.ore_vein.overworld/vidium": "Vidium Vein",
+    "gtceu.jei.ore_vein.nether/argentite": "Argentite Vein",
+    "gtceu.jei.ore_vein.nether/torbenite": "Torbenite Vein",
+    "gtceu.jei.ore_vein.nether/terraemantine": "Terraemantine Vein",
 
     
     "gtceu.greenhouse":"Greenhouse",
@@ -134,9 +140,9 @@
 
     "material.gtceu.cupric_viadium_semielement" : "Cupric Viadium Semielement",
     "material.gtceu.sapatanium_viadium_steel": "Sapatanium Viadium Steel",
-    "material.gtceu.svs_blue": "SVS-B",
-    "material.gtceu.svs_green": "SVS-G",
-    "material.gtceu.svs_red": "SVS-R",
+    "material.gtceu.svs_g": "SVS-G",
+    "material.gtceu.svs_l": "SVS-L",
+    "material.gtceu.svs_s": "SVS-S",
 
     "material.gtceu.ballistic_steel" : "Ballistic Steel",
 

@@ -1,7 +1,11 @@
 ServerEvents.recipes(event => {
 
-    /** ULV Recipies */
-
+    // Remove unimplemented ammunition
+    event.remove({id: 'lradd:ammo/fusion_cell'})
+    event.remove({id: 'lradd:ammo/2mm_ec'})
+    event.remove({id: 'lradd:ammo/flintlock_bullet'})
+    event.remove({id: 'lradd:ammo/m993'})
+    // Implemented Ammunition
     const casing = [
         "9mm",
         "45acp",
@@ -27,64 +31,104 @@ ServerEvents.recipes(event => {
         event.remove({id: `tacz:ammo/${casing}`})
     })
 
-    function createAmmo(ammo, light, mat, powder, circuit){
+    function createAmmo(ammo, light, mat, powder, circuit, outAmount){
         if(light==true){
-            event.recipes.gtceu.bender(`kubejs:${ammo}_casing`)
+            event.recipes.gtceu.bender(`kubejs:ammo/${ammo}_casing`)
                 .itemInputs(`4x gtceu:${mat}_foil`)
                 .itemOutputs(`kubejs:${ammo}_casing`)
                 .duration(80)
                 .EUt(GTValues.VH[GTValues.LV])
                 .circuit(circuit)
-            event.recipes.gtceu.packer(`kubejs:${ammo}`)
+            event.recipes.gtceu.packer(`kubejs:ammo/${ammo}`)
                 .itemInputs(`kubejs:${ammo}_casing`, `${powder}x gtceu:small_gunpowder_dust`)
-                .itemOutputs(Item.of("5x tacz:ammo", {AmmoId:`tacz:${ammo}`}))
+                .itemOutputs(Item.of(`${outAmount}x tacz:ammo`, {AmmoId:`tacz:${ammo}`}))
                 .duration(40)
                 .EUt(GTValues.VH[GTValues.LV])
         }
 
         if(light==false){
-            event.recipes.gtceu.bender(`kubejs:${ammo}_casing`)
+            event.recipes.gtceu.bender(`kubejs:ammo/${ammo}_casing`)
                 .itemInputs(`2x gtceu:${mat}_plate`)
                 .itemOutputs(`kubejs:${ammo}_casing`)
                 .duration(80)
                 .EUt(GTValues.VH[GTValues.LV])
                 .circuit(circuit)
-            event.recipes.gtceu.packer(`kubejs:${ammo}`)
+            event.recipes.gtceu.packer(`kubejs:ammo/${ammo}`)
                 .itemInputs(`kubejs:${ammo}_casing`, `${powder}x minecraft:gunpowder`)
-                .itemOutputs(Item.of("5x tacz:ammo", {AmmoId:`tacz:${ammo}`}))
+                .itemOutputs(Item.of(`${outAmount}x tacz:ammo`, {AmmoId:`tacz:${ammo}`}))
                 .duration(40)
                 .EUt(GTValues.VH[GTValues.LV])
         }
     }
 
-    createAmmo('9mm',true, 'copper', '1', 4)
-    createAmmo('45acp',true, 'copper', '1', 5)
-    createAmmo('357mag',true, 'ballistic_steel', '1', 4)
-    createAmmo('50ae',true, 'ballistic_steel', '1', 5)
+    const handAmmoCraft = [
+        ["iron", 5],
+        ["wrought_iron", 10],
+        ["steel", 15],
+        ["aluminium", 20]
+    ]
+
+    event.remove({id: 'lradd:ammo/nail'})
+    for(const [type, output] of handAmmoCraft){
+        event.shaped(Item.of(`${output}x tacz:ammo`, {AmmoId:'lradd:nail'}), [
+            'BA ',
+            'AC ',
+            '   '
+        ], {
+            A: `#forge:rods/${type}`,
+            B: '#forge:tools/hammers',
+            C: '#forge:tools/files'
+        }).damageIngredient(["#forge:tools/hammers", "#forge:tools/files"]).id(`kubejs:ammo/${type}_nails`)
+
+        event.recipes.gtceu.bender(`kubejs:ammo/${type}_nails`)
+            .itemInputs(`#forge:rods/${type}`)
+            .itemOutputs(Item.of(`${output}x tacz:ammo`, {AmmoId: 'lradd:nail'}))
+            .duration(80)
+            .EUt(16)
+            .circuit(2)
+    }
+
+    event.remove({id: 'lradd:ammo/arrow'})
+    event.shaped(Item.of('8x tacz:ammo', {AmmoId: 'lradd:arrow'}), [
+        ' CA',
+        ' AD',
+        'B  '
+    ], {
+        A: '#forge:rods/iron',
+        B: 'minecraft:feather',
+        C: '#forge:tools/hammers',
+        D: '#forge:tools/files'
+    }).damageIngredient(["#forge:tools/hammers", "#forge:tools/files"]).id('kubejs:ammo/arrow')
     
-    createAmmo('12g',false, 'brass', '1', 4)
-    createAmmo('338',false, 'brass', '2', 5)
-    createAmmo('308',false, 'brass', '2', 6)
-    createAmmo('30_06',false, 'copper', '1', 6)
-    createAmmo('57x28',false, 'copper', '2', 7)
-    createAmmo('40mm',false, 'steel', '8', 4)
-    createAmmo('58x42',false, 'ballistic_steel', '1', 6)
-    createAmmo('46x30',false, 'ballistic_steel', '1', 7)
-    createAmmo('68x51fury',false, 'ballistic_steel', '1', 9)
-    createAmmo('556x45',false, 'ballistic_steel', '1', 11)
-    createAmmo('762x25',false, 'invar', '1', 4)
-    createAmmo('762x39',false, 'invar', '1', 5)
-    createAmmo('762x54',false, 'invar', '1', 6)
-    createAmmo('50bmg',false, 'double_ballistic_steel', '1', 4)
+    createAmmo('9mm',true, 'copper', '1', 4, 15)
+    createAmmo('45acp',true, 'copper', '1', 5, 12)
+    createAmmo('357mag',true, 'ballistic_steel', '1', 4, 6)
+    createAmmo('50ae',true, 'ballistic_steel', '1', 5, 8)
+    
+    createAmmo('12g',false, 'brass', '1', 4, 8)
+    createAmmo('338',false, 'brass', '2', 5, 10)
+    createAmmo('308',false, 'brass', '2', 6, 10)
+    createAmmo('30_06',false, 'copper', '1', 6, 8)
+    createAmmo('57x28',false, 'copper', '2', 7, 6)
+    createAmmo('40mm',false, 'steel', '8', 4, 8)
+    createAmmo('58x42',false, 'ballistic_steel', '1', 6, 6)
+    createAmmo('46x30',false, 'ballistic_steel', '1', 7, 6)
+    createAmmo('68x51fury',false, 'ballistic_steel', '1', 9, 5)
+    createAmmo('556x45',false, 'ballistic_steel', '1', 11, 12)
+    createAmmo('762x25',false, 'invar', '1', 4, 10)
+    createAmmo('762x39',false, 'invar', '1', 5, 15)
+    createAmmo('762x54',false, 'invar', '1', 6, 12)
+    createAmmo('50bmg',false, 'double_ballistic_steel', '1', 4, 5)
 
     /** LV Recipies */
 
     
     /** MV Recipies */
-
-
+    
+    
     /** HV Recipies */
-
+    
+    event.remove({id: 'tacz:ammo/rpg_rocket'})
     event.recipes.gtceu.assembler("kubejs:ammo/rpg_rocket")
         .itemInputs("8x gtceu:double_ballistic_steel_plate", "12x gtceu:copper_foil", "4x gtceu:lead_ring", "4x gtceu:gelled_toluene")
         .inputFluids("gtceu:sulfuric_acid 150")
