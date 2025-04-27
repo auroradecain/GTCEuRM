@@ -1,0 +1,69 @@
+
+
+
+ServerEvents.recipes(event=>{
+
+    function cutter(log, isTag){
+        if(isTag == true){
+            event.recipes.gtceu.cutter(`${log}_planks`)
+                .itemInputs(`#${log}_logs`)
+                .itemOutputs(`6x ${log}_planks`, '2x gtceu:wood_dust')
+                .inputFluids('gtceu:lubricant 1')
+                .duration(200)
+                .EUt(7)
+            event.recipes.gtceu.cutter(`${log}_planks_distilled_water`)
+                .itemInputs(`#${log}_logs`)
+                .itemOutputs(`6x ${log}_planks`, '2x gtceu:wood_dust')
+                .inputFluids('gtceu:distilled_water 3')
+                .duration(300)
+                .EUt(7)
+            event.recipes.gtceu.cutter(`${log}_planks_water`)
+                .itemInputs(`#${log}_logs`)
+                .itemOutputs(`6x ${log}_planks`, '2x gtceu:wood_dust')
+                .inputFluids('minecraft:water 4')
+                .duration(400)
+                .EUt(7)
+        }else{
+            event.recipes.gtceu.cutter(`${log}_planks`)
+                .itemInputs(`${log}_log`)
+                .itemOutputs(`6x ${log}_planks`, '2x gtceu:wood_dust')
+                .inputFluids('gtceu:lubricant 1')
+                .duration(200)
+                .EUt(7)
+            event.recipes.gtceu.cutter(`${log}_planks_distilled_water`)
+                .itemInputs(`${log}_log`)
+                .itemOutputs(`6x ${log}_planks`, '2x gtceu:wood_dust')
+                .inputFluids('gtceu:distilled_water 3')
+                .duration(300)
+                .EUt(7)
+            event.recipes.gtceu.cutter(`${log}_planks_water`)
+                .itemInputs(`${log}_log`)
+                .itemOutputs(`6x ${log}_planks`, '2x gtceu:wood_dust')
+                .inputFluids('minecraft:water 4')
+                .duration(400)
+                .EUt(7)
+        }
+    }
+
+    cutter("regions_unexplored:alpha", false)
+    cutter("regions_unexplored:baobab", true)
+    cutter("regions_unexplored:blackwood", true)
+    cutter("regions_unexplored:brimwood", true)
+    cutter("regions_unexplored:cobalt", true)
+    cutter("regions_unexplored:cypress", true)
+    cutter("regions_unexplored:dead", true)
+    cutter("regions_unexplored:eucalyptus", true)
+    cutter("regions_unexplored:joshua", true)
+    cutter("regions_unexplored:kapok", true)
+    cutter("regions_unexplored:larch", true)
+    cutter("regions_unexplored:magnolia", true)
+    cutter("regions_unexplored:maple", true)
+    cutter("regions_unexplored:mauve", true)
+    cutter("regions_unexplored:palm", true)
+    cutter("regions_unexplored:pine", true)
+    cutter("regions_unexplored:redwood", true)
+    cutter("regions_unexplored:socotra", true)
+    cutter("regions_unexplored:willow", true)
+
+
+})

@@ -1,8 +1,12 @@
 
-const $PropertyKey = Java.loadClass("com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey");
-const $IngotProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.IngotProperty');
-const $ToolProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty');
-const $RotorProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.RotorProperty');
+const $PropertyKey = Java.loadClass("com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey")
+const $IngotProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.IngotProperty')
+const $ToolProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty')
+const $RotorProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.RotorProperty')
+const $FluidProperty = Java.loadClass("com.gregtechceu.gtceu.api.data.chemical.material.properties.FluidProperty")
+const $FluidStorageKeys = Java.loadClass("com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys")
+const $FluidAttributes = Java.loadClass('com.gregtechceu.gtceu.api.fluids.attribute.FluidAttributes')
+const $FluidBuilder = Java.loadClass("com.gregtechceu.gtceu.api.fluids.FluidBuilder");
 
 GTCEuStartupEvents.materialModification(event=>{
     
@@ -77,7 +81,6 @@ GTCEuStartupEvents.materialModification(event=>{
     GTMaterials.get('svs_g').setProperty($PropertyKey.ROTOR, new $RotorProperty(190, 155, 4.5, 5000))
     GTMaterials.get('svs_l').setProperty($PropertyKey.ROTOR, new $RotorProperty(240, 155, 7.0, 7680))
     GTMaterials.get('svs_s').setProperty($PropertyKey.ROTOR, new $RotorProperty(210, 195, 6.0, 3800))
-    //GTMaterials.get('gabro').setFormula('MgFe2Al3(SiO2)(Vd2O3(OH)2)')
     GTMaterials.get('vidium').setFormula('Vd2O3(OH)2')
     GTMaterials.get('dioptase').setFormula('CuSiO2(OH)2')
     GTMaterials.get('torbenite').setFormula('Cu(UO2)2(PO4)2O5H4')

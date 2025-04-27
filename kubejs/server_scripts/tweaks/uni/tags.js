@@ -12,5 +12,6 @@ ServerEvents.tags("item", event => {
     // NC
     event.remove("forge:ingots/aluminum", "nuclearcraft:aluminum_ingot")
     event.add("forge:ingots/aluminium", "nuclearcraft:aluminum_ingot")
-
+    // RU (wtf)
+    event.add("regions_unexplored:magnolia_logs", "#regions_unexplored:magnolia_logs_item")
 })
