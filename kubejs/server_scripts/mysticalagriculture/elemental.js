@@ -92,7 +92,7 @@ ServerEvents.recipes(event =>{
 
     // Draconic Matter Line
     event.recipes.gtceu.chemical_reactor('amniotic_fluid')
-        .itemInputs('8x minecraft:egg')
+        .itemInputs('16x minecraft:egg')
         .inputFluids('gtceu:bacteria 500', 'gtceu:sterilized_growth_medium 500')
         .outputFluids('gtceu:amniotic_fluid 1000')
         .duration(300)
@@ -108,8 +108,8 @@ ServerEvents.recipes(event =>{
         .cleanroom(CleanroomType.STERILE_CLEANROOM)
         
     event.recipes.gtceu.chemical_reactor('replicate_dragon')
-        .itemInputs('32x mysticalagriculture:enderman_essence')
-        .inputFluids('gtceu:altered_life_source 250', 'gtceu:argon 400', 'gtceu:xenon 300')
+        .itemInputs('32x mysticalagriculture:enderman_essence', '4x gtceu:stem_cells')
+        .inputFluids('gtceu:altered_life_source 250', 'gtceu:argon 400', 'gtceu:radon 300')
         .outputFluids('gtceu:replicated_living_dragon_fluid 400')
         .duration(180)
         .EUt(3840)

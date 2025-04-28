@@ -14,7 +14,7 @@ ServerEvents.recipes(event=>{
     }).id('gtceu:shaped/greenhouse')
 
 
-
+    // Boost function
     function boost(input, factor) {
         let boosted = [];
         input.forEach(element => {
@@ -70,19 +70,15 @@ ServerEvents.recipes(event=>{
      * @param {string} input Input item identifier
      * @param {string[]} output Base recipe output
      * @param {number} duration Recipe duration
-     * @param {string} fluidInput Fluid type special recipe input
-     * @param {string[]} special Output chanced item 
      */
-    function MysticalGreenhouse(input, output, duration){
+    function GrowMystical(input, output, duration){
         
         let specialOut = Item.of(Item.of(output[0]).getId(), 4)
-
         let fluidType =  'gtceu:mystical_hyperconcentrate'
-        let tickAmount = duration
 
         let boostedOutputs = boost(output, 3)
 
-        Greenhouse('mysticalagriculture', input, output, 'minecraft:water', tickAmount, 0)
+        Greenhouse('mysticalagriculture', input, output, 'minecraft:water', duration, 0)
         event.recipes.gtceu.greenhouse(`kubejs:${input}_special`)
             .circuit(3)
             .notConsumable(Item.of(`mysticalagriculture:${input}`))
@@ -91,18 +87,23 @@ ServerEvents.recipes(event=>{
             .chancedOutput(specialOut, 1500, 300)
             .chancedOutput(Item.of(`mysticalagriculture:${input}`), 1200, 250)
             .chancedOutput(Item.of('mysticalagriculture:fertilized_essence'), 750, 150)
-            .duration(tickAmount/2)
+            .duration(duration/2)
             .EUt(1920)
         event.recipes.gtceu.seed_growth(`kubejs:${input}`)
             .circuit(1)
             .chancedInput(Item.of(`mysticalagriculture:${input}`), 8500, -500)
             .inputFluids(Fluid.of('minecraft:water', 8000))
             .itemOutputs(output)
-            .duration(2*tickAmount)
+            .duration(2*duration)
             .EUt(4)
     }
     
-    function growVanilla(modID, inputBase, outputBase){
+    /**
+     * @param {string} modID Input item identifier
+     * @param {string} inputBase Base recipe input
+     * @param {string[]} outputBase Base recipe output
+     */
+    function GrowVanilla(modID, inputBase, outputBase){
 
         let mult = 4
         let tickAmount = 1200
@@ -155,7 +156,7 @@ ServerEvents.recipes(event=>{
         ['regions_unexplored', 'blackwood_sapling', ['32x regions_unexplored:blackwood_log', '8x regions_unexplored:blackwood_branch']],
         ['regions_unexplored', 'brimwood_sapling', ['32x regions_unexplored:brimwood_log']],
         ['regions_unexplored', 'cobalt_sapling', ['32x regions_unexplored:cobalt_log']],
-        ['regions_unexplored', 'cypress_sapling', ['32x regions_unexplored:cypress_log', '8x regions_unexplored:cypress_branch']],
+        ['regions_unexplored', 'cypress_sapling', ['64x regions_unexplored:cypress_log', '16x regions_unexplored:cypress_branch']],
         ['regions_unexplored', 'dead_pine_sapling', ['32x regions_unexplored:pine_log', '8x regions_unexplored:pine_branch']],
         ['regions_unexplored', 'dead_sapling', ['32x regions_unexplored:dead_log', '8x regions_unexplored:dead_branch']],
         ['regions_unexplored', 'eucalyptus_sapling', ['32x regions_unexplored:eucalyptus_log', '8x regions_unexplored:eucalyptus_branch']],
@@ -183,7 +184,7 @@ ServerEvents.recipes(event=>{
     ]
 
     for (const [mod, ins, outs] of growNormal){
-        growVanilla(mod, ins, outs)
+        GrowVanilla(mod, ins, outs)
     }
 
     const growMystical = [
@@ -274,7 +275,7 @@ ServerEvents.recipes(event=>{
 
 
     for(const [input, output] of growMystical){
-        MysticalGreenhouse(input, output, 1640)
+        GrowMystical(input, output, 1640)
     }
 
 })

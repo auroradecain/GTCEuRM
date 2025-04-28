@@ -45,6 +45,27 @@ ServerEvents.recipes(event=>{
         }
     }
 
+    event.remove({id:/regions_unexplored:.*_branch/})
+    event.recipes.gtceu.cutter('branch_to_sticks')
+        .itemInputs('#regions_unexplored:branches')
+        .itemOutputs('6x minecraft:stick', '1x gtceu:wood_dust')
+        .inputFluids('gtceu:lubricant 1')
+        .duration(100)
+        .EUt(7)
+    event.recipes.gtceu.cutter(`branch_to_sticks_distilled_water`)
+        .itemInputs('#regions_unexplored:branches')
+        .itemOutputs('6x minecraft:stick', '1x gtceu:wood_dust')
+        .inputFluids('gtceu:distilled_water 3')
+        .duration(200)
+        .EUt(7)
+    event.recipes.gtceu.cutter(`branch_to_sticks_water`)
+        .itemInputs('#regions_unexplored:branches')
+        .itemOutputs('6x minecraft:stick', '1x gtceu:wood_dust')
+        .inputFluids('minecraft:water 4')
+        .duration(150)
+        .EUt(7)
+
+
     cutter("regions_unexplored:alpha", false)
     cutter("regions_unexplored:baobab", true)
     cutter("regions_unexplored:blackwood", true)

@@ -22,8 +22,28 @@ StartupEvents.registry("item", event =>{
 
     for(const [id, disp] of casing){
         event.create(`${id}_casing`)
-            .texture(`kubejs:item/casing/${id}_casing`)
-            .displayName(`${disp} Casing`)
+            .texture(`kubejs:item/casing/${id}_ammo_package`)
+            .displayName(`Factory ${disp} Ammo Package`)
             .maxStackSize(24)
+    }
+
+    // Stabilized Elements
+    const biome_cores = [
+        ["forest", "#ce9f00"],
+        ["ocean", "#a33f20"],
+        ["desert", "#486d7b"],
+        ["beach", "#ba2727"],
+        ["hills", "#1d891d"],
+        ["nether", "#58307f"],
+        ["end", "#7d0222"],
+        ["plains", "#287869"],
+        ["meadow", "#443936"]
+    ]
+
+    for (const [element, elemColor] of biome_cores) {
+        event.create(`${element}_biome_core`)
+            .textureJson({ layer0: "kubejs:item/prediction" })
+            .color(0, elemColor)
+            .glow(true);
     }
 })

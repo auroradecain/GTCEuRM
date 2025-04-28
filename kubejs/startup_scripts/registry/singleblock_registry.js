@@ -10,10 +10,10 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event =>{
     event.create("seed_growth")
         .category("agricultural")
         .setEUIO("in")
-        .setMaxIOSize(2, 3, 1, 1)
+        .setMaxIOSize(2, 6, 1, 0)
         .setSlotOverlay(false, false, GuiTextures.EXTRACTOR_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_RECYCLER, FillDirection.LEFT_TO_RIGHT)
-        .setSound(GTSoundEntries.CHEMICAL)
+        .setSound(GTSoundEntries.BATH)
 
     // event.create("weapon_factory")
         // .category("ballistic")

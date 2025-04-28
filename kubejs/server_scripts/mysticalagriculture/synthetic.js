@@ -206,7 +206,7 @@ ServerEvents.recipes(event =>{
         ["solid", "diamond", "diamond", 16, "gtceu:raw_diamond", 4, 80, GTValues.HV, 1],
         ["solid", "emerald", "emerald", 16, "gtceu:raw_emerald", 4, 80, GTValues.HV, 1],
         ["solid", "platinum", "platinum", 8, "gtceu:raw_platinum", 4, 80, GTValues.EV, 1],
-        ["solid", "netherite", "netherite", 64, "gtceu:smalll_netherite_dust", 2, 310, GTValues.EV, 1]
+        ["solid", "netherite", "netherite", 32, "gtceu:small_netherite_dust", 2, 310, GTValues.EV, 1]
     ]
 
     for(const [type, id, inputEssence, amountRecipe, output, amountOutput, duration, voltage, circuit] of solidEssence){
