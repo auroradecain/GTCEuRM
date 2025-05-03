@@ -119,7 +119,7 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .dust()
         .color(0x2f332d).iconSet('dull')
         .components('7x basalt', '3x granite', '2x calcite', 'vidium')
-        .flags(GTMaterialFlags.DECOMPOSITION_BY_ELECTROLYZING)
+        .flags(GTMaterialFlags.DECOMPOSITION_BY_CENTRIFUGING)
         
     event.create("dionitase")
         .dust().ore()

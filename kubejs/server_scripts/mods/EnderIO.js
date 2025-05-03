@@ -177,4 +177,13 @@ ServerEvents.recipes(event =>{
         .itemOutputs("4x enderio:endsteel_conduit")
         .duration(80)
         .EUt(GTValues.VH[GTValues.LV])
+
+    // Misc.
+    event.remove({id:'enderio:photovoltaic_composite'})
+    event.shapeless('2x enderio:photovoltaic_composite', ['#forge:dusts/lapis', '#forge:dusts/coal', '#forge:dusts/silicon'])
+    event.recipes.gtceu.alloy_smelter('kubejs:photovoltaic_plate')
+        .itemInputs('3x enderio:photovoltaic_composite', 'gtceu:wrought_iron_plate')
+        .itemOutputs('enderio:photovoltaic_plate')
+        .duration(120)
+        .EUt(7)
 })

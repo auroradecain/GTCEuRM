@@ -1,5 +1,18 @@
 ServerEvents.recipes(event=>{
     
+    // Dust block from sand
+    event.recipes.gtceu.forge_hammer("dust_block_from_sand_block")
+        .itemInputs("#minecraft:smelts_to_glass")
+        .itemOutputs("kubejs:dust")
+        .duration(10)
+        .EUt(16)
+    // Dust to clay
+    event.recipes.gtceu.chemical_reactor("clay_from_dust_block")
+        .itemInputs("kubejs:dust")
+        .inputFluids("minecraft:water 1000")
+        .itemOutputs("minecraft:clay")
+        .duration(200)
+        .EUt(24)
     // Clay to clay ball
     event.shapeless("4x minecraft:clay_ball", ["minecraft:clay"])
 
@@ -25,7 +38,6 @@ ServerEvents.recipes(event=>{
         .duration(200)
         .EUt(30)
         .circuit(3)
-
     event.recipes.gtceu.centrifuge("oilsands_to_light_oil")
         .itemInputs("gtceu:oilsands_dust")
         .chancedOutput("minecraft:sand", 5000, 5000)
@@ -33,7 +45,6 @@ ServerEvents.recipes(event=>{
         .duration(200)
         .EUt(30)
         .circuit(4)
-
     event.recipes.gtceu.centrifuge("oilsands_to_heavy_oil")
         .itemInputs("gtceu:oilsands_dust")
         .chancedOutput("minecraft:sand", 5000, 5000)
@@ -41,7 +52,6 @@ ServerEvents.recipes(event=>{
         .duration(200)
         .EUt(30)
         .circuit(2)
-
     event.recipes.gtceu.centrifuge("oilsands_to_raw_oil")
         .itemInputs("gtceu:oilsands_dust")
         .chancedOutput("minecraft:sand", 5000, 5000)
@@ -76,7 +86,6 @@ ServerEvents.recipes(event=>{
         .outputFluids("enderio:xp_juice 250")
         .duration(400)
         .EUt(2)
-
     event.recipes.gtceu.canner("xp_bottling")
         .itemInputs("minecraft:glass_bottle")
         .inputFluids("enderio:xp_juice 250")

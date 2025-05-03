@@ -15,13 +15,6 @@ ServerEvents.recipes(event =>{
         .duration(16)
         .EUt(7)
 
-    // Vidium dust 
-    event.recipes.gtceu.centrifuge('vidium_dust')
-        .itemInputs('13x gtceu:gabro_dust')
-        .itemOutputs('10x gtceu:basalt_dust', '2x gtceu:granite_dust', '1x gtceu:vidium_dust')
-        .duration(210)
-        .EUt(30)
-
     // Viadium dust
     event.recipes.gtceu.chemical_reactor('kubejs:viadium_from_copper')
         .itemInputs('2x gtceu:vidium_dust', '3x gtceu:copper_dust')

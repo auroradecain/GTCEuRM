@@ -22,7 +22,8 @@ StartupEvents.registry("block", event =>{
     const casings = [
       "supremium",
       "draconitium",
-      "draconitium_fusion"
+      "draconitium_fusion",
+      "astronomical"
     ]
 
     casings.forEach(casing =>{

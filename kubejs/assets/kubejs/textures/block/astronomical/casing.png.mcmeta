@@ -1,0 +1,5 @@
+{
+    "ldlib": {
+        "connection": "kubejs:block/astronomical/casing_ctm"
+    }
+}

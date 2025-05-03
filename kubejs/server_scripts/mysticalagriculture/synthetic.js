@@ -51,7 +51,7 @@ ServerEvents.recipes(event =>{
         ["fluid", "end/nitrogen_dioxide", "end", 1, "gtceu:nitrogen_dioxide", 7000, 70, GTValues.MV, 1],
         ["fluid", "end/deuterium", "end", 1, "gtceu:deuterium", 2400, 90, GTValues.MV, 2],
         ["fluid", "end/helium", "end", 1, "gtceu:helium", 3600, 90, GTValues.MV, 3],
-        ["fluid", "end/tritium", "end", 1, "gtceu:tritium", 500, 160, GTValues.EV, 4]
+        ["fluid", "end/tritium", "end", 1, "gtceu:tritium", 500, 160, GTValues.EV, 4],
         // Experience
         ["fluid", "experience/xp_juice", "experience", 1, "enderio:xp_juice", 2000, 160, GTValues.HV, 1]
     ]
@@ -71,7 +71,6 @@ ServerEvents.recipes(event =>{
         ["solid", "earth/magnesite", "earth", 8, "gtceu:raw_magnesite", 4, 110, GTValues.HV, 5],
         ["solid", "earth/calcite", "earth", 8, "gtceu:raw_calcite", 6, 110, GTValues.MV, 6],
         ["solid", "earth/tadanite_earth", "earth", 8, "gtceu:raw_tadanite_earth", 6, 130, GTValues.HV, 7],
-    
         // Stone category
         ["solid", "stone/stone", "stone", 1, "minecraft:stone", 48, 40, GTValues.LV, 1],
         ["solid", "stone/granite", "stone", 1, "minecraft:granite", 16, 120, GTValues.HV, 2],
@@ -80,27 +79,22 @@ ServerEvents.recipes(event =>{
         ["solid", "stone/gabro", "stone", 1, "kubejs:gabro", 16, 120, GTValues.HV, 5],
         ["solid", "stone/marble", "stone", 1, "gtceu:marble", 16, 120, GTValues.HV, 6],
         ["solid", "stone/red_granite", "stone", 1, "gtceu:red_granite", 16, 120, GTValues.EV, 7],
-
         // Sky stone
         ["solid", "sky_stone/sky_stone", "sky_stone", 1, "ae2:sky_stone_block", 8, 144, GTValues.MV, 1],
-    
         // Dirt category
         ["solid", "dirt/dirt", "dirt", 4, "minecraft:dirt", 48, 80, GTValues.MV, 1],
         ["solid", "dirt/clay", "dirt", 4, "minecraft:clay", 16, 80, GTValues.MV, 2],
         ["solid", "dirt/sand", "dirt", 4, "minecraft:sand", 24, 80, GTValues.MV, 3],
         ["solid", "dirt/podzel", "dirt", 4, "minecraft:podzel", 24, 80, GTValues.MV, 4],
         ["solid", "dirt/mycelium", "dirt", 4, "minecraft:mycelium", 24, 80, GTValues.MV, 5],
-    
         // Ice category
         ["solid", "ice/ice", "ice", 4, "minecraft:ice", 24, 80, GTValues.MV, 1],
         ["solid", "ice/snow", "ice", 4, "minecraft:snow", 32, 80, GTValues.MV, 2],
         ["solid", "ice/packed_ice", "ice", 8, "minecraft:packed_ice", 16, 80, GTValues.MV, 3],
-    
         // Deepslate category
         ["solid", "deepslate/deepslate", "deepslate", 4, "minecraft:deepslate", 16, 80, GTValues.HV, 1],
         ["solid", "deepslate/basalt", "deepslate", 4, "minecraft:basalt", 16, 80, GTValues.HV, 2],
         ["solid", "deepslate/blackstone", "deepslate", 4, "minecraft:blackstone", 16, 80, GTValues.HV, 3],
-    
         // Nature category
         ["solid", "nature/oak_sapling", "nature", 4, "minecraft:oak_sapling", 8, 80, GTValues.MV, 1],
         ["solid", "nature/birch_sapling", "nature", 4, "minecraft:birch_sapling", 8, 80, GTValues.MV, 2],
@@ -111,7 +105,6 @@ ServerEvents.recipes(event =>{
         ["solid", "nature/cactus", "nature", 4, "minecraft:cactus", 16, 80, GTValues.MV, 7],
         ["solid", "nature/bamboo", "nature", 4, "minecraft:bamboo", 12, 80, GTValues.MV, 8],
         ["solid", "nature/lily_pad", "nature", 4, "minecraft:lily_pad", 6, 80, GTValues.MV, 9],
-    
         // Dye category
         ["solid", "dye/white", "dye", 3, "gtceu:chemical_white_dye", 8, 80, GTValues.MV, 1],
         ["solid", "dye/black", "dye", 3, "gtceu:chemical_black_dye", 8, 80, GTValues.MV, 2],
@@ -129,13 +122,11 @@ ServerEvents.recipes(event =>{
         ["solid", "dye/cyan", "dye", 3, "gtceu:chemical_cyan_dye", 8, 80, GTValues.MV, 14],
         ["solid", "dye/gray", "dye", 3, "gtceu:chemical_gray_dye", 8, 80, GTValues.MV, 15],
         ["solid", "dye/light_gray", "dye", 3, "gtceu:chemical_light_gray_dye", 8, 80, GTValues.MV, 16],
-    
         // Miscellaneous solids
         ["solid", "rubber", "rubber", 4, "gtceu:sticky_resin", 6, 80, GTValues.MV, 1],
         ["solid", "glowstone", "glowstone", 8, "minecraft:glowstone_dust", 24, 80, GTValues.MV, 1],
         ["solid", "obsidian", "obsidian", 8, "minecraft:obsidian", 12, 80, GTValues.MV, 1],
         ["solid", "fluix", "fluix", 4, "gtceu:fluix_gem", 8, 80, GTValues.MV, 1],
-
         // Basic materials
         ["solid", "coal", "coal", 8, "gtceu:raw_coal", 6, 80, GTValues.MV, 1],
         ["solid", "amethyst", "amethyst", 8, "gtceu:raw_amethyst", 4, 80, GTValues.MV, 1],
@@ -143,70 +134,80 @@ ServerEvents.recipes(event =>{
         ["solid", "aluminium", "aluminum", 8, "gtceu:raw_bauxite", 4, 80, GTValues.MV, 1],
         ["solid", "saltpeter", "saltpeter", 8, "gtceu:raw_saltpeter", 6, 80, GTValues.MV, 1],
         ["solid", "apatite", "apatite", 8, "gtceu:raw_apatite", 4, 80, GTValues.MV, 1],
-
         // Iron variants
         ["solid", "iron/iron", "iron", 8, "minecraft:raw_iron", 4, 80, GTValues.MV, 1],
         ["solid", "iron/goethite", "iron", 8, "gtceu:raw_goethite", 6, 80, GTValues.MV, 2],
         ["solid", "iron/magnetite", "iron", 8, "gtceu:raw_magnetite", 6, 80, GTValues.MV, 3],
         ["solid", "iron/pyrite", "iron", 8, "gtceu:raw_pyrite", 6, 80, GTValues.MV, 4],
-
         // Copper variants
         ["solid", "copper/copper", "copper", 8, "minecraft:raw_copper", 4, 80, GTValues.MV, 1],
         ["solid", "copper/tetrahedrite", "copper", 8, "gtceu:raw_tetrahedrite", 6, 80, GTValues.MV, 2],
         ["solid", "copper/malachite", "copper", 8, "gtceu:raw_malachite", 6, 80, GTValues.MV, 3],
         ["solid", "copper/chalcopyrite", "copper", 8, "gtceu:raw_chalcopyrite", 6, 80, GTValues.MV, 4],
-
         // Quartz
         ["solid", "nether_quartz", "nether_quartz", 8, "gtceu:raw_nether_quartz", 6, 80, GTValues.MV, 1],
-
         // Tin variants
         ["solid", "tin/tin", "tin", 8, "gtceu:raw_tin", 4, 80, GTValues.MV, 1],
         ["solid", "tin/cassiterite", "tin", 8, "gtceu:raw_cassiterite", 6, 80, GTValues.MV, 2],
         ["solid", "tin/cassiterite_sand", "tin", 8, "gtceu:raw_cassiterite_sand", 6, 80, GTValues.MV, 3],
-
         // Other metals
         ["solid", "zinc", "zinc", 8, "gtceu:raw_sphalerite", 4, 80, GTValues.MV, 1],
         ["solid", "silver", "silver", 8, "gtceu:raw_silver", 4, 80, GTValues.MV, 1],
-
+        ["solid", "barium", "barium", 8, "gtceu:raw_barite", 4, 80, GTValues.MV, 1],
+        ["solid", "tantalum", "tantalum", 8, "gtceu:raw_tantalite", 4, 80, GTValues.MV, 1],
+        ["solid", "manganese", "manganese", 4, "gtceu:raw_pyrolusite", 8, 80, GTValues.MV, 1],
+        ["solid", "niobium", "niobium", 4, "gtceu:raw_pyrochlore", 8, 80, GTValues.MV, 1],
+        ["solid", "antimony", "antimony", 4, "gtceu:raw_stibnite", 8, 80, GTValues.MV, 1],
+        ["solid", "vidium", "vidium", 8, "gtceu:raw_vidium", 4, 80, GTValues.MV, 1],
+        // Topaz
+        ["solid", "topaz/topaz", "topaz", 8, "gtceu:raw_topaz", 4, 80, GTValues.MV, 1],
+        ["solid", "topaz/blue_topaz", "topaz", 8, "gtceu:raw_blue_topaz", 4, 80, GTValues.MV, 2],
+        // Garnet
+        ["solid", "garnet/sand", "garnet", 8, "gtceu:raw_garnet_sand", 6, 80, GTValues.MV, 1],
+        ["solid", "garnet/red", "garnet", 8, "gtceu:raw_red_garnet", 6, 80, GTValues.MV, 2],
+        ["solid", "garnet/yellow", "garnet", 8, "gtceu:raw_yellow_garnet", 6, 80, GTValues.MV, 3],
         // Lead variants
         ["solid", "lead/lead", "lead", 8, "gtceu:raw_lead", 4, 80, GTValues.MV, 1],
         ["solid", "lead/galena", "lead", 8, "gtceu:raw_galena", 6, 80, GTValues.MV, 2],
-
+        // Molybdenum
+        ["solid", "molybdenum/molybdenum", "molybdenum", 8, "gtceu:raw_molybdenum", 4, 80, GTValues.MV, 1],
+        ["solid", "molybdenum/molybdenite", "molybdenum", 8, "gtceu:raw_molybdenite", 6, 80, GTValues.MV, 2],
+        // Salts
+        ["solid", "salt/salt", "salts", 8, "gtceu:raw_salt", 6, 80, GTValues.MV, 1],
+        ["solid", "salt/rock_salt", "salts", 8, "gtceu:raw_rock_salt", 6, 80, GTValues.MV, 2],
+        ["solid", "salt/lepidolite", "salts", 8, "gtceu:raw_lepidolite", 6, 80, GTValues.MV, 3],
         // Special materials
+        ["solid", "oilsands", "oilsands", 8, "gtceu:raw_oilsands", 4, 80, GTValues.MV, 1],
         ["solid", "graphite", "graphite", 8, "gtceu:raw_graphite", 4, 80, GTValues.MV, 1],
         ["solid", "certus_quartz", "certus_quartz", 8, "gtceu:raw_certus_quartz", 6, 80, GTValues.MV, 1],
         ["solid", "gold", "gold", 8, "minecraft:raw_gold", 4, 80, GTValues.MV, 1],
         ["solid", "redstone", "redstone", 8, "gtceu:raw_redstone", 6, 80, GTValues.MV, 1],
         ["solid", "ruby", "ruby", 8, "gtceu:raw_ruby", 4, 80, GTValues.MV, 1],
-
         // Lapis variants
         ["solid", "lapis_lazuli/lapis", "lapis_lazuli", 8, "gtceu:raw_lapis", 6, 80, GTValues.MV, 1],
         ["solid", "lapis_lazuli/lazurite", "lapis_lazuli", 8, "gtceu:raw_lazurite", 6, 80, GTValues.MV, 2],
         ["solid", "lapis_lazuli/sodalite", "lapis_lazuli", 8, "gtceu:raw_sodalite", 6, 80, GTValues.MV, 3],
-
         // Nickel variants
         ["solid", "nickel/nickel", "nickel", 8, "gtceu:raw_nickel", 4, 80, GTValues.MV, 1],
         ["solid", "nickel/garnierite", "nickel", 8, "gtceu:raw_garnierite", 6, 80, GTValues.MV, 2],
         ["solid", "nickel/pentlandite", "nickel", 8, "gtceu:raw_pentlandite", 6, 80, GTValues.MV, 3],
-
         // Tungsten variants (EV tier)
         ["solid", "tungsten/tungstate", "tungsten", 8, "gtceu:raw_tungstate", 4, 80, GTValues.EV, 1],
         ["solid", "tungsten/scheelite", "tungsten", 8, "gtceu:raw_scheelite", 4, 80, GTValues.EV, 2],
-
         // Advanced materials (EV tier)
         ["solid", "titanium", "titanium", 8, "gtceu:raw_ilmenite", 4, 80, GTValues.EV, 1],
         ["solid", "uranium", "uranium", 8, "gtceu:raw_uraninite", 4, 80, GTValues.EV, 1],
         ["solid", "chrome", "chrome", 8, "gtceu:raw_chromite", 4, 80, GTValues.EV, 1],
-
         // Sapphire variants
         ["solid", "sapphire/sapphire", "sapphire", 8, "gtceu:raw_sapphire", 6, 80, GTValues.MV, 1],
         ["solid", "sapphire/green_sapphire", "sapphire", 8, "gtceu:raw_green_sapphire", 6, 80, GTValues.MV, 2],
-
         // High-tier materials
         ["solid", "diamond", "diamond", 16, "gtceu:raw_diamond", 4, 80, GTValues.HV, 1],
         ["solid", "emerald", "emerald", 16, "gtceu:raw_emerald", 4, 80, GTValues.HV, 1],
         ["solid", "platinum", "platinum", 8, "gtceu:raw_platinum", 4, 80, GTValues.EV, 1],
-        ["solid", "netherite", "netherite", 32, "gtceu:small_netherite_dust", 2, 310, GTValues.EV, 1]
+        ["solid", "netherite", "netherite", 32, "gtceu:small_netherite_dust", 2, 310, GTValues.EV, 1],
+        ["solid", "naquadah", "naquadah", 16, "gtceu:raw_naquadah", 4, 290, GTValues.EV, 1],
+        ["solid", "avisium", "avisium", 8, "gtceu:raw_trevinite", 4, 290, GTValues.EV, 1]
     ]
 
     for(const [type, id, inputEssence, amountRecipe, output, amountOutput, duration, voltage, circuit] of solidEssence){

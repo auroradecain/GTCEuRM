@@ -12,6 +12,11 @@ ItemEvents.tooltip(tooltip => {
     tooltip.add('enderio:vibrant_conduit', Text.translatable('item.enderio.vibrant_conduit.desc'))
     tooltip.add('enderio:endsteel_conduit', Text.translatable('item.enderio.endsteel_conduit.desc'))
 
+    tooltip.addAdvanced('gtceu:elemental_turbine', (item, adv, text)=>{
+        text.add(1, Text.translatable('block.gtceu.elemental_turbine.desc1'))
+        text.add(2, Text.translatable('block.gtceu.elemental_turbine.desc2'))
+    })
+
     // Custom materials
     tooltip.add('gtceu:viadium_ingot', Text.of('This time the faggot crushed').color(0xe2bbfd))
     tooltip.add('gtceu:sapatanium_ingot', Text.of('Big shoe crazy, Lord!').color(0xffdfba))

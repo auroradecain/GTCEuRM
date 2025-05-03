@@ -237,6 +237,7 @@ ServerEvents.recipes(event=>{
         ['nether_quartz_seeds', ['8x mysticalagriculture:nether_quartz_essence']],
         ['certus_quartz_seeds', ['8x mysticalagriculture:certus_quartz_essence']],
         ['end_seeds', ['8x mysticalagriculture:end_essence']],
+        ['oilsands_seeds', ['8x mysticalagriculture:oilsands_essence']],
 
         // Mobs & Special
         ['experience_seeds', ['8x mysticalagriculture:experience_essence']],
@@ -269,7 +270,20 @@ ServerEvents.recipes(event=>{
         ['chrome_seeds', ['8x mysticalagriculture:chrome_essence']],
         ['ruby_seeds', ['8x mysticalagriculture:ruby_essence']],
         ['sapphire_seeds', ['8x mysticalagriculture:sapphire_essence']],
-        ['platinum_seeds', ['8x mysticalagriculture:platinum_essence']]
+        ['platinum_seeds', ['8x mysticalagriculture:platinum_essence']],
+        ['barium_seeds', ['8x mysticalagriculture:barium_essence']],
+        ['topaz_seeds', ['8x mysticalagriculture:topaz_essence']],
+        ['naquadah_seeds', ['8x mysticalagriculture:naquadah_essence']],
+        ['tantalum_seeds', ['8x mysticalagriculture:tantalum_essence']],
+        ['garnet_seeds', ['8x mysticalagriculture:garnet_essence']],
+        ['molybdenum_seeds', ['8x mysticalagriculture:molybdenum_essence']],
+        ['manganese_seeds', ['8x mysticalagriculture:manganese_essence']],
+        ['salts_seeds', ['8x mysticalagriculture:salts_essence']],
+        ['life_seeds', ['8x mysticalagriculture:life_essence']],
+        ['niobium_seeds', ['8x mysticalagriculture:niobium_essence']],
+        ['antimony_seeds', ['8x mysticalagriculture:antimony_essence']],
+        ['avisium_seeds', ['8x mysticalagriculture:avisium_essence']],
+        ['vidium_seeds', ['8x mysticalagriculture:vidium_essence']]
 
     ]
 

@@ -18,9 +18,8 @@ ServerEvents.recipes(event =>{
         .EUt(2)
     
     // Tier 1
-    event.recipes.gtceu.autoclave('kubejs:solar/components/2')
+    event.recipes.gtceu.alloy_smelter('kubejs:solar/components/2')
         .itemInputs('3x gtceu:lapis_plate', '3x solarflux:mirror')
-        .inputFluids('gtceu:glass 72')
         .itemOutputs('3x solarflux:photovoltaic_cell_1')
         .duration(80)
         .EUt(24)
