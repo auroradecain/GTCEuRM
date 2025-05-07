@@ -185,41 +185,39 @@ ServerEvents.recipes(event =>{
     }).id('gtceu:shaped/zpm_agricultural_fabricator')
 
     event.shaped('gtceu:synthetic_fluid_rig', [
-        "pPp",
-        "CMC",
-        "RFE"
+        "BDB",
+        "CAC",
+        "ECE"
     ],{
-        M: "gtceu:mv_pump",
-        P: "gtceu:mv_electric_pump",
+        A: "gtceu:mv_machine_hull",
+        B: "gtceu:mv_electric_pump",
         C: "#gtceu:circuits/mv",
-        R: "gtceu:mv_robot_arm",
-        F: "gtceu:mv_fluid_regulator",
-        E: "gtceu:mv_emitter",
-        p: "gtceu:steel_normal_fluid_pipe"
+        D: "gtceu:mv_robot_arm",
+        E: "gtceu:steel_normal_fluid_pipe"
     }).id('gtceu:shaped/synthetic_fluid_rig')
 
     event.shaped('gtceu:synthetic_solid_rig', [
-        "SCS",
-        "RMR",
-        "QQQ"
+        "CBC",
+        "BDB",
+        "EBE"
     ],{
-        S: "gtceu:mv_sensor",
-        C: "#gtceu:circuits/mv",
-        R: "gtceu:mv_robot_arm",
-        M: "gtceu:mv_miner",
-        Q: "gtceu:annealed_copper_quadruple_cable"
+        A: "gtceu:mv_sensor",
+        B: "#gtceu:circuits/mv",
+        C: "gtceu:mv_robot_arm",
+        D: "gtceu:mv_machine_hull",
+        E: "gtceu:annealed_copper_quadruple_cable"
     }).id('gtceu:shaped/synthetic_solid_rig')
 
     event.shaped('gtceu:synthetic_lifeform_simulator', [
-        "SCE",
-        "THT",
-        "EFS"
+        "CEC",
+        "BAD",
+        "CFC"
     ],{
-        H: "gtceu:mv_machine_hull",
-        S: "gtceu:mv_sensor",
+        A: "gtceu:mv_machine_hull",
+        B: "gtceu:mv_sensor",
         C: "#gtceu:circuits/mv",
-        E: "gtceu:lv_emitter",
-        T: "gtceu:tempered_glass",
+        D: "gtceu:mv_emitter",
+        E: "gtceu:tempered_glass",
         F: "gtceu:lv_field_generator"
     }).id('gtceu:shaped/synthetic_lifeform_simulator')
 

@@ -55,7 +55,7 @@ ServerEvents.recipes(event=>{
                     .inputFluids(Fluid.of(fluidType, 12000))
                     .itemOutputs(output)
                     .duration(duration)
-                    .EUt(80)
+                    .EUt(54)
                 event.recipes.gtceu.greenhouse(`kubejs:${input}_boosted`)
                     .circuit(2)
                     .notConsumable(InputItem.of(Item.of(`${mod}:${input}`)))
@@ -63,7 +63,7 @@ ServerEvents.recipes(event=>{
                     .inputFluids(Fluid.of(fluidType, 8000))
                     .itemOutputs(boostedOutputs)
                     .duration(3*duration/4)
-                    .EUt(80)
+                    .EUt(54)
     }
 
     /**
@@ -82,20 +82,20 @@ ServerEvents.recipes(event=>{
         event.recipes.gtceu.greenhouse(`kubejs:${input}_special`)
             .circuit(3)
             .notConsumable(Item.of(`mysticalagriculture:${input}`))
-            .inputFluids(Fluid.of(fluidType, 200))
+            .inputFluids(Fluid.of(fluidType, 80))
             .itemOutputs(boostedOutputs)
             .chancedOutput(specialOut, 1500, 300)
             .chancedOutput(Item.of(`mysticalagriculture:${input}`), 1200, 250)
             .chancedOutput(Item.of('mysticalagriculture:fertilized_essence'), 750, 150)
             .duration(duration/2)
-            .EUt(1920)
+            .EUt(960)
         event.recipes.gtceu.seed_growth(`kubejs:${input}`)
             .circuit(1)
             .chancedInput(Item.of(`mysticalagriculture:${input}`), 8500, -500)
-            .inputFluids(Fluid.of('minecraft:water', 8000))
+            .inputFluids(Fluid.of('minecraft:water', 6000))
             .itemOutputs(output)
-            .duration(2*duration)
-            .EUt(4)
+            .duration(3*duration/2)
+            .EUt(20)
     }
     
     /**
@@ -106,7 +106,7 @@ ServerEvents.recipes(event=>{
     function GrowVanilla(modID, inputBase, outputBase){
 
         let mult = 4
-        let tickAmount = 1200
+        let tickAmount = 1000
         let water = 'minecraft:water'
         let curOutput = Item.of(outputBase[0])
         let curItem = `${modID}:${inputBase}`
@@ -122,7 +122,7 @@ ServerEvents.recipes(event=>{
             .itemOutputs(outputBase)
             .inputFluids(Fluid.of(water, 6000))
             .duration(3*tickAmount/2)
-            .EUt(16)
+            .EUt(20)
 
     }
     
