@@ -17,7 +17,7 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .ingot().fluid()
         .ore(2, 3, true) 
         .color(0x758d01).iconSet("metallic")
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_GEAR)
 
     
     event.create(`prudentium`)

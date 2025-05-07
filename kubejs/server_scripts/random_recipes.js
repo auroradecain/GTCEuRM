@@ -69,6 +69,25 @@ ServerEvents.recipes(event=>{
         .duration(50)
         .EUt(120)
 
+    // Beetroot to seeds
+    event.recipes.gtceu.macerator("beetroot_seeds_from_beetroot")
+        .itemInputs("minecraft:beetroot")
+        .itemOutputs("minecraft:beetroot_seeds")
+        .duration(200)
+        .EUt(2)
+    // Wheat to flour + seeds
+    event.remove({id: 'gtceu:macerator/macerate_wheat'})
+    event.recipes.gtceu.macerator("macerate_wheat")
+        .itemInputs("minecraft:wheat")
+        .itemOutputs("minecraft:wheat_seeds")
+        .duration(98)
+        .EUt(2)
+    event.recipes.gtceu.forge_hammer("wheat_to_flour")
+        .itemInputs("minecraft:wheat")
+        .itemOutputs("gtceu:wheat_dust")
+        .duration(48)
+        .EUt(2)
+
     // Fix ilmenite -> rutile stoich
     event.remove({id:"gtceu:electric_blast_furnace/rutile_from_ilmenite"})
     event.recipes.gtceu.electric_blast_furnace("rutile_from_ilmenite")

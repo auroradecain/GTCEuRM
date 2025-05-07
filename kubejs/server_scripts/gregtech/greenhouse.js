@@ -1,14 +1,14 @@
 ServerEvents.recipes(event=>{
 
     event.shaped('gtceu:greenhouse', [
-        "ABA",
-        "CDC",
-        "EFE"
+        "BFE",
+        "ADA",
+        "CAC"
     ],{
         A: "#gtceu:circuits/mv",
-        B: "gtceu:mv_sensor",
+        B: "gtceu:mv_robot_arm",
         C: "gtceu:copper_double_cable",
-        D: "gtceu:mv_hydroponic_unit",
+        D: "gtceu:mv_machine_hull",
         E: "gtceu:mv_electric_pump",
         F: "gtceu:aluminium_drum"
     }).id('gtceu:shaped/greenhouse')
@@ -52,7 +52,7 @@ ServerEvents.recipes(event=>{
                 event.recipes.gtceu.greenhouse(`kubejs:${input}`)
                     .circuit(1)
                     .notConsumable(InputItem.of(Item.of(`${mod}:${input}`)))
-                    .inputFluids(Fluid.of(fluidType, 16000))
+                    .inputFluids(Fluid.of(fluidType, 12000))
                     .itemOutputs(output)
                     .duration(duration)
                     .EUt(80)
@@ -60,7 +60,7 @@ ServerEvents.recipes(event=>{
                     .circuit(2)
                     .notConsumable(InputItem.of(Item.of(`${mod}:${input}`)))
                     .itemInputs("1x gtceu:fertilizer")
-                    .inputFluids(Fluid.of(fluidType, 12000))
+                    .inputFluids(Fluid.of(fluidType, 8000))
                     .itemOutputs(boostedOutputs)
                     .duration(3*duration/4)
                     .EUt(80)
@@ -120,9 +120,9 @@ ServerEvents.recipes(event=>{
             .circuit(1)
             .itemInputs(`${modID}:${inputBase}`)
             .itemOutputs(outputBase)
-            .inputFluids(Fluid.of(water, 4000))
-            .duration(2*tickAmount)
-            .EUt(4)
+            .inputFluids(Fluid.of(water, 6000))
+            .duration(3*tickAmount/2)
+            .EUt(16)
 
     }
     
@@ -146,7 +146,9 @@ ServerEvents.recipes(event=>{
         ['minecraft', 'sweet_berries', ['32x minecraft:sweet_berries']],
         ['minecraft', 'sugar_cane', ['32x minecraft:sugar_cane']],
         ['minecraft', 'cactus', ['32x minecraft:cactus']],
-        ['minecraft', 'bamboo', ['32x minecraft:bamboo']],
+        ['minecraft', 'wheat_seeds', ['32x minecraft:wheat']],
+        ['minecraft', 'pumpkin_seeds', ['24x minecraft:pumpkin']],
+        ['minecraft', 'melon_seeds', ['24x minecraft:melon']],
 
         ['regions_unexplored', 'alpha_sapling', ['32x regions_unexplored:alpha_log', 'minecraft:apple']],
         ['regions_unexplored', 'apple_oak_sapling', ['32x minecraft:oak_log', '8x minecraft:apple']],
