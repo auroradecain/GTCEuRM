@@ -289,9 +289,28 @@ ServerEvents.recipes(event=>{
 
     ]
 
-
     for(const [input, output] of growMystical){
         GrowMystical(input, output, 1640)
+    }
+
+    function GrowFlower(modID, inputBase, outputBase){
+    
+        Greenhouse(modID, inputBase, outputBase, 'minecraft:water', 640, 0)
+        event.recipes.gtceu.seed_growth(`${modID}_${inputBase}`)
+            .circuit(1)
+            .itemInputs(`${modID}:${inputBase}`)
+            .itemOutputs(outputBase)
+            .inputFluids(Fluid.of(water, 6000))
+            .duration(3*tickAmount/2)
+            .EUt(20)
+    }
+
+    const flowers = [
+        ['minecraft', 'sunflower', ['32x minecraft:sunflower']]
+    ]
+
+    for(const [mod, input, output] of flowers){
+        GrowFlower(mod, input, output)
     }
 
 })

@@ -19,6 +19,14 @@ ServerEvents.recipes(event=>{
     // Chipped tinker's table
     event.replaceInput({ id: "chipped:benches/mechanist_workbench" }, "minecraft:tnt", "#forge:chests")
 
+    // Sunflower to seed oil
+    event.remove({id:'gtceu:extractor/sunflower_dye'})
+    event.recipes.gtceu.extractor("sunflower_to_seed_oil")
+        .itemInputs("minecraft:sunflower")
+        .outputFluids("gtceu:seed_oil 30")
+        .duration(32)
+        .EUt(2)
+
     // Lava from Magma
     event.recipes.gtceu.chemical_reactor("lava_from_magma")
         .itemInputs("minecraft:magma_block")
