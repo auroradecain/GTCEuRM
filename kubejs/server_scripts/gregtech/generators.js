@@ -14,7 +14,7 @@ ServerEvents.recipes(event =>{
         .outputFluids("gtceu:glycerol 1000", "gtceu:bio_diesel 6000")
         .duration(600)
         .EUt(30)
-    event.recipes.gtceu.chemical_reactor("kubejs:bio_diesel_from_seed_oil_ethanol")
+    event.recipes.gtceu.chemical_reactor("kubejs:bio_diesel_from_seed_oil_methanol")
         .itemInputs("#forge:tiny_dusts/sodium_hydroxide")
         .inputFluids("gtceu:seed_oil 4000", "gtceu:methanol 1000")
         .outputFluids("gtceu:glycerol 1000", "gtceu:bio_diesel 6000")

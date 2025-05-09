@@ -300,8 +300,8 @@ ServerEvents.recipes(event=>{
             .circuit(1)
             .itemInputs(`${modID}:${inputBase}`)
             .itemOutputs(outputBase)
-            .inputFluids(Fluid.of(water, 6000))
-            .duration(3*tickAmount/2)
+            .inputFluids(Fluid.of('minecraft:water', 6000))
+            .duration(3*640/2)
             .EUt(20)
     }
 
