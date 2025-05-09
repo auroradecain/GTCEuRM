@@ -23,7 +23,7 @@ ServerEvents.recipes(event=>{
     event.remove({id:'gtceu:extractor/sunflower_dye'})
     event.recipes.gtceu.extractor("sunflower_to_seed_oil")
         .itemInputs("minecraft:sunflower")
-        .outputFluids("gtceu:seed_oil 30")
+        .outputFluids("gtceu:seed_oil 20")
         .duration(32)
         .EUt(2)
 
@@ -31,8 +31,8 @@ ServerEvents.recipes(event=>{
     event.recipes.gtceu.chemical_reactor("lava_from_magma")
         .itemInputs("minecraft:magma_block")
         .outputFluids(Fluid.of("minecraft:lava", 1000))
-        .EUt(32)
         .duration(120)
+        .EUt(16)
 
     // Slime ball from plant ball
     event.smelting("2x minecraft:slime_ball", "gtceu:plant_ball")
@@ -75,7 +75,7 @@ ServerEvents.recipes(event=>{
         .itemOutputs("3x gtceu:sodium_hydroxide_dust")
         .outputFluids("gtceu:hydrogen 1000")
         .duration(50)
-        .EUt(120)
+        .EUt(100)
 
     // Beetroot to seeds
     event.recipes.gtceu.macerator("beetroot_seeds_from_beetroot")
