@@ -23,7 +23,8 @@ StartupEvents.registry("block", event =>{
       "supremium",
       "draconitium",
       "draconitium_fusion",
-      "astronomical"
+      "astronomical",
+      "aluminium_antenna"
     ]
 
     casings.forEach(casing =>{

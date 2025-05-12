@@ -22,6 +22,8 @@
     "gtceu.elemental_generator":"Elemental Turbine",
     "gtceu.crystal_matrix":"Critical Point Crystal Matrix",
     "gtceu.draconitium_energy":"Draconitium Collider",
+    "gtceu.data_collection":"Data Collection",
+    "gtceu.data_extraction":"Data Extraction",
 
     "block.gtceu.mv_agricultural_fabricator":"§bAdvanced Agricultural Fabricator",
     "block.gtceu.hv_agricultural_fabricator":"§6Advanced Agricultural Fabricator II",
@@ -43,9 +45,13 @@
     "block.gtceu.elemental_turbine":"§9Large Elemental Turbine",
     "block.gtceu.critical_point_crystal_matrix":"§9Critical Point Crystal Matrix",
     "block.gtceu.draconitium_collider":"§cDraconitium Collider",
+    "block.gtceu.basic_antenna_controller":"Antenna Controller MK I",
+    "block.gtceu.basic_simulation_unit":"Simulation Unit MK I",
 
     "block.gtceu.elemental_turbine.desc1":"§eBase Production: §f4096 EU/t",
     "block.gtceu.elemental_turbine.desc2":"Each Rotor Holder above §5EV§r §7adds§r 10% efficiency and multiplies EU/t by 2.",
+    
+    "block.gtceu.large_pyrolyse_oven":"Large Pyrolyse Oven",
 
     "material.gtceu.gabro" : "Gabro",
 

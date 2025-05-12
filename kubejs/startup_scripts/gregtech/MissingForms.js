@@ -66,8 +66,8 @@ GTCEuStartupEvents.materialModification(event=>{
 
     GTMaterials.Netherite.setFormula('(FeWO4)4Au4', true)
 
-
-    // Gears for Thermal Expansion
+    GTMaterials.Iron.addFlags(GTMaterialFlags.GENERATE_FRAME)
+    GTMaterials.Copper.addFlags(GTMaterialFlags.GENERATE_FRAME)
     GTMaterials.Copper.addFlags(GTMaterialFlags.GENERATE_GEAR)
 
     // Fixes incorrect formulae

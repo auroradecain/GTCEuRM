@@ -1,0 +1,5 @@
+{
+    "ldlib": {
+        "connection": "kubejs:block/machine_casing_aluminium_antenna_ctm"
+    }
+}

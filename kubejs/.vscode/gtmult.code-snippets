@@ -1,0 +1,33 @@
+{
+	// Place your KubeJS workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Greg Multiblock": {
+		"scope": "javascript,typescript",
+		"prefix": "gtmult",
+		"body": [
+			"event.create('$1', 'multiblock')",
+				".rotationState(RotationState.NON_Y_AXIS)",
+				".recipeTypes('')",
+				".recipeModifiers([])",
+				".appearanceBlock()",
+				".pattern(definition => FactoryBlockPattern.start()",
+					".aisle('CCC', 'CCC', 'CCC')",
+					".aisle('CCC', 'C C', 'CCC')",
+					".aisle('CCC', 'C%C', 'CCC')",
+					".where('%', Predicates.controller(Predicates.blocks(definition.get())))",
+					".where('C', Predicates.blocks(GTBlocks.CASING_STEEL_SOLID.get()).setMinGlobalLimited(6)",
+						".or(Predicates.autoAbilities(definition.getRecipeTypes()))",
+						".or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))",
+						".or(Predicates.abilities(PartAbility.MAINTENANCE).setMaxGlobalLimited(1)))",
+					".where(' ', Predicates.air())",
+					".build())",
+				".workableCasingRenderer('', '', false)"
+		],
+		"description": "Generate Multiblock"
+	}
+}

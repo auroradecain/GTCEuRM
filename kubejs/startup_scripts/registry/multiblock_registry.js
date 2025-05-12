@@ -8,6 +8,8 @@
 const LargeTurbineMachine = Java.loadClass("com.gregtechceu.gtceu.common.machine.multiblock.generator.LargeTurbineMachine")
 const FusionReactorMachine = Java.loadClass("com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine")
 const WorkableElectricMultiblockMachine = Java.loadClass("com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine")
+const CoilWorkableElectricMultiblockMachine = Java.loadClass("com.gregtechceu.gtceu.api.machine.multiblock.CoilWorkableElectricMultiblockMachine")
+
 
 
 GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
@@ -53,7 +55,8 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
         .setEUIO('out')
         .setMaxIOSize(0, 0, 1, 1)
         .setSlotOverlay(false, false, GuiTextures.TURBINE_OVERLAY)
-        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
+        .setSlotOverlay(false, true, true,GuiTextures.DARK_CANISTER_OVERLAY)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_GAS_COLLECTOR, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.TURBINE)
 
     event.create('crystal_matrix')
@@ -71,16 +74,35 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
         .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.JET_ENGINE)
+
+    event.create('data_collection')
+        .category('multiblock')
+        .setEUIO('in')
+        .setMaxIOSize(9, 6, 3, 0)
+        .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.COMPUTATION)
+
+    event.create('data_extraction')
+        .category('multiblock')
+        .setEUIO('in')
+        .setMaxIOSize(3, 9, 3, 6)
+        .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+        .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.COMPUTATION)
+
 })
 
 GTCEuStartupEvents.registry('gtceu:machine', event=>{
 
-    // Mystical Agriculture
-    // Synthetic Fluid Rig
+    GTRecipeTypes.get("data_collection").addDataInfo((data) => ("Transmission Tier: " + data.getByte("transmission_tier")));   // todo: get Text.translatable to work
+
+    // Synthetic Trio
     event.create('synthetic_fluid_rig', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes('synthetic_fluid')
-        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
+        .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
         .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
         .pattern(definition => FactoryBlockPattern.start()
             .aisle("AAA", "#F#", "#F#", "#F#", "###", "###", "###")
@@ -98,11 +120,10 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
             .build())
         .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel", "gtceu:block/multiblock/large_chemical_reactor", false)
 
-    // Synthetic Solid Rig
     event.create('synthetic_solid_rig', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes('synthetic_solid')
-        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
+        .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
         .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
         .pattern(definition => FactoryBlockPattern.start()
             .aisle('BBB', '#F#', "#F#", "#F#", "###", "###", "###")
@@ -120,11 +141,10 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
             .build())
         .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel", "gtceu:block/multiblock/large_miner", false)
 
-    // Synthetic Lifeform Simulator
     event.create('synthetic_lifeform_simulator', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes('synthetic_lifeform')
-        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
+        .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
         .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
         .pattern(definition => FactoryBlockPattern.start()
             .aisle('CCC', 'CCC', 'CCC')
@@ -143,7 +163,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
     event.create('greenhouse', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes(['greenhouse', 'seed_growth'])
-        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
+        .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
         .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
         .pattern(definition => FactoryBlockPattern.start()
             .aisle('DDDDD', 'DDDDD', 'GGGGG', 'GGGGG', '#GGG#')
@@ -167,7 +187,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
             .build())
         .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel", "gtceu:block/multiblock/greenhouse", false)
  
-    // It works!
+    // Elemental Turbine
     event.create('elemental_turbine', 'multiblock')
         .machine((holder) => new LargeTurbineMachine(holder, GTValues.EV))
         .rotationState(RotationState.NON_Y_AXIS)
@@ -190,7 +210,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
             .where('E', Predicates.blocks(GTBlocks.CASING_STAINLESS_STEEL_GEARBOX.get()))
             .where(' ', Predicates.air())
             .build())
-        .workableCasingRenderer("kubejs:block/supremium/supremium_casing", "gtceu:block/multiblock/distillation_tower", false)
+        .workableCasingRenderer("kubejs:block/supremium/supremium_casing", "gtceu:block/multiblock/generator/large_gas_turbine", false)
 
     event.create('critical_point_crystal_matrix', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
@@ -276,4 +296,81 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
             .where(' ', Predicates.air())
             .build())
         .workableCasingRenderer("kubejs:block/fusion/draconitium_fusion_casing", "gtceu:block/multiblock/fusion_reactor", false)
+
+    event.create('large_pyrolyse_oven', 'multiblock')
+        .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder)) 
+        .rotationState(RotationState.ALL)
+        .recipeTypes(GTRecipeTypes.PYROLYSE_RECIPES)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, (machine, recipe) => GTRecipeModifiers.pyrolyseOvenOverclock(machine, recipe)])
+        .appearanceBlock(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING)
+        .pattern(definition => FactoryBlockPattern.start()
+            .aisle('AAAAA', 'AAAAA', 'AAAAA', 'AAAAA', 'AAAAA')
+            .aisle('#CCC#', 'C   C', 'C   C', 'C   C', '#CCC#')
+            .aisle('#BBB#', 'B   B', 'B   B', 'B   B', '#BBB#')
+            .aisle('#CCC#', 'C   C', 'C   C', 'C   C', '#CCC#')
+            .aisle('#BBB#', 'B   B', 'B   B', 'B   B', '#BBB#')
+            .aisle('#CCC#', 'C   C', 'C   C', 'C   C', '#CCC#')
+            .aisle('AAAAA', 'AAAAA', 'AA@AA', 'AAAAA', 'AAAAA')
+            .where('@', Predicates.controller(Predicates.blocks(definition.get())))
+            .where('A', Predicates.blocks(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING.get())
+                .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                .or(Predicates.abilities(PartAbility.MAINTENANCE).setMaxGlobalLimited(1))
+                .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
+            .where('B', Predicates.blocks(GCYMBlocks.HEAT_VENT.get()))
+            .where('C', Predicates.heatingCoils())
+            .where('#', Predicates.any())
+            .where(' ', Predicates.air())
+            .build())
+        .workableCasingRenderer("gtceu:block/casings/gcym/high_temperature_smelting_casing", "gtceu:block/multiblock/fluid_drilling_rig", false)
+
+    let getTransmissionRecipeModifiers = tier => [
+        GTRecipeModifiers.OC_NON_PERFECT,
+        (machine, recipe) => recipe.data.getLong("transmission_tier") > tier ?
+            ModifierFunction.NULL : ModifierFunction.IDENTITY
+    ]
+
+    event.create('basic_antenna_controller', 'multiblock')
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeTypes('data_collection')
+        .recipeModifiers(getTransmissionRecipeModifiers(1))
+        .appearanceBlock(() => Block.getBlock("kubejs:aluminium_antenna_casing"))
+        .pattern(definition => FactoryBlockPattern.start()
+            .aisle('##AAA##', '##AAA##', '###A###', '#######', '       ', '       ', 'D D D D')
+            .aisle('#AAAAA#', '#A   A#', '##   ##', '## A ##', '       ', '       ', 'D D D D')
+            .aisle('#AAAAA#', '#A B A#', '#A B A#', '##ABA##', '   B   ', 'CCCCCCC', 'D D D D')
+            .aisle('#AAAAA#', '#A   A#', '##   ##', '## A ##', '       ', '       ', 'D D D D')
+            .aisle('##AAA##', '##A@A##', '###A###', '#######', '       ', '       ', 'D D D D')
+            .where('@', Predicates.controller(Predicates.blocks(definition.get())))
+            .where('A', Predicates.blocks("kubejs:aluminium_antenna_casing").setMinGlobalLimited(6)
+                .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                .or(Predicates.abilities(PartAbility.MAINTENANCE).setMaxGlobalLimited(1)))
+            .where('B', Predicates.blocks("gtceu:steel_frame"))
+            .where('C', Predicates.blocks("gtceu:copper_frame"))
+            .where('D', Predicates.blocks("gtceu:aluminium_frame"))
+            .where("#", Predicates.any())
+            .where(" ", Predicates.air())
+            .build())
+        .workableCasingRenderer("kubejs:block/machine_casing_aluminium_antenna", "gtceu:block/multiblock/generator/large_gas_turbine", false)
+    
+    event.create('basic_simulation_unit', 'multiblock')
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeTypes('data_extraction')
+        .recipeModifiers(getTransmissionRecipeModifiers(1))
+        .appearanceBlock(() => Block.getBlock("kubejs:aluminium_antenna_casing"))
+        .pattern(definition => FactoryBlockPattern.start()
+            .aisle('#AAA#', '#CAC#', '##B##', '#####')
+            .aisle('AAAAA', 'C   C', '#C C#', '##B##')
+            .aisle('AAAAA', 'A   A', 'B   B', '#BBB#')
+            .aisle('AAAAA', 'C   C', '#C C#', '##B##')
+            .aisle('#AAA#', '#C@C#', '##B##', '#####')
+            .where('@', Predicates.controller(Predicates.blocks(definition.get())))
+            .where('A', Predicates.blocks("kubejs:aluminium_antenna_casing").setMinGlobalLimited(6)
+                .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                .or(Predicates.abilities(PartAbility.MAINTENANCE).setMaxGlobalLimited(1)))
+            .where('B', Predicates.blocks("kubejs:aluminium_antenna_casing"))
+            .where('C', Predicates.blocks(GTBlocks.CASING_TEMPERED_GLASS.get()))
+            .where('#', Predicates.any())
+            .where(' ', Predicates.air())
+            .build())
+        .workableCasingRenderer("kubejs:block/machine_casing_aluminium_antenna", "gtceu:block/multiblock/fusion_reactor", false)
 })

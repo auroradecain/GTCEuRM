@@ -1,6 +1,25 @@
 StartupEvents.registry("item", event =>{
+    
+    const drone = [
+        "1"
+    ]
+
+    for (const tier of drone) {
+        event.create(`drone_t${tier}`).maxStackSize(16).texture(`kubejs:item/data_collection/drone/t${tier}`)
+    }
+
     const dataCollection = [
-        ["overworld", "#3399ff"]
+        ["overworld", "#3399ff"],
+        ["nether", "#7e1b1b"],
+        ["end", "#d6d980"],
+        ["deep_dark", "#012a39"],
+        ["scavenger", "#d9bf8c"],
+        ["miner", "#666666"],
+        ["solar_system", "#a8f0f0"],
+        ["milky_way", "#221254"],
+        ["virgo_supercluster", "#3f0d3f"],
+        ["observable_universe", "#2a0911"],
+        ["altered_reality", "#f2f2f2"]
     ]
 
     for (const [data, dataColor] of dataCollection){
@@ -45,15 +64,15 @@ StartupEvents.registry("item", event =>{
 
     // Stabilized Elements
     const biomeFlowers = [
-        ["forest", "#ce9f00"],
-        ["ocean", "#a33f20"],
-        ["desert", "#486d7b"],
-        ["beach", "#ba2727"],
-        ["hills", "#1d891d"],
-        ["nether", "#58307f"],
-        ["end", "#7d0222"],
-        ["plains", "#287869"],
-        ["meadow", "#443936"]
+        ["forest", "#7b621e"],
+        ["ocean", "#6666ff"],
+        ["desert", "#ffa94d"],
+        ["beach", "#007a99"],
+        ["hills", "#77b300"],
+        ["plains", "#f6f66f"],
+        ["meadow", "#ffccff"],
+        ["nether", "#7d0222"],
+        ["end", "#58307f"]
     ]
 
 
@@ -83,7 +102,7 @@ StartupEvents.registry("item", event =>{
         ["neon", "#FAB4B4"],
         ["nitrogen", "#00BFC1"],
         ["radon", "#FF39FF"],
-        ["tritium", "#FF39FF"],
+        ["tritium", "#ff316b"],
         ["xenon", "#00FFFF"]
     ]
 
