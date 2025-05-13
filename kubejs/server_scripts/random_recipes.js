@@ -96,6 +96,14 @@ ServerEvents.recipes(event=>{
         .duration(48)
         .EUt(2)
 
+    // Drill recipes for data simulation
+    event.recipes.gtceu.assembler("diamond_drill")
+        .itemInputs("3x #forge:plates/diamond", "4x #forge:plates/steel")
+        .inputFluids("gtceu:soldering_alloy 72")
+        .itemOutputs("gtceu:diamond_drill_head")
+        .duration(120)
+        .EUt(16)
+
     // Fix ilmenite -> rutile stoich
     event.remove({id:"gtceu:electric_blast_furnace/rutile_from_ilmenite"})
     event.recipes.gtceu.electric_blast_furnace("rutile_from_ilmenite")

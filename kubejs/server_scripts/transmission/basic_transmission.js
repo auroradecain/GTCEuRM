@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-    // T1MM missions
+    // Data trade and Creation
     data_transmission(event, "overworld", 1, 1).forEach(builder => {
         builder
             .dimension('minecraft:overworld')
@@ -13,7 +13,7 @@ ServerEvents.recipes(event => {
             )
     })
 
-    data_transmission(event, "overworld", 1, 1).forEach(builder => {
+    data_transmission(event, "scavenger", 1, 1).forEach(builder => {
         builder
             .dimension('minecraft:overworld')
             .itemInputs("kubejs:overworld_data_collection")
@@ -27,7 +27,7 @@ ServerEvents.recipes(event => {
             )
     })
 
-    data_transmission(event, "scavenger", 1, 1).forEach(builder=> {
+    data_transmission(event, "miner", 1, 1).forEach(builder=> {
         builder
             .inputFluids("gtceu:drilling_fluid 2400", "gtceu:lubricant 1200")
             .itemInputs("kubejs:scavenger_data_collection")
