@@ -98,7 +98,7 @@ ServerEvents.recipes(event=>{
 
     // Drill recipes for data simulation
     event.recipes.gtceu.assembler("diamond_drill")
-        .itemInputs("3x #forge:plates/diamond", "4x #forge:plates/steel")
+        .itemInputs("3x #forge:plates/diamond", "2x #forge:plates/steel", "#forge:ingots/steel")
         .inputFluids("gtceu:soldering_alloy 72")
         .itemOutputs("gtceu:diamond_drill_head")
         .duration(120)

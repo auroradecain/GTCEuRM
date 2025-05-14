@@ -3,7 +3,7 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event =>{
         .category("agricultural")
         .setEUIO("in")
         .setMaxIOSize(6, 1, 1, 0)
-        .setSlotOverlay(false, false, GuiTextures.PRESS_OVERLAY_4)
+        .setSlotOverlay(false, false, new ResourceTexture("kubejs:textures/gui/essence_overlay.png"))
         .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.ELECTROLYZER)
 
@@ -11,7 +11,8 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event =>{
         .category("agricultural")
         .setEUIO("in")
         .setMaxIOSize(2, 6, 1, 0)
-        .setSlotOverlay(false, false, GuiTextures.EXTRACTOR_OVERLAY)
+        .setSlotOverlay(false, false, new ResourceTexture("kubejs:textures/gui/sapling_overlay.png"))
+        .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_RECYCLER, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.BATH)
 

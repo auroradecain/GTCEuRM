@@ -8,21 +8,16 @@ StartupEvents.registry("item", event =>{
         event.create(`drone_t${tier}`).maxStackSize(16).texture(`kubejs:item/data_collection/drone/t${tier}`)
     }
 
-    const dataCollection = [
+    const floppyCollection = [
         ["overworld", "#3399ff"],
         ["nether", "#7e1b1b"],
         ["end", "#d6d980"],
         ["deep_dark", "#012a39"],
         ["scavenger", "#d9bf8c"],
-        ["miner", "#666666"],
-        ["solar_system", "#a8f0f0"],
-        ["milky_way", "#221254"],
-        ["virgo_supercluster", "#3f0d3f"],
-        ["observable_universe", "#2a0911"],
-        ["altered_reality", "#f2f2f2"]
+        ["miner", "#666666"]
     ]
 
-    for (const [data, dataColor] of dataCollection){
+    for (const [data, dataColor] of floppyCollection){
         event.create(`${data}_data_collection`)
             .textureJson({
                 layer0:"kubejs:item/data_collection/floppy", 
@@ -30,9 +25,75 @@ StartupEvents.registry("item", event =>{
                 layer2:"kubejs:item/data_collection/overlay"
             })
             .color(1, dataColor)
+            .rarity("uncommon")
+            .tag("kubejs:data_collection")
+            .tag("kubejs:basic_data")
+            .maxStackSize(16)
+    }
+
+    function advancedData(dataId, color, secondaryColor){
+        if (color == undefined) color = "#ffffff"
+        if (secondaryColor == undefined) secondaryColor = "#ffffff"
+        
+        event.create(`${dataId}_data_collection`)
+            .textureJson({
+                layer0:"kubejs:item/data_collection/advanced/base",
+                layer1:"kubejs:item/data_collection/advanced/color",
+                layer2:"kubejs:item/data_collection/advanced/secondary_color"
+            })
+            .color(1, color)
+            .color(2, secondaryColor)
             .rarity("rare")
+            .tag("kubejs:data_collection")
+            .tag("kubejs:advanced_data")
+            .maxStackSize(12)
+    }
+
+    advancedData("solar_system", "#a8f0f0")
+    advancedData("milky_way", "#221254")
+    advancedData("virgo_supercluster", "#3f0d3f")
+    advancedData("observable_universe", "#2a0911")
+    advancedData("altered_reality", "#f2f2f2")
+
+
+    function universalData(data_id){
+        event.create(`${data_id}_data_collection`)
+            .textureJson({
+                layer0:`kubejs:item/data_collection/universal/${data_id}`,
+                layer1:"kubejs:item/data_collection/overlay3"
+            })
+            .tag("kubejs:data_collection")
+            .tag("kubejs:universal_data")
+            .rarity("epic")
             .maxStackSize(8)
     }
+
+    universalData("universe")
+
+    function processingArray(array, color) {
+        event.create(`${array}_processing_array`)
+            .textureJson({
+                layer0:"kubejs:item/processing_array",
+                layer1:"kubejs:item/processing_array_color"
+            })
+            .color(1, color)
+    }
+
+    processingArray("logic", "#ff6600")
+    processingArray("resource", "#0099ff")
+    processingArray("precise", "#33cc33")
+    processingArray("cosmological", "#6600cc")
+
+    function dataBinary(id, color){
+        event.create(`${id}_data_binary`)
+            .textureJson({layer0:"kubejs:item/data_collection/binary"})
+            .color(0, color)
+    }
+
+    dataBinary("mundane", "#66ccff")
+    dataBinary("otherworldly", "#339966")
+    dataBinary("extraordinary", "#cc33ff")
+    dataBinary("impossible", "#cc0000")
 
     const casing = [
         ["9mm", "9mm"],

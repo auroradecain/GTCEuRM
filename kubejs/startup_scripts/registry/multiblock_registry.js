@@ -23,6 +23,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
         .setEUIO('in')
         .setMaxIOSize(2, 0, 1, 6)
         .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+        .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.CHEMICAL)
 
@@ -31,6 +32,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
         .setEUIO('in')
         .setMaxIOSize(2, 6, 1, 0)
         .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+        .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.CHEMICAL)
 
@@ -39,6 +41,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
         .setEUIO('in')
         .setMaxIOSize(2, 6, 1, 1)
         .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+        .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.COMPUTATION)
 
