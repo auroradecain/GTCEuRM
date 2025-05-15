@@ -50,10 +50,10 @@ StartupEvents.registry("item", event =>{
     }
 
     advancedData("solar_system", "#a8f0f0")
-    advancedData("milky_way", "#221254")
-    advancedData("virgo_supercluster", "#3f0d3f")
-    advancedData("observable_universe", "#2a0911")
-    advancedData("altered_reality", "#f2f2f2")
+    advancedData("milky_way", "#4524a8")
+    advancedData("virgo_supercluster", "#be27be")
+    advancedData("observable_universe", "#931f3c")
+    advancedData("altered_reality", "#acacd2")
 
 
     function universalData(dataId){
@@ -97,7 +97,6 @@ StartupEvents.registry("item", event =>{
 
     event.create("instruction_set_machine")
         .textureJson({layer0: "kubejs:item/instruction_set_machine"})
-        .maxStackSize(1)
 
     const casing = [
         ["9mm", "9mm"],
