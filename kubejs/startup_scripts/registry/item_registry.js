@@ -79,8 +79,8 @@ StartupEvents.registry("item", event =>{
             .color(1, color)
     }
 
-    processingArray("logic", "#ff6600")
-    processingArray("resource", "#0099ff")
+    processingArray("logical", "#ff6600")
+    processingArray("resourceful", "#0099ff")
     processingArray("precise", "#33cc33")
     processingArray("cosmological", "#6600cc")
 
@@ -90,8 +90,8 @@ StartupEvents.registry("item", event =>{
             .color(0, color)
     }
 
-    dataBinary("mundane", "#66ccff")
-    dataBinary("otherworldly", "#339966")
+    dataBinary("mundane", "#00aaff")
+    dataBinary("otherworldly", "#66ff33")
     dataBinary("extraordinary", "#cc33ff")
     dataBinary("impossible", "#cc0000")
 
