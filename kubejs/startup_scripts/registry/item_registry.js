@@ -26,8 +26,8 @@ StartupEvents.registry("item", event =>{
             })
             .color(1, dataColor)
             .rarity("uncommon")
-            .tag("kubejs:data_collection")
-            .tag("kubejs:basic_data")
+            .tag("kubejs:data/basic")
+            .tag(`kubejs:data_collection/${data}`)
             .maxStackSize(16)
     }
 
@@ -44,8 +44,8 @@ StartupEvents.registry("item", event =>{
             .color(1, color)
             .color(2, secondaryColor)
             .rarity("rare")
-            .tag("kubejs:data_collection")
-            .tag("kubejs:advanced_data")
+            .tag("kubejs:data/advanced")
+            .tag(`kubejs:data_collection/${dataId}`)
             .maxStackSize(12)
     }
 
@@ -56,14 +56,14 @@ StartupEvents.registry("item", event =>{
     advancedData("altered_reality", "#f2f2f2")
 
 
-    function universalData(data_id){
-        event.create(`${data_id}_data_collection`)
+    function universalData(dataId){
+        event.create(`${dataId}_data_collection`)
             .textureJson({
-                layer0:`kubejs:item/data_collection/universal/${data_id}`,
-                layer1:"kubejs:item/data_collection/overlay3"
+                layer0:`kubejs:item/data_collection/universal/${dataId}`,
+                layer1:"kubejs:item/data_collection/universal/overlay3"
             })
-            .tag("kubejs:data_collection")
-            .tag("kubejs:universal_data")
+            .tag("kubejs:data/universal")
+            .tag(`kubejs:data_collection/${dataId}`)
             .rarity("epic")
             .maxStackSize(8)
     }
@@ -94,6 +94,10 @@ StartupEvents.registry("item", event =>{
     dataBinary("otherworldly", "#339966")
     dataBinary("extraordinary", "#cc33ff")
     dataBinary("impossible", "#cc0000")
+
+    event.create("instruction_set_machine")
+        .textureJson({layer0: "kubejs:item/instruction_set_machine"})
+        .maxStackSize(1)
 
     const casing = [
         ["9mm", "9mm"],
