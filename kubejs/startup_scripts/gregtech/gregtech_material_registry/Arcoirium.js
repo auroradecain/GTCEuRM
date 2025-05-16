@@ -106,13 +106,13 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .dust().ore()
         .addOreByproducts("iron", "copper", "gallium")
         .washedIn('sodium_persulfate', 100)
-        .color(0xd89251)
+        .color(0xd89251).secondaryColor(0x7d7d1c)
         .components('2x viadium', '5x oxygen', '2x hydrogen')
     
     event.create("tadanite_earth")
         .dust().ore()
         .addOreByproducts('arsenic', 'rare_earth')
-        .color(0x33334d)
+        .color(0x8585ad).secondaryColor(0x40334d)
         .components('2x fechantium', '2x oxygen', 'barite', '3x clay')
     
     event.create("gabro")
@@ -125,12 +125,12 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .dust().ore()
         // 'fechantium' may crash, remove if needed
         .addOreByproducts('tungstate', 'chromite')
-        .color(0xb366ff)
+        .color(0xb366ff).secondaryColor(0x600080)
         .components('1x fechantium', '2x oxygen')
 
     event.create("trevinite")
         .dust().ore()
-        .color(0x666600)
+        .color(0xb3b300).secondaryColor(0x4d6600)
         .addOreByproducts('magnetite', 'chromite')
 
     // Chemicals

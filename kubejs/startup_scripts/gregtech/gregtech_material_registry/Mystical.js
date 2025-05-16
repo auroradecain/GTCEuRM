@@ -10,13 +10,13 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .dust()
         .ore(1, 3, true)
         .addOreByproducts('copper', 'sulfur')
-        .color(0x5a3a2d)
+        .color(0x664233).secondaryColor(0x444422)
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
         .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.dustSmall])
     event.create("inferium")
         .ingot().fluid()
         .ore(2, 3, true) 
-        .color(0x758d01).iconSet("metallic")
+        .color(0x758d01).secondaryColor(0x4c6501).iconSet("metallic")
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_GEAR)
 
     
