@@ -3,6 +3,7 @@ ServerEvents.recipes(event=>{
         builder
             .dimension('minecraft:overworld')
             .itemInputs('32x #minecraft:saplings')
+            .itemInputs('kubejs:mundane_data_binary')
             .inputFluids('minecraft:water 4000')
             .inputFluids('gtceu:biomass 3000')
             .inputFluids('gtceu:oxygen 8000')
