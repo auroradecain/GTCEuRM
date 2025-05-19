@@ -2,7 +2,12 @@ ServerEvents.recipes(event =>{
     
     const seedMake = (type) =>{    
 
-        const tier_inferium = [["inferium", 1], ["prudentium", 2], ["tertium", 4], ["imperium", 8], ["supremium", 16], ["insanium", 32]]
+        const tier_inferium = [
+            ["inferium", 1], 
+            ["prudentium", 2], ["tertium", 4], ["imperium", 8], 
+            ["supremium", 8], 
+            ["insanium", 16]
+        ]
 
         for (const [tier, mult] of tier_inferium){
             event.recipes.gtceu.agricultural_fabrication(`essence_seeds/${type}_at_${tier}`)
@@ -14,17 +19,6 @@ ServerEvents.recipes(event =>{
         }
 
     }
-
-    // const element_essences = ["air", "earth", "fire", "water"]
-    
-    // element_essences.forEach(ele =>{
-    //     event.recipes.gtceu.agricultural_fabrication(`elemental_seeds/${ele}`)
-    //         .itemInputs(`2x mysticalagriculture:${ele}_agglomeratio`, "mysticalagriculture:prosperity_seed_base")
-    //         .itemOutputs(`mysticalagriculture:${ele}_seeds`)
-    //         .duration(140)
-    //         .EUt(30)
-    //     seedMake(ele)
-    // })
 
     ["air", "earth", "fire", "water"].forEach(ele =>{
         event.recipes.gtceu.agricultural_fabrication(`elemental_seeds/${ele}`)

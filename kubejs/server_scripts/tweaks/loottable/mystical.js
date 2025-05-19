@@ -1,3 +1,3 @@
 LootJS.modifiers((event) => {
-    //event.addEntityLootModifier("minecraft:").replaceLoot("architects_palette:withered_bone", "minecraft:bone", true);
+    event.addBlockLootModifier("mysticalagriculture:soulium_ore").replaceLoot("mysticalagriculture:soulium_dust", "gtceu:raw_soulium", true);
 });

@@ -1,9 +1,26 @@
 {
 
     "block.kubejs.supremium_casing":"§cSupremium Casing",
-    "block.kubejs.draconitium_casing":"§dDraconitium Casing",
-    "block.kubejs.draconitium_fusion_casing":"§dDraconitium Fusion Casing",
-    "block.kubejs.astronomical_casing":"Astronomical Machine Casing",
-    "block.kubejs.aluminium_antenna_casing":"Antenna Aluminium Casing"
+    "block.kubejs.draconitium_casing":"§dDraconitium Casing§r (W.I.P)",
+    "block.kubejs.draconitium_fusion_casing":"§dDraconitium Fusion Casing§r (W.I.P)",
+    "block.kubejs.astronomical_casing":"Astronomical Machine Casing (W.I.P)",
+    "block.kubejs.aluminium_antenna_casing":"Antenna Aluminium Casing",
+
+    "data_collection.overworld.desc1":"§7A pale blue dot drift away in the universe...",
+    "data_collection.scavenger.desc1":"§7The Raft can hear you!",
+    "data_collection.miner.desc1":"§7Universal Mineralogy and its Wonders Vol. I",
+    "data_collection.nether.desc1":"§7A sudden cry for help of a thousand souls",
+    "data_collection.end.desc1":"§7Is it?",
+    "data_collection.deep_dark.desc1":"§7A million hearts beating at the same time",
+    "data_collection.placeholder.desc1":"§7§kSeek Further",
+
+    "data_binary.mundane.desc1":"§701001000 01101111",
+    "data_binary.otherworldly.desc1":"§701010000 01010111 01000011",
+    "data_binary.extraordinary.desc1":"§701010101 01000101",
+    "data_binary.impossible.desc1":"§701000100 01001110 01001001",
+
+    "item.kubejs.drone_t1": "Drone [Tier 1] (W.I.P)",
+    "item.kubejs.drone_t2": "Drone [Tier 2] (W.I.P)"
+
 
 }

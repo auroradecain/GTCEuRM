@@ -89,7 +89,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
     event.create('data_extraction')
         .category('multiblock')
         .setEUIO('in')
-        .setMaxIOSize(3, 9, 3, 6)
+        .setMaxIOSize(6, 9, 3, 6)
         .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
         .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
@@ -99,7 +99,9 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
 
 GTCEuStartupEvents.registry('gtceu:machine', event=>{
 
-    GTRecipeTypes.get("data_collection").addDataInfo((data) => ("Transmission Tier: " + data.getByte("transmission_tier")));   // todo: get Text.translatable to work
+    GTRecipeTypes.get("data_collection").addDataInfo((data) => ("Transmission Tier: " + data.getByte("transmission_tier")));
+    GTRecipeTypes.get("data_extraction").addDataInfo((data) => ("Transmission Tier: " + data.getByte("transmission_tier")));
+
 
     // Synthetic Trio
     event.create('synthetic_fluid_rig', 'multiblock')
@@ -255,7 +257,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
 
     event.create('draconitium_collider', 'multiblock')
         .machine((holder) => new FusionReactorMachine(holder, GTValues.ZPM))
-        .rotationState(RotationState.NON_Y_AXIS)
+        .rotationState(RotationState.ALL)
         .recipeTypes('draconitium_energy')
         .appearanceBlock(() =>Block.getBlock("kubejs:draconitium_fusion_casing"))
         .recipeModifiers([MachineModifiers.FUSION_REACTOR])

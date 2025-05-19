@@ -1,6 +1,6 @@
 {
 
-    "tagprefix.gabro":"Gabro %s Ore",
+    "tagprefix.chalk":"Chalk %s Ore",
 
     "gtceu.jei.ore_vein.overworld/emerald": "Emerald Vein (Overworld)",
     "gtceu.jei.ore_vein.overworld/quartz": "Quartz Vein (Overworld)",
@@ -11,6 +11,8 @@
     "gtceu.jei.ore_vein.nether/argentite": "Argentite Vein",
     "gtceu.jei.ore_vein.nether/torbenite": "Torbenite Vein",
     "gtceu.jei.ore_vein.nether/terraemantine": "Terraemantine Vein",
+    "gtceu.jei.ore_vein.end/dionitase": "Dionitase Vein",
+    "gtceu.jei.ore_vein.end/trevinite": "Trevinite Vein",
 
     
     "gtceu.greenhouse":"Greenhouse",
@@ -47,14 +49,30 @@
     "block.gtceu.draconitium_collider":"§cDraconitium Collider",
     "block.gtceu.basic_antenna_controller":"Antenna Controller MK I",
     "block.gtceu.basic_simulation_unit":"Simulation Unit MK I",
-
-    "block.gtceu.elemental_turbine.desc1":"§eBase Production: §f4096 EU/t",
-    "block.gtceu.elemental_turbine.desc2":"Each Rotor Holder above §5EV§r §7adds§r 10% efficiency and multiplies EU/t by 2.",
-    
     "block.gtceu.large_pyrolyse_oven":"Large Pyrolyse Oven",
 
-    "material.gtceu.gabro" : "Gabro",
+    "block.gtceu.elemental_turbine.desc1":"§7Elemental Motors™",
+    "block.gtceu.elemental_turbine.desc2":"§eBase Production: §f4096 EU/t",
+    "block.gtceu.elemental_turbine.desc3":"Each Rotor Holder above §5EV§r §7adds§r 10% efficiency and multiplies EU/t by 2.",
 
+    "block.gtceu.greenhouse.desc1":"§7Greg, Land and Peace!",
+    "block.gtceu.greenhouse.desc2":"Large Automatic Crop Production",
+
+    "block.gtceu.basic_antenna_controller.desc1":"§7Comence data transmission right away!",
+    "block.gtceu.basic_antenna_controller.desc2":"§aMax Transmission Tier Supported:§r 1",
+
+    "block.gtceu.basic_simulation_unit.desc1":"§7Plans for a certain death ball not included",
+    "block.gtceu.basic_simulation_unit.desc2":"§aMax Transmission Tier Supported:§r 1",
+
+    "block.gtceu.critical_point_crystal_matrix.desc1":"§7Yeah, Science!",
+    "block.gtceu.synthetic_lifeform_simulator.desc1":"§7Somehow, Deep Mob learned...",
+    "block.gtceu.synthetic_fluid_rig.desc1":"§7Finally, infinite sauce",
+    "block.gtceu.synthetic_solid_rig.desc1":"§7Mass producing cobblestone the wrong way",
+
+    "block.gtceu.large_pyrolyse_oven.desc1":"§7A tad bit larger than needed...",
+    "block.gtceu.large_pyrolyse_oven.desc2":"Large Electric Coke Oven",
+    "block.gtceu.large_pyrolyse_oven.desc3":"§6Cupronickel§r §7coils are§r 25% §7slower. Every coil after§r §bKanthal§r §7increases speed by§r 50%§7.",
+    
     "material.gtceu.sky_steel" : "Sky Steel",
     "material.gtceu.fluix" : "Fluix Crystal",
     "material.gtceu.charged_certus_quartz" : "Charged Certus Quartz",
@@ -145,6 +163,7 @@
     "material.gtceu.argentite" : "Argentite",
     "material.gtceu.fluorspar" : "Fluorspar",
     "material.gtceu.terraemantine" : "Terrarmantine",
+    "material.gtceu.indefinitium" : "Indefinitium",
 
 
     "material.gtceu.cupric_viadium_semielement" : "Cupric Viadium Semielement",

@@ -1,3 +1,29 @@
+GTCEuStartupEvents.registry("gtceu:element",event=>{
+    event.create('viadium') 
+        .protons(46)
+        .neutrons(73)
+        .symbol('Vd')
+    event.create('fechantium')
+        .protons(74)
+        .neutrons(112)
+        .symbol('Fn')
+    event.create('avisium')
+        .protons(77)
+        .neutrons(123)
+        .symbol('Av')
+    event.create('queenium')
+        .protons(125)
+        .neutrons(125)
+        .symbol('Q')    
+    event.create('indefinitium')
+        .protons(150)
+        .neutrons(150)
+        .symbol('!∞')
+})
+
+GTCEuStartupEvents.registry("gtceu:material_icon_set", event =>{
+    event.create("pulsating").parent("radioactive")
+})
 
 GTCEuStartupEvents.registry('gtceu:material', event =>{
 
@@ -12,12 +38,12 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
 
     event.create("cupric_viadium_semielement")
         .ingot().fluid()
-        .color(0xef8b5d).secondaryColor(0xe59aae).iconSet('metallic')
+        .color(0xef8b5d).secondaryColor(0xe59aae).iconSet('dull')
         .blastTemp(1350,'low', 120, 430)
+        .flags(GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_ROD)
         .components("viadium", "2x copper", "silicon", "3x oxygen")
 
-        
-        // Sapatanium
+    // Sapatanium
     event.create("sapatanium")
         .ingot().fluid()
         .color(0xffb866).iconSet('metallic')
@@ -96,9 +122,13 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .color(0xbfbfbf).iconSet(GTMaterialIconSet.BRIGHT)
         .element(GTElements.get("queenium"))
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FINE_WIRE)
-        // .blastTemp(6300, 'high', 7680, 1340)
         .cableProperties(131072, 6, 0, true)
 
+    // event.create("indefinitium")
+    //     .ingot()
+    //     .color(0x01374a).iconSet(GTMaterialIconSet.getByName("pulsating"))
+    //     .element(GTElements.get("indefinitium"))
+    //     .flags(GTMaterialFlags.NO_SMELTING, GTMaterialFlags.NO_SMASHING)
 
     // Ores
     
@@ -110,28 +140,22 @@ GTCEuStartupEvents.registry('gtceu:material', event =>{
         .components('2x viadium', '5x oxygen', '2x hydrogen')
     
     event.create("tadanite_earth")
-        .dust().ore()
+        .dust().ore(2, 1)
         .addOreByproducts('arsenic', 'rare_earth')
         .color(0x8585ad).secondaryColor(0x40334d)
         .components('2x fechantium', '2x oxygen', 'barite', '3x clay')
-    
-    event.create("gabro")
-        .dust()
-        .color(0x2f332d).iconSet('dull')
-        .components('7x basalt', '3x granite', '2x calcite', 'vidium')
-        .flags(GTMaterialFlags.DECOMPOSITION_BY_CENTRIFUGING)
         
     event.create("dionitase")
         .dust().ore()
-        // 'fechantium' may crash, remove if needed
-        .addOreByproducts('tungstate', 'chromite')
+        .washedIn("mercury", 100)
+        .addOreByproducts('tungstate', 'chromite', 'naquadah')
         .color(0xb366ff).secondaryColor(0x600080)
         .components('1x fechantium', '2x oxygen')
 
     event.create("trevinite")
         .dust().ore()
         .color(0xb3b300).secondaryColor(0x4d6600)
-        .addOreByproducts('magnetite', 'chromite')
+        .addOreByproducts('magnetite', 'lithium')
 
     // Chemicals
 

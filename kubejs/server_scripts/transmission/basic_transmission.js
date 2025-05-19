@@ -3,9 +3,9 @@ ServerEvents.recipes(event => {
     data_transmission(event, "overworld", 1, 1).forEach(builder => {
         builder
             .dimension('minecraft:overworld')
-            .itemInputs("12x gtceu:lv_sensor")
-            .itemInputs("12x gtceu:lv_field_generator")
-            .itemInputs("12x gtceu:lv_robot_arm")
+            .itemInputs("8x gtceu:lv_sensor")
+            .itemInputs("4x gtceu:lv_robot_arm")
+            .itemInputs("3x gtceu:lv_field_generator")
             .itemInputs("4x gtceu:viadium_double_wire")
             .itemInputs("2x #gtceu:batteries/lv")
             .itemOutputs(
@@ -70,6 +70,9 @@ ServerEvents.recipes(event => {
     data_transmission(event, "miner", 1, 1).forEach(builder =>{
         builder
             .notConsumable("kubejs:miner_data_collection")
+            .itemInputs("64x #forge:stone")
+            .itemInputs("64x #forge:stone")
+            .itemInputs("64x #forge:stone")
             .itemInputs("64x #forge:stone")
             .itemInputs("64x #forge:stone")
             .itemInputs("64x minecraft:gravel")

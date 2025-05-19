@@ -146,8 +146,9 @@ GTCEuServerEvents.oreVeins(event =>{
         vein.heightRangeUniform(100, 120)
         vein.layeredVeinGenerator(generator => generator
             .buildLayerPattern(pattern => pattern
+                .layer(l => l.weight(4).mat(GTMaterials.get("torbenite")).size(2, 3))
+                .layer(l => l.weight(2).mat(GTMaterials.get("tadanite_earth")).size(1, 3))
                 .layer(l => l.weight(2).mat(GTMaterials.Pyrochlore).size(1, 3))
-                .layer(l => l.weight(3).mat(GTMaterials.get("torbenite")).size(2, 3))
                 .layer(l => l.weight(1).mat(GTMaterials.Lead).size(1, 3))
             )
         )
@@ -170,7 +171,47 @@ GTCEuServerEvents.oreVeins(event =>{
         )
         vein.surfaceIndicatorGenerator(indicator => indicator
             .surfaceRock(GTMaterials.get("terraemantine"))
-            .placement("above")
+            .placement("surface")
+        )
+    })
+
+    event.add("end/dionitase", vein =>{
+        vein.weight(30)
+        vein.density(0.25)
+        vein.clusterSize(25)
+        vein.layer("endstone")
+        vein.dimensions("minecraft:the_end")
+        vein.heightRangeUniform(20, 80)
+        vein.layeredVeinGenerator(generator => generator
+            .buildLayerPattern(pattern => pattern
+                .layer(l => l.weight(4).mat(GTMaterials.get("dionitase")).size(2, 4))
+                .layer(l => l.weight(2).mat(GTMaterials.Magnetite).size(1, 3))
+                .layer(l => l.weight(1).mat(GTMaterials.Chromite).size(1, 2))
+            )
+        )
+        vein.surfaceIndicatorGenerator(indicator => indicator
+            .surfaceRock(GTMaterials.get("dionitase"))
+            .placement("surface")
+        )
+    })
+
+    event.add("end/trevinite", vein =>{
+        vein.weight(25)
+        vein.density(0.25)
+        vein.clusterSize(25)
+        vein.layer("endstone")
+        vein.dimensions("minecraft:the_end")
+        vein.heightRangeUniform(20, 80)
+        vein.layeredVeinGenerator(generator => generator
+            .buildLayerPattern(pattern => pattern
+                .layer(l => l.weight(4).mat(GTMaterials.get("trevinite")).size(2, 4)) 
+                .layer(l => l.weight(3).mat(GTMaterials.Lithium).size(2, 3))
+                .layer(l => l.weight(2).mat(GTMaterials.Molybdenum).size(1, 2))
+            )
+        )
+        vein.surfaceIndicatorGenerator(indicator => indicator
+            .surfaceRock(GTMaterials.get("dionitase"))
+            .placement("surface")
         )
     })
 

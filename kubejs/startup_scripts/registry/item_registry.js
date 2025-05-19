@@ -1,7 +1,8 @@
 StartupEvents.registry("item", event =>{
     
     const drone = [
-        "1"
+        "1",
+        "2"
     ]
 
     for (const tier of drone) {
@@ -24,11 +25,12 @@ StartupEvents.registry("item", event =>{
                 layer1:"kubejs:item/data_collection/color", 
                 layer2:"kubejs:item/data_collection/overlay"
             })
+            .tooltip(Text.translatable(`data_collection.${data}.desc1`))
             .color(1, dataColor)
             .rarity("uncommon")
             .tag("kubejs:data/basic")
             .tag(`kubejs:data_collection/${data}`)
-            .maxStackSize(16)
+            .maxStackSize(1)
     }
 
     function advancedData(dataId, color, secondaryColor){
@@ -44,9 +46,10 @@ StartupEvents.registry("item", event =>{
             .color(1, color)
             .color(2, secondaryColor)
             .rarity("rare")
+            .tooltip(Text.translatable("data_collection.placeholder.desc1"))
             .tag("kubejs:data/advanced")
             .tag(`kubejs:data_collection/${dataId}`)
-            .maxStackSize(12)
+            .maxStackSize(1)
     }
 
     advancedData("solar_system", "#a8f0f0")
@@ -65,10 +68,15 @@ StartupEvents.registry("item", event =>{
             .tag("kubejs:data/universal")
             .tag(`kubejs:data_collection/${dataId}`)
             .rarity("epic")
-            .maxStackSize(8)
+            .tooltip(Text.translatable("data_collection.placeholder.desc1"))
+            .maxStackSize(1)
     }
 
     universalData("universe")
+
+    event.create("processing_array_housing")
+        .textureJson({layer0:"kubejs:item/processing_array_housing"})
+
 
     function processingArray(array, color) {
         event.create(`${array}_processing_array`)
@@ -77,6 +85,8 @@ StartupEvents.registry("item", event =>{
                 layer1:"kubejs:item/processing_array_color"
             })
             .color(1, color)
+            .tag(`kubejs:processing_array/${array}`)
+            .maxStackSize(24)
     }
 
     processingArray("logical", "#ff6600")
@@ -87,7 +97,9 @@ StartupEvents.registry("item", event =>{
     function dataBinary(id, color){
         event.create(`${id}_data_binary`)
             .textureJson({layer0:"kubejs:item/data_collection/binary"})
+            .tooltip(Text.translatable(`data_binary.${id}.desc1`))
             .color(0, color)
+            .tag(`kubejs:binary/${id}`)
     }
 
     dataBinary("mundane", "#00aaff")

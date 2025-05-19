@@ -246,19 +246,41 @@ ServerEvents.recipes(event =>{
     })
 
     // Supremium Casing
+    event.shaped("2x kubejs:supremium_casing", [
+        'ACA', 
+        'ABA', 
+        'ADA'
+    ], {
+        A:'gtceu:supremium_plate', 
+        B:'gtceu:prosperity_frame', 
+        C:'#forge:tools/hammers', 
+        D:'#forge:tools/wrenches'
+    }).damageIngredient(['#forge:tools/hammers', '#forge:tools/wrenches']).id('kubejs:supremium_casing_on_crafting_table')
+    
     event.recipes.gtceu.assembler('supremium_casing')
         .itemInputs('6x gtceu:supremium_plate', 'gtceu:prosperity_frame')
         .itemOutputs('2x kubejs:supremium_casing')
-        .duration(240)
-        .EUt(30)
         .circuit(6)
+        .duration(50)
+        .EUt(16)
 
+    event.shaped("2x kubejs:draconitium_casing", [
+        'ACA', 
+        'ABA', 
+        'ADA'
+    ], {
+        A:'gtceu:draconitium_plate', 
+        B:'gtceu:draconitium_frame', 
+        C:'#forge:tools/hammers', 
+        D:'#forge:tools/wrenches'
+    }).damageIngredient(['#forge:tools/hammers', '#forge:tools/wrenches']).id('kubejs:draconitium_casing_on_crafting_table')
+    
     event.recipes.gtceu.assembler('draconitium_casing')
         .itemInputs('6x gtceu:draconitium_plate', 'gtceu:draconitium_frame')
         .itemOutputs('2x kubejs:draconitium_casing')
-        .duration(240)
-        .EUt(30)
         .circuit(6)
+        .duration(50)
+        .EUt(16)
 
     // Master Infusion Crystal
     event.recipes.gtceu.agricultural_fabrication('mystical_crystal')
@@ -301,5 +323,13 @@ ServerEvents.recipes(event =>{
         .itemOutputs('mysticalagriculture:prosperity_gemstone')
         .duration(300)
         .EUt(24)
+
+    // DON'T DELETE YET
+    event.shapeless('gtceu:inferium_dust', ['2x mysticalagriculture:inferium_essence'])
+    event.recipes.gtceu.mixer("inferium_essence_to_dust")
+        .itemInputs("2x mysticalagriculture:inferium_essence")
+        .itemOutputs("gtceu:inferium_dust")
+        .duration(50)
+        .EUt(8)
         
 })

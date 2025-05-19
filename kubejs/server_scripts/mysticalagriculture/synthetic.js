@@ -76,9 +76,11 @@ ServerEvents.recipes(event =>{
         ["solid", "stone/granite", "stone", 1, "minecraft:granite", 16, 120, GTValues.HV, 2],
         ["solid", "stone/diorite", "stone", 1, "minecraft:diorite", 16, 120, GTValues.HV, 3],
         ["solid", "stone/andesite", "stone", 1, "minecraft:andesite", 16, 120, GTValues.HV, 4],
-        ["solid", "stone/gabro", "stone", 1, "kubejs:gabro", 16, 120, GTValues.HV, 5],
-        ["solid", "stone/marble", "stone", 1, "gtceu:marble", 16, 120, GTValues.HV, 6],
-        ["solid", "stone/red_granite", "stone", 1, "gtceu:red_granite", 16, 120, GTValues.EV, 7],
+        ["solid", "stone/shale", "stone", 1, "quark:shale", 16, 120, GTValues.HV, 5],
+        ["solid", "stone/jasper", "stone", 1, "quark:jasper", 16, 120, GTValues.HV, 6],
+        ["solid", "stone/limestone", "stone", 1, "quark:limestone", 16, 120, GTValues.HV, 7],
+        ["solid", "stone/marble", "stone", 1, "gtceu:marble", 16, 120, GTValues.HV, 8],
+        ["solid", "stone/red_granite", "stone", 1, "gtceu:red_granite", 16, 120, GTValues.EV, 9],
         // Sky stone
         ["solid", "sky_stone/sky_stone", "sky_stone", 1, "ae2:sky_stone_block", 8, 144, GTValues.MV, 1],
         // Dirt category

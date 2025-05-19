@@ -192,7 +192,7 @@ ServerEvents.recipes(event=>{
     const growMystical = [
 
         // Inferium
-        ['inferium_seeds', ['8x gtceu:inferium_dust']],
+        ['inferium_seeds', ['8x mysticalagriculture:inferium_essence']],
 
         // Elements
         ['air_seeds', ['8x mysticalagriculture:air_essence']],

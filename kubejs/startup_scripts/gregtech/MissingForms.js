@@ -46,8 +46,6 @@ GTCEuStartupEvents.materialModification(event=>{
     const hv_cutter = GTToolType.WIRE_CUTTER_HV;
     const iv_cutter = GTToolType.WIRE_CUTTER_IV;
     
-    //GTToolType.SWORD, GTToolType.PICKAXE, GTToolType.AXE, GTToolType.SHOVEL, GTToolType.HOE, GTToolType.MINING_HAMMER,GTToolType.SPADE, GTToolType.SCYTHE, e
- 
     const mysticalTools = [
         ["inferium", [3.0, 2.5, 384, 2], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe, lv_drill]],
         ["prudentium", [5.0,  3.5,  1024, 2], [sword, pick, axe, shovel, hoe, mining_hammer, spade, scythe,  lv_drill, mv_drill]],

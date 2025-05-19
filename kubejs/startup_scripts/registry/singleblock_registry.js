@@ -16,13 +16,6 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event =>{
         .setProgressBar(GuiTextures.PROGRESS_BAR_RECYCLER, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.BATH)
 
-    // event.create("weapon_factory")
-        // .category("ballistic")
-        // .setEUIO("in")
-        // .setMaxIOSize(12, 1, 0, 0)
-        // .setSlotOverlay(false, false, GuiTextures.PRESS_OVERLAY_4)
-        // .setProgressBar(GuiTextures.PROGRESS_BAR_BENDING, FillDirection.LEFT_TO_RIGHT)
-        // .setSound(GTSoundEntries.ASSEMBLER)
 })
 
 GTCEuStartupEvents.registry("gtceu:machine", event =>{
@@ -43,13 +36,4 @@ GTCEuStartupEvents.registry("gtceu:machine", event =>{
                 .recipeType("seed_growth")
                 .workableTieredHullRenderer("gtceu:block/machines/hydroponic_unit")
         )
-
-    // event.create("ballistic_assembler", "simple")
-        // .tiers(GTValues.LV, GTValues.MV, GTValues.HV, GTValues.EV, GTValues.IV, GTValues.LuV, GTValues.ZPM)
-        // .definition((tier, builder) =>
-            // builder
-                // .langValue(`${GTValues.VLVH[tier]} Ballistic Assembler`)
-                // .recipeType("weapon_factory")
-                // .workableTieredHullRenderer("gtceu:block/machines/assembler")
-        // )
 })

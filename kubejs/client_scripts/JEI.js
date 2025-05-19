@@ -86,5 +86,6 @@ JEIEvents.hideItems(event =>{
 })
 
 JEIEvents.addItems(event =>{
+    event.add(Item.of("mysticalagriculture:inferium_essence"))
     event.add(Item.of("ae2:facade", {item: "minecraft:stone"}))
 })

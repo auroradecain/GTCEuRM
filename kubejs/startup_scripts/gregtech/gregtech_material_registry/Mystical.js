@@ -1,6 +1,14 @@
+
+
+GTCEuStartupEvents.registry('gtceu:element', event=>{
+    event.create('awakened_supremium')
+        .protons(139)
+        .neutrons(211)
+        .symbol('Š')
+})
+
 GTCEuStartupEvents.registry("gtceu:material", event=>{
 
-    
     event.create("prosperity")
         .ingot()
         .ore(2, 1)
@@ -19,23 +27,22 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .color(0x758d01).secondaryColor(0x4c6501).iconSet("metallic")
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_GEAR)
 
-    
     event.create(`prudentium`)
         .ingot().fluid()
         .color(0x008623).iconSet("metallic")
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
     event.create(`tertium`)
         .ingot().fluid()
         .color(0xb34b02).iconSet("metallic")
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
     event.create(`imperium`)
         .ingot().fluid()
         .color(0x0380da).iconSet("metallic")
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
     event.create(`supremium`)
         .ingot().fluid()
         .color(0xcb0000).iconSet("metallic")
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
     
     event.create("insanium")
         .ingot().fluid()
@@ -90,24 +97,20 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
         .color(0xffff1a).secondaryColor(0xffffb3).iconSet(GTMaterialIconSet.QUARTZ)
         .element(GTElements.C)
         .flags(GTMaterialFlags.CRYSTALLIZABLE)
-        .ignoredTagPrefixes([TagPrefix.dustTiny])
     event.create('fire_elementia')
         .gem(2, 4000)
         .color(0xff751a).secondaryColor(0xffd1b3).iconSet(GTMaterialIconSet.QUARTZ)
         .element(GTElements.C)
         .flags(GTMaterialFlags.CRYSTALLIZABLE)
-        .ignoredTagPrefixes([TagPrefix.dustTiny])
     event.create('earth_elementia')
         .gem(2, 4000)
         .color(0x1aff1a).secondaryColor(0xccffcc).iconSet(GTMaterialIconSet.QUARTZ)
         .element(GTElements.C)
         .flags(GTMaterialFlags.CRYSTALLIZABLE)
-        .ignoredTagPrefixes([TagPrefix.dustTiny])
     event.create('water_elementia')
         .gem(2, 4000)
         .color(0x3385ff).secondaryColor(0xb3d1ff).iconSet(GTMaterialIconSet.QUARTZ)
         .element(GTElements.C)
         .flags(GTMaterialFlags.CRYSTALLIZABLE)
-        .ignoredTagPrefixes([TagPrefix.dustTiny])
 
 })

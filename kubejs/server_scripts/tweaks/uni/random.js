@@ -1,6 +1,6 @@
 ServerEvents.tags("item", event => {
     event.get("gtceu:batteries").getObjectIds().forEach(resourceLoc => {
-        event.add("curios:charm", resourceLoc.toString())
+        event.add("curios:belt", resourceLoc.toString())
     })
 })
 

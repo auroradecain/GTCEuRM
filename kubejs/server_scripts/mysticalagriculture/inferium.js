@@ -16,7 +16,7 @@ ServerEvents.recipes(event =>{
         .duration(200)
         .EUt(480)
     event.recipes.gtceu.mixer("enrichment/supremium")
-        .itemInputs("2x gtceu:imperium_dust", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
+        .itemInputs("32x gtceu:inferium_dust", "8x mysticalagriculture:air_essence", "8x mysticalagriculture:fire_essence", "8x mysticalagriculture:earth_essence", "8x mysticalagriculture:water_essence")
         .itemOutputs("gtceu:supremium_dust")
         .duration(200)
         .EUt(1920)
@@ -42,7 +42,7 @@ ServerEvents.recipes(event =>{
         .duration(200)
         .EUt(1920)
     event.recipes.gtceu.agricultural_fabrication("enrichment/supremium")
-        .itemInputs("gtceu:imperium_dust", "16x gtceu:air_elementia_gem", "16x gtceu:fire_elementia_gem", "16x gtceu:earth_elementia_gem", "16x gtceu:water_elementia_gem")
+        .itemInputs("16x gtceu:inferium_dust", "16x gtceu:air_elementia_gem", "16x gtceu:fire_elementia_gem", "16x gtceu:earth_elementia_gem", "16x gtceu:water_elementia_gem")
         .itemOutputs("gtceu:supremium_dust")
         .duration(200)
         .EUt(7680)
@@ -54,7 +54,12 @@ ServerEvents.recipes(event =>{
 
     
     // Gemstone crafting
-    const dusts = ["inferium", "prudentium", "tertium", "imperium", "supremium", "awakened_supremium"]
+    const dusts = [
+        "inferium",
+        //"prudentium", "tertium", "imperium", 
+        "supremium", 
+        "awakened_supremium"
+    ]
 
     dusts.forEach(tier =>{
         event.recipes.gtceu.alloy_smelter(`gemstone/${tier}`)

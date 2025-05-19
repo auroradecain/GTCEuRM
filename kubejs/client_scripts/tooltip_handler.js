@@ -15,6 +15,44 @@ ItemEvents.tooltip(tooltip => {
     tooltip.addAdvanced('gtceu:elemental_turbine', (item, adv, text)=>{
         text.add(1, Text.translatable('block.gtceu.elemental_turbine.desc1'))
         text.add(2, Text.translatable('block.gtceu.elemental_turbine.desc2'))
+        text.add(3, Text.translatable('block.gtceu.elemental_turbine.desc3'))
+    })
+
+    tooltip.addAdvanced('gtceu:large_pyrolyse_oven', (item, adv, text)=>{
+        text.add(1, Text.translatable('block.gtceu.large_pyrolyse_oven.desc1'))
+        text.add(2, Text.translatable('block.gtceu.large_pyrolyse_oven.desc2'))
+        text.add(3, Text.translatable('block.gtceu.large_pyrolyse_oven.desc3'))
+    })
+
+    tooltip.addAdvanced('gtceu:greenhouse', (item, adv, text)=>{
+        text.add(1, Text.translatable('block.gtceu.greenhouse.desc1'))
+        text.add(2, Text.translatable('block.gtceu.greenhouse.desc2'))
+    })
+
+    tooltip.addAdvanced('gtceu:basic_antenna_controller', (item, adv, text)=>{
+        text.add(1, Text.translatable('block.gtceu.basic_antenna_controller.desc1'))
+        text.add(2, Text.translatable('block.gtceu.basic_antenna_controller.desc2'))
+    })
+
+    tooltip.addAdvanced('gtceu:basic_simulation_unit', (item, adv, text)=>{
+        text.add(1, Text.translatable('block.gtceu.basic_simulation_unit.desc1'))
+        text.add(2, Text.translatable('block.gtceu.basic_simulation_unit.desc2'))
+    })
+
+    tooltip.addAdvanced('gtceu:critical_point_crystal_matrix', (item, adv, text)=>{
+        text.add(1, Text.translatable('block.gtceu.critical_point_crystal_matrix.desc1'))
+    })
+
+    tooltip.addAdvanced('gtceu:synthetic_lifeform_simulator', (item, adv, text)=>{
+        text.add(1, Text.translatable('block.gtceu.synthetic_lifeform_simulator.desc1'))
+    })
+
+    tooltip.addAdvanced('gtceu:synthetic_fluid_rig', (item, adv, text)=>{
+        text.add(1, Text.translatable('block.gtceu.synthetic_fluid_rig.desc1'))
+    })
+
+    tooltip.addAdvanced('gtceu:synthetic_solid_rig', (item, adv, text)=>{
+        text.add(1, Text.translatable('block.gtceu.synthetic_solid_rig.desc1'))
     })
 
     // Custom materials

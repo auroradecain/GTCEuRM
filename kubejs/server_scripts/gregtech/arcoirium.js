@@ -1,20 +1,5 @@
 ServerEvents.recipes(event =>{
 
-    // Gabro Dust
-    event.recipes.gtceu.macerator('gabro_dust')
-        .itemInputs("kubejs:gabro")
-        .itemOutputs("gtceu:gabro_dust")
-        .duration(80)
-        .EUt(2)
-
-    event.recipes.gtceu.rock_breaker('gabro')
-        .notConsumable("kubejs:gabro")
-        .itemOutputs("kubejs:gabro")
-        .addDataString('fluidA', 'minecraft:lava')
-        .addDataString('fluidB', 'minecraft:water')
-        .duration(16)
-        .EUt(7)
-
     // Viadium dust
     event.recipes.gtceu.chemical_reactor('kubejs:viadium_from_copper')
         .itemInputs('2x gtceu:vidium_dust', '3x gtceu:copper_dust')
@@ -22,6 +7,14 @@ ServerEvents.recipes(event =>{
         .itemOutputs('1x gtceu:viadium_dust', '6x gtceu:copper_ii_hydroxide_dust')
         .duration(140)
         .EUt(30)
+
+    // Cupric Viadium Semielement dust
+    event.recipes.gtceu.mixer('kubejs:cupric_viadium_semielement_dust')
+        .itemInputs('#forge:dusts/viadium', '2x #forge:dusts/copper', '#forge:dusts/silicon')
+        .inputFluids('gtceu:oxygen 3000')
+        .itemOutputs('7x gtceu:cupric_viadium_semielement_dust')
+        .duration(230)
+        .EUt(GTValues.VA[GTValues.MV])
 
     // Sapatanium dust
     event.recipes.gtceu.mixer('kubejs:sapatanium_dust')
@@ -74,13 +67,6 @@ ServerEvents.recipes(event =>{
         .outputFluids("gtceu:helium 250")
         .duration(210)
         .EUt(480)
-
-    // Fechantium dust
-    event.recipes.gtceu.centrifuge('kubejs:fechantium_dust')
-        .itemInputs("13x gtceu:granite_red_dust")
-        .itemOutputs("12x gtceu:granite_dust", "gtceu:fechantium_dust")
-        .duration(286)
-        .EUt(84)
 
     // Yottrium dust
     
