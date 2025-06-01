@@ -1,13 +1,4 @@
 StartupEvents.registry("item", event =>{
-    
-    const drone = [
-        "1",
-        "2"
-    ]
-
-    for (const tier of drone) {
-        event.create(`drone_t${tier}`).maxStackSize(16).texture(`kubejs:item/data_collection/drone/t${tier}`)
-    }
 
     const floppyCollection = [
         ["overworld", "#3399ff"],
@@ -56,7 +47,7 @@ StartupEvents.registry("item", event =>{
     advancedData("milky_way", "#4524a8")
     advancedData("virgo_supercluster", "#be27be")
     advancedData("observable_universe", "#931f3c")
-    advancedData("altered_reality", "#acacd2")
+    advancedData("altered_reality", "#9393ec", "#4d4d4d")
 
 
     function universalData(dataId){
@@ -74,9 +65,40 @@ StartupEvents.registry("item", event =>{
 
     universalData("universe")
 
+    const drone = [
+        "1",
+        "2",
+        "3",
+        "4"
+    ]
+
+    drone.forEach(tier=>{
+        event.create(`drone_t${tier}`).maxStackSize(4).tooltip(Text.translatable(`drone.t${tier}.desc1`))
+    })
+
+    event.create("bronze_propeller_blades").textureJson({layer0:"kubejs:item/blades"}).color(0, "#ffc370")
+    event.create("steel_propeller_blades").textureJson({layer0:"kubejs:item/blades"}).color(0, "#a7a7a7")
+    event.create("aluminium_propeller_blades").textureJson({layer0:"kubejs:item/blades"}).color(0, "#7db9d8")
+    event.create("stainless_steel_propeller_blades").textureJson({layer0:"kubejs:item/blades"}).color(0, "#ededfd")
+    //event.create("titanium_propeller_blades").textureJson({layer0:"kubejs:item/blades"}).color(0, "#ed8eea")
+
+    // Upgrade
+    const upgrade = [
+        ["bronze", "#ffc370"],
+        ["steel", "#a7a7a7"],
+        ["aluminium", "#7db9d8"],
+        ["stainless_steel", "#ededfd"],
+        ["titanium", "#ed8eea"]
+    ]
+
+    for (const [mat, matColor] of upgrade) {
+        event.create(`${mat}_upgrade`)
+            .textureJson({layer0: "kubejs:item/upgrade/base", layer1: "kubejs:item/upgrade/arrow"})
+            .color(1, matColor)
+    }
+
     event.create("processing_array_housing")
         .textureJson({layer0:"kubejs:item/processing_array_housing"})
-
 
     function processingArray(array, color) {
         event.create(`${array}_processing_array`)
@@ -85,6 +107,7 @@ StartupEvents.registry("item", event =>{
                 layer1:"kubejs:item/processing_array_color"
             })
             .color(1, color)
+            .tag(`kubejs:processing_array`)
             .tag(`kubejs:processing_array/${array}`)
             .maxStackSize(24)
     }
@@ -99,6 +122,7 @@ StartupEvents.registry("item", event =>{
             .textureJson({layer0:"kubejs:item/data_collection/binary"})
             .tooltip(Text.translatable(`data_binary.${id}.desc1`))
             .color(0, color)
+            .tag(`kubejs:binary`)
             .tag(`kubejs:binary/${id}`)
     }
 
@@ -157,28 +181,24 @@ StartupEvents.registry("item", event =>{
             .textureJson({ layer0: "kubejs:item/biome_flower/plant", layer1:"kubejs:item/biome_flower/petal"})
             .color(1, elemColor)
     }
-    // Upgrade
-    const upgrade = [
-        ["bronze", "#ffc370"],
-        ["steel", "#a7a7a7"],
-        ["aluminium", "#7db9d8"],
-        ["stainless_steel", "#ededfd"],
-        ["titanium", "#ed8eea"]
-    ]
 
-    for (const [mat, matColor] of upgrade) {
-        event.create(`${mat}_upgrade`)
-            .textureJson({layer0: "kubejs:item/upgrade/base", layer1: "kubejs:item/upgrade/arrow"})
-            .color(1, matColor)
-    }
+    // Atmospheric Sample
+    event.create("overworld_atmospheric_sample").texture("kubejs:item/overworld_atmospheric_sample")
+    event.create("nether_atmospheric_sample").texture("kubejs:item/nether_atmospheric_sample")
+    event.create("end_atmospheric_sample").texture("kubejs:item/end_atmospheric_sample")
+
     // Atmoseeds
     const atmoseeds = [
         ["hydrogen", "#0059b3"],
-        ["argon", "#66ff33"],
-        ["neon", "#FAB4B4"],
         ["nitrogen", "#00BFC1"],
-        ["radon", "#FF39FF"],
+        ["argon", "#66ff33"],
+        ["sulfur", "#ff6600"],
+        ["helium", "#FCFF90"],
+        ["neon", "#FAB4B4"],
+        ["deuterium", "#ffff33"],
         ["tritium", "#ff316b"],
+        ["krypton", "#80FF80"],
+        ["radon", "#FF39FF"],
         ["xenon", "#00FFFF"]
     ]
 

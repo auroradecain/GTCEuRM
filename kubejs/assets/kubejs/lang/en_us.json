@@ -14,13 +14,20 @@
     "data_collection.deep_dark.desc1":"§7A million hearts beating at the same time",
     "data_collection.placeholder.desc1":"§7§kSeek Further",
 
+    "drone.t1.desc1":"§7Seems fine...",
+    "drone.t2.desc1":"§7Goes a bit further, I guess...",
+    "drone.t3.desc1":"§7Still needs improvement",
+    "drone.t4.desc1":"§7Works like a charm",
+
     "data_binary.mundane.desc1":"§701001000 01101111",
     "data_binary.otherworldly.desc1":"§701010000 01010111 01000011",
     "data_binary.extraordinary.desc1":"§701010101 01000101",
     "data_binary.impossible.desc1":"§701000100 01001110 01001001",
 
     "item.kubejs.drone_t1": "Drone [Tier 1] (W.I.P)",
-    "item.kubejs.drone_t2": "Drone [Tier 2] (W.I.P)"
+    "item.kubejs.drone_t2": "Drone [Tier 2] (W.I.P)",
+    "item.kubejs.drone_t3": "Drone [Tier 3] (W.I.P)",
+    "item.kubejs.drone_t4": "Drone [Tier 4] (W.I.P)"
 
 
 }

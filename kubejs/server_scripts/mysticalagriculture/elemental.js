@@ -140,6 +140,4 @@ ServerEvents.recipes(event =>{
         .chancedOutput('gtceu:small_water_elementia_dust', 7000, 750)
         .duration(380)
         .EUt(24)
-
-    event.recipes
 })

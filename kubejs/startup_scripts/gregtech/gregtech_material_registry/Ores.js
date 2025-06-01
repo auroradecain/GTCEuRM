@@ -1,13 +1,11 @@
 GTCEuStartupEvents.registry('gtceu:material', event=>{
 
-    
     event.create("zircon")
         .gem().ore()
         .addOreByproducts('lead', 'zirconium')
         .flags(GTMaterialFlags.HIGH_SIFTER_OUTPUT)
         .color(0xb32d00).secondaryColor(0x804000).iconSet(GTMaterialIconSet.FINE)
         .components('zirconium', 'silicon', '4x oxygen')
-
     
     event.create("fluorspar")
         .gem().ore(2, 1, true)
@@ -20,21 +18,21 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
         .dust().ore()
         .addOreByproducts('sulfur', 'silver', 'niobium')
         .washedIn('mercury', 100)
-        .color(0x9494b8).secondaryColor(0x453d5c)
+        .color(0x9494b8).secondaryColor(0x453d5c).iconSet(GTMaterialIconSet.SHINY)
         .components('2x silver', 'sulfur')
         .oreSmeltInto('silver')
 
     event.create("dioptase")
         .gem().ore()
         .addOreByproducts('rare_earth', 'silicon')
-        .color(0x00b377).secondaryColor(0x00664d).iconSet(GTMaterialIconSet.LIGNITE)
+        .color(0x00b377).secondaryColor(0x00664d).iconSet(GTMaterialIconSet.EMERALD)
         .components('copper', 'silicon', '4x oxygen', '2x hydrogen')
         .oreSmeltInto('copper')
 
     event.create("torbenite")
         .dust().ore(2, 3)
         .addOreByproducts('copper', 'uraninite', 'tricalcium_phosphate')
-        .color(0x2db9b9).secondaryColor(0x195367)
+        .color(0x2db9b9).secondaryColor(0x195367).iconSet(GTMaterialIconSet.METALLIC)
         .components('copper', '2x uraninite', '2x phosphate', '5x oxygen', '4x hydrogen')
 
     event.create("terraemantine")
@@ -42,5 +40,12 @@ GTCEuStartupEvents.registry('gtceu:material', event=>{
         .addOreByproducts('tungsten', 'iron')
         .color(0xcc6900).secondaryColor(0x806000).iconSet(GTMaterialIconSet.METALLIC)
         .components('iron', 'tungsten', '4x oxygen', '4x phosphate')
+
+    event.create("ender_sulfate")
+        .dust().ore(3, 1)
+        .addOreByproducts('iron', 'sulfur')
+        .color(0x0b4c41).secondaryColor(0x032620).iconSet(GTMaterialIconSet.SHINY)
+        .components('iron', 'ender_pearl', '2x sulfur')
+        .flags(GTMaterialFlags.DECOMPOSITION_BY_CENTRIFUGING)
 
 })

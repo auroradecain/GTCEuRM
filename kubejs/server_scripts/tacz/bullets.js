@@ -1,10 +1,5 @@
 ServerEvents.recipes(event => {
 
-    // Remove unimplemented ammunition
-    event.remove({id: 'lradd:ammo/fusion_cell'})
-    event.remove({id: 'lradd:ammo/2mm_ec'})
-    event.remove({id: 'lradd:ammo/flintlock_bullet'})
-    event.remove({id: 'lradd:ammo/m993'})
     // Implemented Ammunition
     const casing = [
         "9mm",
@@ -61,44 +56,6 @@ ServerEvents.recipes(event => {
         }
     }
 
-    const handAmmoCraft = [
-        ["iron", 5],
-        ["wrought_iron", 10],
-        ["steel", 15],
-        ["aluminium", 20]
-    ]
-
-    event.remove({id: 'lradd:ammo/nail'})
-    for(const [type, output] of handAmmoCraft){
-        event.shaped(Item.of(`${output}x tacz:ammo`, {AmmoId:'lradd:nail'}), [
-            'BA ',
-            'AC ',
-            '   '
-        ], {
-            A: `#forge:rods/${type}`,
-            B: '#forge:tools/hammers',
-            C: '#forge:tools/files'
-        }).damageIngredient(["#forge:tools/hammers", "#forge:tools/files"]).id(`kubejs:ammo/${type}_nails`)
-
-        event.recipes.gtceu.bender(`kubejs:ammo/${type}_nails`)
-            .itemInputs(`#forge:rods/${type}`)
-            .itemOutputs(Item.of(`${output}x tacz:ammo`, {AmmoId: 'lradd:nail'}))
-            .duration(80)
-            .EUt(16)
-            .circuit(2)
-    }
-
-    event.remove({id: 'lradd:ammo/arrow'})
-    event.shaped(Item.of('8x tacz:ammo', {AmmoId: 'lradd:arrow'}), [
-        ' CA',
-        ' AD',
-        'B  '
-    ], {
-        A: '#forge:rods/iron',
-        B: 'minecraft:feather',
-        C: '#forge:tools/hammers',
-        D: '#forge:tools/files'
-    }).damageIngredient(["#forge:tools/hammers", "#forge:tools/files"]).id('kubejs:ammo/arrow')
     
     createAmmo('9mm',true, 'copper', '1', 4, 15)
     createAmmo('45acp',true, 'copper', '1', 5, 12)

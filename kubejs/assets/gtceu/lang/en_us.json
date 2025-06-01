@@ -11,6 +11,7 @@
     "gtceu.jei.ore_vein.nether/argentite": "Argentite Vein",
     "gtceu.jei.ore_vein.nether/torbenite": "Torbenite Vein",
     "gtceu.jei.ore_vein.nether/terraemantine": "Terraemantine Vein",
+    "gtceu.jei.ore_vein.nether/ender_sulfate": "Ender Sulfate Vein",
     "gtceu.jei.ore_vein.end/dionitase": "Dionitase Vein",
     "gtceu.jei.ore_vein.end/trevinite": "Trevinite Vein",
 
@@ -131,6 +132,7 @@
     "material.gtceu.dark_soularium": "Dark Soularium",
     "material.gtceu.soularium" : "Soularium",
 
+    "material.gtceu.ender_sulfate": "Ender Sulfate",
     "material.gtceu.igneous_mixture" : "Igneous Mixture",
     "material.gtceu.molybdenum_disulfide" : "Molybdenum Disulfide",
     "material.gtceu.trevinitic_acid" : "Trevinitic Acid",
@@ -149,9 +151,6 @@
     "material.gtceu.iron_ii_tungstate_trisphosphate": "Iron II Tungstate Tris-Phosphate",
     "material.gtceu.iron_ii_tungstate_bisphosphate": "Iron II Tungstate Bis-Phosphate",
     "material.gtceu.iron_ii_tungstate_phosphate": "Iron II Tungstate Phosphate",
-
-    
-
 
     "material.gtceu.trevinite" : "Trevinite",
     "material.gtceu.zircon" : "Zircon",

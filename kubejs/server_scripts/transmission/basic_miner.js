@@ -110,9 +110,9 @@ ServerEvents.recipes(event=>{
             .chancedInput("kubejs:resourceful_processing_array", 1200, -400)
             .notConsumable("kubejs:meadow_biome_core")
             .itemInputs("kubejs:mundane_data_binary")
-            .itemOutputs("48x gtceu:raw_uraninite")
+            .itemOutputs("48x gtceu:raw_pitchblende")
             .itemOutputs("32x gtceu:raw_silver")
-            .itemOutputs("24x gtceu:raw_pitchblende")
+            .itemOutputs("24x gtceu:raw_uraninite")
         })
         
         data_receive(event, "miner", 2, 1).forEach(builder=>{

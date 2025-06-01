@@ -12,41 +12,41 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
     event.create("prosperity")
         .ingot()
         .ore(2, 1)
-        .color(0xddfbfa).iconSet('metallic')
+        .color(0xddfbfa).iconSet(GTMaterialIconSet.METALLIC)
         .flags(GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_PLATE)
     event.create("soulium")
         .dust()
         .ore(1, 3, true)
         .addOreByproducts('copper', 'sulfur')
-        .color(0x664233).secondaryColor(0x444422)
+        .color(0x664233).secondaryColor(0x444422).iconSet(GTMaterialIconSet.SHINY)
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
         .ignoredTagPrefixes([TagPrefix.dustTiny, TagPrefix.dustSmall])
     event.create("inferium")
         .ingot().fluid()
         .ore(2, 3, true) 
-        .color(0x758d01).secondaryColor(0x4c6501).iconSet("metallic")
+        .color(0x758d01).secondaryColor(0x4c6501).iconSet(GTMaterialIconSet.SHINY)
         .flags(GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_GEAR)
 
     event.create(`prudentium`)
         .ingot().fluid()
-        .color(0x008623).iconSet("metallic")
+        .color(0x008623).iconSet(GTMaterialIconSet.METALLIC)
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
     event.create(`tertium`)
         .ingot().fluid()
-        .color(0xb34b02).iconSet("metallic")
+        .color(0xb34b02).iconSet(GTMaterialIconSet.METALLIC)
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
     event.create(`imperium`)
         .ingot().fluid()
-        .color(0x0380da).iconSet("metallic")
+        .color(0x0380da).iconSet(GTMaterialIconSet.METALLIC)
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
     event.create(`supremium`)
         .ingot().fluid()
-        .color(0xcb0000).iconSet("metallic")
+        .color(0xcb0000).iconSet(GTMaterialIconSet.METALLIC)
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, GTMaterialFlags.GENERATE_GEAR)
     
     event.create("insanium")
         .ingot().fluid()
-        .color(0x560484).iconSet('metallic')
+        .color(0x560484).iconSet(GTMaterialIconSet.METALLIC)
         .toolStats(new $ToolProperty.Builder.of(19.0, 13.0, 4096, 4).types([
             GTToolType.SWORD,
             GTToolType.PICKAXE,
@@ -65,7 +65,7 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
 
     event.create("awakened_supremium") 
         .ingot().fluid()
-        .color(0xff3333).iconSet('radioactive')
+        .color(0xff3333).iconSet(GTMaterialIconSet.RADIOACTIVE)
         .element(GTElements.get('awakened_supremium'))
         .toolStats(new $ToolProperty.Builder.of(27.0, 18.0, 4608, 5).types([
             GTToolType.SWORD,
@@ -87,7 +87,7 @@ GTCEuStartupEvents.registry("gtceu:material", event=>{
     event.create("draconitium")
         .ingot()
         .fluid()
-        .color(0x5c00e6).secondaryColor(0x0a001a).iconSet('radioactive')
+        .color(0x5c00e6).secondaryColor(0x0a001a).iconSet(GTMaterialIconSet.RADIOACTIVE)
         .flags(GTMaterialFlags.GENERATE_DENSE, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_ROD)
         
  

@@ -36,7 +36,7 @@ ServerEvents.recipes(event =>{
         // Air
         ["fluid", "air/oxygen", "air", 1, "gtceu:oxygen", 4000, 110, GTValues.LV, 1],
         ["fluid", "air/carbon_dioxide", "air", 1, "gtceu:carbon_dioxide", 1000,  90, GTValues.LV, 2],
-        ["fluid", "air/nitrogen", "air", 1, "gtceu:nitrogen", 3000, 110, GTValues.LV, 3],
+        ["fluid", "air/nitrogen", "air", 1, "gtceu:nitrogen", 7000, 110, GTValues.LV, 3],
         // Water
         ["fluid", "water/water", "water", 1, "minecraft:water", 4000, 90, GTValues.LV, 1],
         ["fluid", "water/salt_water", "water", 1, "gtceu:salt_water", 2000, 110, GTValues.LV, 2],

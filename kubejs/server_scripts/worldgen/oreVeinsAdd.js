@@ -175,6 +175,30 @@ GTCEuServerEvents.oreVeins(event =>{
         )
     })
 
+    event.add("nether/ender_sulfate", vein =>{
+        vein.weight(70)
+        vein.density(0.75)
+        vein.clusterSize(50)
+        vein.layer("netherrack")
+        vein.dimensions("minecraft:the_nether")
+        vein.heightRangeUniform(80, 120)
+        vein.veinedVeinGenerator(generator => generator
+            .oreBlock(GTMaterials.get("ender_sulfate"), 5)
+            .oreBlock(GTMaterials.Sulfur, 2)
+            .oreBlock(GTMaterials.Iron, 2)
+            .veininessThreshold(0.05)
+            .maxRichnessThreshold(0.175)
+            .minRichness(0.7)
+            .maxRichness(1.1)
+            .edgeRoundoffBegin(3)
+            .maxEdgeRoundoff(0.1)
+        )
+        vein.surfaceIndicatorGenerator(indicator => indicator
+            .surfaceRock(GTMaterials.get("ender_sulfate"))
+            .placement("above")
+        )
+    })
+
     event.add("end/dionitase", vein =>{
         vein.weight(30)
         vein.density(0.25)

@@ -125,6 +125,39 @@ ServerEvents.recipes(event=>{
             .EUt(20)
 
     }
+
+    // Vanilla or vanilla-like flowers only
+    /**
+     * @param {string} modID Input item identifier
+     * @param {string} inputBase Base recipe input
+     * @param {string[]} outputBase Base recipe output
+     */
+    function GrowFlower(modID, inputBase, outputBase){
+
+        Greenhouse(modID, inputBase, outputBase, 'minecraft:water', 640, 0)
+        event.recipes.gtceu.seed_growth(`${modID}_${inputBase}`)
+            .circuit(1)
+            .itemInputs(`${modID}:${inputBase}`)
+            .itemOutputs(outputBase)
+            .inputFluids(Fluid.of('minecraft:water', 6000))
+            .duration(3*640/2)
+            .EUt(20)
+    }
+
+    function AtmoGrowth(input, output, tier){
+        const tierList = {
+            1: GTValues.VHA[GTValues.HV],
+            2: GTValues.VHA[GTValues.EV],
+            3: GTValues.VHA[GTValues.IV]
+        }
+
+        event.recipes.gtceu.greenhouse(`kubejs:atmoseed_growth_${input}`)
+            .notConsumable([`kubejs:${input}_atmoseeds`])
+            .inputFluids("minecraft:water 4000")
+            .outputFluids(output)
+            .duration(2240)
+            .EUt(tierList[tier])
+    }
     
     // Greenhouse common recipes
     const growNormal = [
@@ -189,6 +222,7 @@ ServerEvents.recipes(event=>{
         GrowVanilla(mod, ins, outs)
     }
 
+    // Mystical agriculture seed processing
     const growMystical = [
 
         // Inferium
@@ -293,24 +327,21 @@ ServerEvents.recipes(event=>{
         GrowMystical(input, output, 1640)
     }
 
-    function GrowFlower(modID, inputBase, outputBase){
-    
-        Greenhouse(modID, inputBase, outputBase, 'minecraft:water', 640, 0)
-        event.recipes.gtceu.seed_growth(`${modID}_${inputBase}`)
-            .circuit(1)
-            .itemInputs(`${modID}:${inputBase}`)
-            .itemOutputs(outputBase)
-            .inputFluids(Fluid.of('minecraft:water', 6000))
-            .duration(3*640/2)
-            .EUt(20)
-    }
+    GrowFlower('minecraft', 'sunflower', ['32x minecraft:sunflower'])
 
-    const flowers = [
-        ['minecraft', 'sunflower', ['32x minecraft:sunflower']]
-    ]
+    AtmoGrowth("hydrogen", "gtceu:hydrogen 24000", 1)
+    AtmoGrowth("nitrogen", "gtceu:nitrogen 16000", 1)
+    AtmoGrowth("argon", "gtceu:argon 8000", 2)
 
-    for(const [mod, input, output] of flowers){
-        GrowFlower(mod, input, output)
-    }
+    AtmoGrowth("sulfur", "gtceu:hydrogen_sulfide 10000", 1)
+    AtmoGrowth("helium", "gtceu:helium 8000", 1)
+    AtmoGrowth("neon", "gtceu:neon 6000", 2)
+
+    AtmoGrowth("deuterium", "gtceu:deuterium 10000", 2)
+    AtmoGrowth("tritium", "gtceu:tritium 8000", 2)
+    AtmoGrowth("krypton", "gtceu:krypton 4000", 3)
+    AtmoGrowth("xeon", "gtceu:xeon 4000", 3)
+    AtmoGrowth("radon", "gtceu:radon 4000", 3)
+
 
 })
