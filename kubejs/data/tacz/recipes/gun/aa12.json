@@ -2,27 +2,27 @@
   "materials": [
     {
       "item": {
-        "tag": "forge:ingots/gold"
+        "tag": "forge:ingots/stainless_steel"
       },
       "count": 16
     },
     {
       "item": {
-        "tag": "forge:ingots/iron"
+        "tag": "forge:ingots/aluminium"
       },
-      "count": 80
+      "count": 12
     },
     {
       "item": {
-        "tag": "forge:gems/diamond"
+        "tag": "forge:ingots/steel"
+      },
+      "count": 8
+    },
+    {
+      "item": {
+        "tag": "gtceu:circuits/mv"
       },
       "count": 2
-    },
-    {
-      "item": {
-        "tag": "forge:rods/blaze"
-      },
-      "count": 4
     }
   ],
   "result": {

@@ -2,21 +2,21 @@
   "materials": [
     {
       "item": {
-        "tag": "forge:ingots/gold"
+        "tag": "forge:ingots/aluminium"
       },
-      "count": 16
+      "count": 12
     },
     {
       "item": {
-        "tag": "forge:ingots/iron"
+        "tag": "forge:ingots/steel"
       },
-      "count": 64
+      "count": 36
     },
     {
       "item": {
-        "tag": "forge:gems/quartz"
+        "tag": "forge:ingots/bronze"
       },
-      "count": 8
+      "count": 4
     }
   ],
   "result": {
