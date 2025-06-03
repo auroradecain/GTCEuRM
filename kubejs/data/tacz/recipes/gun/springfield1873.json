@@ -8,9 +8,9 @@
     },
     {
       "item": {
-        "tag": "forge:ingots/iron"
+        "tag": "forge:ingots/wrought_iron"
       },
-      "count": 3
+      "count": 6
     }
   ],
   "result": {
