@@ -2,7 +2,7 @@
   "materials": [
     {
       "item": {
-        "tag": "forg:ingots/stainless_steel"
+        "tag": "forge:ingots/stainless_steel"
       },
       "count": 3
     },
