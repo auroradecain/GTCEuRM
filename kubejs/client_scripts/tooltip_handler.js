@@ -43,18 +43,6 @@ ItemEvents.tooltip(tooltip => {
         text.add(1, Text.translatable('block.gtceu.critical_point_crystal_matrix.desc1'))
     })
 
-    tooltip.addAdvanced('gtceu:synthetic_lifeform_simulator', (item, adv, text)=>{
-        text.add(1, Text.translatable('block.gtceu.synthetic_lifeform_simulator.desc1'))
-    })
-
-    tooltip.addAdvanced('gtceu:synthetic_fluid_rig', (item, adv, text)=>{
-        text.add(1, Text.translatable('block.gtceu.synthetic_fluid_rig.desc1'))
-    })
-
-    tooltip.addAdvanced('gtceu:synthetic_solid_rig', (item, adv, text)=>{
-        text.add(1, Text.translatable('block.gtceu.synthetic_solid_rig.desc1'))
-    })
-
     // Custom materials
     tooltip.add('gtceu:viadium_ingot', Text.of('This time the faggot crushed').color(0xe2bbfd))
     tooltip.add('gtceu:sapatanium_ingot', Text.of('Big shoe crazy, Lord!').color(0xffdfba))

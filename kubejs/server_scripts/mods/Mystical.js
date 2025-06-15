@@ -184,43 +184,6 @@ ServerEvents.recipes(event =>{
         A: "gtceu:vanadium_gallium_quadruple_cable"
     }).id('gtceu:shaped/zpm_agricultural_fabricator')
 
-    event.shaped('gtceu:synthetic_fluid_rig', [
-        "BDB",
-        "CAC",
-        "ECE"
-    ],{
-        A: "gtceu:mv_machine_hull",
-        B: "gtceu:mv_electric_pump",
-        C: "#gtceu:circuits/mv",
-        D: "gtceu:mv_robot_arm",
-        E: "gtceu:steel_normal_fluid_pipe"
-    }).id('gtceu:shaped/synthetic_fluid_rig')
-
-    event.shaped('gtceu:synthetic_solid_rig', [
-        "CAC",
-        "BDB",
-        "EBE"
-    ],{
-        A: "gtceu:mv_sensor",
-        B: "#gtceu:circuits/mv",
-        C: "gtceu:mv_robot_arm",
-        D: "gtceu:mv_machine_hull",
-        E: "gtceu:annealed_copper_quadruple_cable"
-    }).id('gtceu:shaped/synthetic_solid_rig')
-
-    event.shaped('gtceu:synthetic_lifeform_simulator', [
-        "CEC",
-        "BAD",
-        "CFC"
-    ],{
-        A: "gtceu:mv_machine_hull",
-        B: "gtceu:mv_sensor",
-        C: "#gtceu:circuits/mv",
-        D: "gtceu:mv_emitter",
-        E: "gtceu:tempered_glass",
-        F: "gtceu:lv_field_generator"
-    }).id('gtceu:shaped/synthetic_lifeform_simulator')
-
     event.shaped('gtceu:elemental_turbine', [
         "ABA",
         "BDB",

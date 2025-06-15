@@ -1,32 +1,27 @@
 ServerEvents.recipes(event =>{
 
-    // Fluid
-
-    function synthMat(type, id, ess, amntIn, out, amntOut, tick, volt, c){
+    function synthMat(type, ess, amntIn, out, tick, volt){
         switch(type){
             case "fluid":
-                event.recipes.gtceu.synthetic_fluid(`essence/${id}`)
+                event.recipes.gtceu.centrifuge(`essence/${type}_${ess}`)
                     .itemInputs(`${amntIn}x mysticalagriculture:${ess}_essence`)
-                    .outputFluids(`${out} ${amntOut}`)
+                    .outputFluids(out)
                     .duration(tick)
-                    .EUt(GTValues.VH[volt])
-                    .circuit(c)
+                    .EUt(GTValues.VA[volt])
                 break;
             case "solid":
-                event.recipes.gtceu.synthetic_solid(`essence/${id}`)
+                event.recipes.gtceu.centrifuge(`essence/${type}_${ess}`)
                     .itemInputs(`${amntIn}x mysticalagriculture:${ess}_essence`)
-                    .itemOutputs(Item.of(out, amntOut))
+                    .itemOutputs(out)
                     .duration(tick)
-                    .EUt(GTValues.VH[volt])
-                    .circuit(c)
+                    .EUt(GTValues.VA[volt])
                 break;
             case "lifeform":
-                event.recipes.gtceu.synthetic_lifeform(`essence/${id}`)
+                event.recipes.gtceu.centrifuge(`essence/${type}_${ess}`)
                     .itemInputs(`${amntIn}x mysticalagriculture:${ess}_essence`)
-                    .itemOutputs(Item.of(out, amntOut))
+                    .itemOutputs(out)
                     .duration(tick)
-                    .EUt(GTValues.VH[volt])
-                    .circuit(c)
+                    .EUt(GTValues.VA[volt])
                 break;
         }
     }
@@ -34,229 +29,173 @@ ServerEvents.recipes(event =>{
     // FLUIDS
     const fluidEssence = [   
         // Air
-        ["fluid", "air/oxygen", "air", 1, "gtceu:oxygen", 4000, 110, GTValues.LV, 1],
-        ["fluid", "air/carbon_dioxide", "air", 1, "gtceu:carbon_dioxide", 1000,  90, GTValues.LV, 2],
-        ["fluid", "air/nitrogen", "air", 1, "gtceu:nitrogen", 7000, 110, GTValues.LV, 3],
+        ["fluid", "air", 2, ["gtceu:nitrogen 7100", "gtceu:oxygen 3900", "gtceu:carbon_dioxide 1000"] , 110, GTValues.LV],
         // Water
-        ["fluid", "water/water", "water", 1, "minecraft:water", 4000, 90, GTValues.LV, 1],
-        ["fluid", "water/salt_water", "water", 1, "gtceu:salt_water", 2000, 110, GTValues.LV, 2],
+        ["fluid", "water", 2, ["minecraft:water 4000", "gtceu:salt_water 2000"] , 50, GTValues.LV],
         // Fire
-        ["fluid", "fire/lava", "fire", 1, "minecraft:lava", 2000, 70, GTValues.LV, 1],
+        ["fluid", "fire", 2, ["minecraft:lava 4000"], 80, GTValues.LV],
         // Nether
-        ["fluid", "nether/hydrogen_sulfide", "nether", 1, "gtceu:hydrogen_sulfide", 3000, 90, GTValues.MV, 1],
-        ["fluid", "nether/carbon_monoxide", "nether", 1, "gtceu:carbon_monoxide", 8000, 90, GTValues.MV, 2],
-        ["fluid", "nether/sulfur_dioxide", "nether", 1, "gtceu:sulfur_dioxide", 3000, 70, GTValues.MV, 3],
-        ["fluid", "nether/coal_gas", "nether", 1, "gtceu:coal_gas", 2000, 90, GTValues.MV, 4],
+        ["fluid", "nether", 8, ["gtceu:carbon_monoxide 8100", "gtceu:hydrogen_sulfide 2900", "gtceu:sulfur_dioxide 2200", "gtceu:coal_gas 1800"], 420, GTValues.MV],
         // End
-        ["fluid", "end/nitrogen_dioxide", "end", 1, "gtceu:nitrogen_dioxide", 7000, 70, GTValues.MV, 1],
-        ["fluid", "end/deuterium", "end", 1, "gtceu:deuterium", 2400, 90, GTValues.MV, 2],
-        ["fluid", "end/helium", "end", 1, "gtceu:helium", 3600, 90, GTValues.MV, 3],
-        ["fluid", "end/tritium", "end", 1, "gtceu:tritium", 500, 160, GTValues.EV, 4],
+        ["fluid", "end", 8, ["gtceu:nitrogen_dioxide 7100", "gtceu:deuterium 3900", "gtceu:helium 1900","gtceu:tritium 1000"], 540, GTValues.HV],
         // Experience
-        ["fluid", "experience/xp_juice", "experience", 1, "enderio:xp_juice", 2000, 160, GTValues.HV, 1]
+        ["fluid", "experience", 1, "enderio:xp_juice 2000", 160, GTValues.HV]
     ]
 
-    for(const [type, id, inputEssence, amountRecipe, output, amountOutput, duration, voltage, circuit] of fluidEssence){
-        synthMat(type, id, inputEssence, amountRecipe, output, amountOutput, duration, voltage, circuit)
+    for(const [type, inputEssence, amountRecipe, output, duration, voltage] of fluidEssence){
+        synthMat(type, inputEssence, amountRecipe, output, duration, voltage)
     }
     
     // SOLIDS
 
     const solidEssence = [
         // Earth category
-        ["solid", "earth/gravel", "earth", 4, "minecraft:gravel", 48, 90, GTValues.MV, 1],
-        ["solid", "earth/fullers", "earth", 8, "gtceu:raw_fullers_earth", 6, 70, GTValues.MV, 2],
-        ["solid", "earth/lithium", "earth", 8, "gtceu:raw_lithium", 4, 90, GTValues.EV, 3],
-        ["solid", "earth/asbestos", "earth", 8, "gtceu:raw_asbestos", 4, 90, GTValues.HV, 4],
-        ["solid", "earth/magnesite", "earth", 8, "gtceu:raw_magnesite", 4, 110, GTValues.HV, 5],
-        ["solid", "earth/calcite", "earth", 8, "gtceu:raw_calcite", 6, 110, GTValues.MV, 6],
-        ["solid", "earth/tadanite_earth", "earth", 8, "gtceu:raw_tadanite_earth", 6, 130, GTValues.HV, 7],
+        ["solid", "earth", 16, ["6x gtceu:raw_calcite", "4x gtceu:raw_fullers_earth", "4x gtceu:raw_asbestos", "4x gtceu:raw_magnesite"], 90, GTValues.MV],
         // Stone category
-        ["solid", "stone/stone", "stone", 1, "minecraft:stone", 48, 40, GTValues.LV, 1],
-        ["solid", "stone/granite", "stone", 1, "minecraft:granite", 16, 120, GTValues.HV, 2],
-        ["solid", "stone/diorite", "stone", 1, "minecraft:diorite", 16, 120, GTValues.HV, 3],
-        ["solid", "stone/andesite", "stone", 1, "minecraft:andesite", 16, 120, GTValues.HV, 4],
-        ["solid", "stone/shale", "stone", 1, "quark:shale", 16, 120, GTValues.HV, 5],
-        ["solid", "stone/jasper", "stone", 1, "quark:jasper", 16, 120, GTValues.HV, 6],
-        ["solid", "stone/limestone", "stone", 1, "quark:limestone", 16, 120, GTValues.HV, 7],
-        ["solid", "stone/marble", "stone", 1, "gtceu:marble", 16, 120, GTValues.HV, 8],
-        ["solid", "stone/red_granite", "stone", 1, "gtceu:red_granite", 16, 120, GTValues.EV, 9],
+        ["solid", "stone", 2, ["32x minecraft:stone"], 60, GTValues.LV],
         // Sky stone
-        ["solid", "sky_stone/sky_stone", "sky_stone", 1, "ae2:sky_stone_block", 8, 144, GTValues.MV, 1],
+        ["solid", "sky_stone", 4, "16x ae2:sky_stone_block", 144, GTValues.MV],
         // Dirt category
-        ["solid", "dirt/dirt", "dirt", 4, "minecraft:dirt", 48, 80, GTValues.MV, 1],
-        ["solid", "dirt/clay", "dirt", 4, "minecraft:clay", 16, 80, GTValues.MV, 2],
-        ["solid", "dirt/sand", "dirt", 4, "minecraft:sand", 24, 80, GTValues.MV, 3],
-        ["solid", "dirt/podzel", "dirt", 4, "minecraft:podzel", 24, 80, GTValues.MV, 4],
-        ["solid", "dirt/mycelium", "dirt", 4, "minecraft:mycelium", 24, 80, GTValues.MV, 5],
+        ["solid", "dirt", 4, ["48x minecraft:dirt"], 120, GTValues.LV],
         // Ice category
-        ["solid", "ice/ice", "ice", 4, "minecraft:ice", 24, 80, GTValues.MV, 1],
-        ["solid", "ice/snow", "ice", 4, "minecraft:snow", 32, 80, GTValues.MV, 2],
-        ["solid", "ice/packed_ice", "ice", 8, "minecraft:packed_ice", 16, 80, GTValues.MV, 3],
+        ["solid", "ice", 2, ["24x minecraft:ice"], 110, GTValues.LV],
         // Deepslate category
-        ["solid", "deepslate/deepslate", "deepslate", 4, "minecraft:deepslate", 16, 80, GTValues.HV, 1],
-        ["solid", "deepslate/basalt", "deepslate", 4, "minecraft:basalt", 16, 80, GTValues.HV, 2],
-        ["solid", "deepslate/blackstone", "deepslate", 4, "minecraft:blackstone", 16, 80, GTValues.HV, 3],
+        ["solid", "deepslate", 4, ["24x minecraft:deepslate"], 150, GTValues.MV],
         // Nature category
-        ["solid", "nature/oak_sapling", "nature", 4, "minecraft:oak_sapling", 8, 80, GTValues.MV, 1],
-        ["solid", "nature/birch_sapling", "nature", 4, "minecraft:birch_sapling", 8, 80, GTValues.MV, 2],
-        ["solid", "nature/jungle_sapling", "nature", 4, "minecraft:jungle_sapling", 8, 80, GTValues.MV, 3],
-        ["solid", "nature/acacia_sapling", "nature", 4, "minecraft:acacia_sapling", 8, 80, GTValues.MV, 4],
-        ["solid", "nature/dark_oak_sapling", "nature", 4, "minecraft:dark_oak_sapling", 8, 80, GTValues.MV, 5],
-        ["solid", "nature/cherry_sapling", "nature", 4, "minecraft:cherry_sapling", 8, 80, GTValues.MV, 6],
-        ["solid", "nature/cactus", "nature", 4, "minecraft:cactus", 16, 80, GTValues.MV, 7],
-        ["solid", "nature/bamboo", "nature", 4, "minecraft:bamboo", 12, 80, GTValues.MV, 8],
-        ["solid", "nature/lily_pad", "nature", 4, "minecraft:lily_pad", 6, 80, GTValues.MV, 9],
+        ["solid", "nature", 32, ["24x minecraft:sugar_cane", "16x minecraft:cactus", "12x minecraft:bamboo", "6x minecraft:lily_pad"], 210, GTValues.LV],
         // Dye category
-        ["solid", "dye/white", "dye", 3, "gtceu:chemical_white_dye", 8, 80, GTValues.MV, 1],
-        ["solid", "dye/black", "dye", 3, "gtceu:chemical_black_dye", 8, 80, GTValues.MV, 2],
-        ["solid", "dye/red", "dye", 3, "gtceu:chemical_red_dye", 8, 80, GTValues.MV, 3],
-        ["solid", "dye/pink", "dye", 3, "gtceu:chemical_pink_dye", 8, 80, GTValues.MV, 4],
-        ["solid", "dye/yellow", "dye", 3, "gtceu:chemical_yellow_dye", 8, 80, GTValues.MV, 5],
-        ["solid", "dye/orange", "dye", 3, "gtceu:chemical_orange_dye", 8, 80, GTValues.MV, 6],
-        ["solid", "dye/green", "dye", 3, "gtceu:chemical_green_dye", 8, 80, GTValues.MV, 7],
-        ["solid", "dye/lime", "dye", 3, "gtceu:chemical_lime_dye", 8, 80, GTValues.MV, 8],
-        ["solid", "dye/magenta", "dye", 3, "gtceu:chemical_magenta_dye", 8, 80, GTValues.MV, 9],
-        ["solid", "dye/purple", "dye", 3, "gtceu:chemical_purple_dye", 8, 80, GTValues.MV, 10],
-        ["solid", "dye/brown", "dye", 3, "gtceu:chemical_brown_dye", 8, 80, GTValues.MV, 11],
-        ["solid", "dye/blue", "dye", 3, "gtceu:chemical_blue_dye", 8, 80, GTValues.MV, 12],
-        ["solid", "dye/light_blue", "dye", 3, "gtceu:chemical_light_blue_dye", 8, 80, GTValues.MV, 13],
-        ["solid", "dye/cyan", "dye", 3, "gtceu:chemical_cyan_dye", 8, 80, GTValues.MV, 14],
-        ["solid", "dye/gray", "dye", 3, "gtceu:chemical_gray_dye", 8, 80, GTValues.MV, 15],
-        ["solid", "dye/light_gray", "dye", 3, "gtceu:chemical_light_gray_dye", 8, 80, GTValues.MV, 16],
+        ["solid", "dye", 16, ["3x gtceu:chemical_red_dye", "3x gtceu:chemical_green_dye", "3x gtceu:chemical_blue_dye", "3x gtceu:chemical_cyan_dye", "3x gtceu:chemical_magenta_dye", "3x gtceu:chemical_yellow_dye"], 170, GTValues.LV],
         // Miscellaneous solids
-        ["solid", "rubber", "rubber", 4, "gtceu:sticky_resin", 6, 80, GTValues.MV, 1],
-        ["solid", "glowstone", "glowstone", 8, "minecraft:glowstone_dust", 24, 80, GTValues.MV, 1],
-        ["solid", "obsidian", "obsidian", 8, "minecraft:obsidian", 12, 80, GTValues.MV, 1],
-        ["solid", "fluix", "fluix", 4, "gtceu:fluix_gem", 8, 80, GTValues.MV, 1],
+        ["solid", "rubber", 4, "6x gtceu:sticky_resin", 72, GTValues.LV],
+        ["solid", "glowstone", 4, "24x minecraft:glowstone_dust", 96, GTValues.LV],
+        ["solid", "obsidian", 4, "12x minecraft:obsidian", 64, GTValues.MV],
+        ["solid", "fluix", 4, "8x gtceu:fluix_gem", 120, GTValues.MV],
         // Basic materials
-        ["solid", "coal", "coal", 8, "gtceu:raw_coal", 6, 80, GTValues.MV, 1],
-        ["solid", "amethyst", "amethyst", 8, "gtceu:raw_amethyst", 4, 80, GTValues.MV, 1],
-        ["solid", "sulfur", "sulfur", 8, "gtceu:raw_sulfur", 6, 80, GTValues.MV, 1],
-        ["solid", "aluminium", "aluminum", 8, "gtceu:raw_bauxite", 4, 80, GTValues.MV, 1],
-        ["solid", "saltpeter", "saltpeter", 8, "gtceu:raw_saltpeter", 6, 80, GTValues.MV, 1],
-        ["solid", "apatite", "apatite", 8, "gtceu:raw_apatite", 4, 80, GTValues.MV, 1],
+        ["solid", "coal", 4, "6x gtceu:raw_coal", 96, GTValues.LV],
+        ["solid", "amethyst", 4, "6x gtceu:raw_amethyst", 128, GTValues.MV],
+        ["solid", "sulfur", 4, "6x gtceu:raw_sulfur", 128, GTValues.LV],
+        ["solid", "aluminum", 4, "6x gtceu:raw_bauxite", 128, GTValues.HV],
+        ["solid", "saltpeter", 4, "6x gtceu:raw_saltpeter", 128, GTValues.MV],
+        ["solid", "apatite", 4, "12x gtceu:raw_apatite", 128, GTValues.LV],
         // Iron variants
-        ["solid", "iron/iron", "iron", 8, "minecraft:raw_iron", 4, 80, GTValues.MV, 1],
-        ["solid", "iron/goethite", "iron", 8, "gtceu:raw_goethite", 6, 80, GTValues.MV, 2],
-        ["solid", "iron/magnetite", "iron", 8, "gtceu:raw_magnetite", 6, 80, GTValues.MV, 3],
-        ["solid", "iron/pyrite", "iron", 8, "gtceu:raw_pyrite", 6, 80, GTValues.MV, 4],
+        ["solid", "iron", 24, ["6x gtceu:raw_pyrite", "6x gtceu:raw_yellow_limonite", "6x gtceu:raw_hematite", "4x minecraft:raw_iron"], 80, GTValues.MV],
         // Copper variants
-        ["solid", "copper/copper", "copper", 8, "minecraft:raw_copper", 4, 80, GTValues.MV, 1],
-        ["solid", "copper/tetrahedrite", "copper", 8, "gtceu:raw_tetrahedrite", 6, 80, GTValues.MV, 2],
-        ["solid", "copper/malachite", "copper", 8, "gtceu:raw_malachite", 6, 80, GTValues.MV, 3],
-        ["solid", "copper/chalcopyrite", "copper", 8, "gtceu:raw_chalcopyrite", 6, 80, GTValues.MV, 4],
+        ["solid", "copper", 24, ["6x gtceu:raw_chalcopyrite", "6x gtceu:raw_tetrahedrite", "6x gtceu:raw_malachite", "4x minecraft:raw_copper"], 80, GTValues.MV],
         // Quartz
-        ["solid", "nether_quartz", "nether_quartz", 8, "gtceu:raw_nether_quartz", 6, 80, GTValues.MV, 1],
+        ["solid", "nether_quartz", 8, "6x gtceu:raw_nether_quartz", 80, GTValues.LV],
         // Tin variants
-        ["solid", "tin/tin", "tin", 8, "gtceu:raw_tin", 4, 80, GTValues.MV, 1],
-        ["solid", "tin/cassiterite", "tin", 8, "gtceu:raw_cassiterite", 6, 80, GTValues.MV, 2],
-        ["solid", "tin/cassiterite_sand", "tin", 8, "gtceu:raw_cassiterite_sand", 6, 80, GTValues.MV, 3],
+        ["solid", "tin", 8, ["6x gtceu:raw_cassiterite", "4x gtceu:raw_tin"], 80, GTValues.MV],
         // Other metals
-        ["solid", "zinc", "zinc", 8, "gtceu:raw_sphalerite", 4, 80, GTValues.MV, 1],
-        ["solid", "silver", "silver", 8, "gtceu:raw_silver", 4, 80, GTValues.MV, 1],
-        ["solid", "barium", "barium", 8, "gtceu:raw_barite", 4, 80, GTValues.MV, 1],
-        ["solid", "tantalum", "tantalum", 8, "gtceu:raw_tantalite", 4, 80, GTValues.MV, 1],
-        ["solid", "manganese", "manganese", 4, "gtceu:raw_pyrolusite", 8, 80, GTValues.MV, 1],
-        ["solid", "niobium", "niobium", 4, "gtceu:raw_pyrochlore", 8, 80, GTValues.MV, 1],
-        ["solid", "antimony", "antimony", 4, "gtceu:raw_stibnite", 8, 80, GTValues.MV, 1],
-        ["solid", "vidium", "vidium", 8, "gtceu:raw_vidium", 4, 80, GTValues.MV, 1],
+        ["solid", "zinc", 4, "6x gtceu:raw_sphalerite", 80, GTValues.MV],
+        ["solid", "barium", 4, "6x gtceu:raw_barite", 80, GTValues.MV],
+        ["solid", "tantalum", 8, "4x gtceu:raw_tantalite", 80, GTValues.MV],
+        ["solid", "manganese", 4, "8x gtceu:raw_pyrolusite", 80, GTValues.MV],
+        ["solid", "niobium", 4, "8x gtceu:raw_pyrochlore", 80, GTValues.MV],
+        ["solid", "antimony", 4, "8x gtceu:raw_stibnite", 80, GTValues.MV],
+        ["solid", "vidium", 8, "4x gtceu:raw_vidium", 80, GTValues.MV],
         // Topaz
-        ["solid", "topaz/topaz", "topaz", 8, "gtceu:raw_topaz", 4, 80, GTValues.MV, 1],
-        ["solid", "topaz/blue_topaz", "topaz", 8, "gtceu:raw_blue_topaz", 4, 80, GTValues.MV, 2],
+        ["solid", "topaz", 8, ["4x gtceu:raw_topaz", "4x gtceu:raw_blue_topaz"], 80, GTValues.MV],
         // Garnet
-        ["solid", "garnet/sand", "garnet", 8, "gtceu:raw_garnet_sand", 6, 80, GTValues.MV, 1],
-        ["solid", "garnet/red", "garnet", 8, "gtceu:raw_red_garnet", 6, 80, GTValues.MV, 2],
-        ["solid", "garnet/yellow", "garnet", 8, "gtceu:raw_yellow_garnet", 6, 80, GTValues.MV, 3],
+        ["solid", "garnet", 12, ["6x gtceu:raw_red_garnet", "6x gtceu:raw_garnet_sand", "6x gtceu:raw_yellow_garnet"], 80, GTValues.MV],
         // Lead variants
-        ["solid", "lead/lead", "lead", 8, "gtceu:raw_lead", 4, 80, GTValues.MV, 1],
-        ["solid", "lead/galena", "lead", 8, "gtceu:raw_galena", 6, 80, GTValues.MV, 2],
+        ["solid", "lead", 8, ["6x gtceu:raw_galena", "4x gtceu:raw_lead"], 80, GTValues.MV],
         // Molybdenum
-        ["solid", "molybdenum/molybdenum", "molybdenum", 8, "gtceu:raw_molybdenum", 4, 80, GTValues.MV, 1],
-        ["solid", "molybdenum/molybdenite", "molybdenum", 8, "gtceu:raw_molybdenite", 6, 80, GTValues.MV, 2],
+        ["solid", "molybdenum", 8, ["6x gtceu:raw_molybdenite", "4x gtceu:raw_molybdenum"], 80, GTValues.MV],
         // Salts
-        ["solid", "salt/salt", "salts", 8, "gtceu:raw_salt", 6, 80, GTValues.MV, 1],
-        ["solid", "salt/rock_salt", "salts", 8, "gtceu:raw_rock_salt", 6, 80, GTValues.MV, 2],
-        ["solid", "salt/lepidolite", "salts", 8, "gtceu:raw_lepidolite", 6, 80, GTValues.MV, 3],
+        ["solid", "salts", 12, ["8x gtceu:raw_salt", "6x gtceu:raw_rock_salt", "4x gtceu:raw_lepidolite"], 80, GTValues.MV],
         // Special materials
-        ["solid", "oilsands", "oilsands", 8, "gtceu:raw_oilsands", 4, 80, GTValues.MV, 1],
-        ["solid", "graphite", "graphite", 8, "gtceu:raw_graphite", 4, 80, GTValues.MV, 1],
-        ["solid", "certus_quartz", "certus_quartz", 8, "gtceu:raw_certus_quartz", 6, 80, GTValues.MV, 1],
-        ["solid", "gold", "gold", 8, "minecraft:raw_gold", 4, 80, GTValues.MV, 1],
-        ["solid", "redstone", "redstone", 8, "gtceu:raw_redstone", 6, 80, GTValues.MV, 1],
-        ["solid", "ruby", "ruby", 8, "gtceu:raw_ruby", 4, 80, GTValues.MV, 1],
+        ["solid", "oilsands", 3, "16x gtceu:raw_oilsands", 80, GTValues.MV],
+        ["solid", "graphite", 3, "4x gtceu:raw_graphite", 80, GTValues.LV],
+        ["solid", "certus_quartz", 4, "6x gtceu:raw_certus_quartz", 80, GTValues.MV],
+        ["solid", "gold", 16, "4x minecraft:raw_gold", 80, GTValues.MV],
+        ["solid", "redstone", 4, "6x gtceu:raw_redstone", 80, GTValues.LV],
+        ["solid", "ruby", 6, "4x gtceu:raw_ruby", 80, GTValues.MV],
+        // Silver
+        ["solid", "silver", 12, ["6x gtceu:raw_argentite", "4x gtceu:raw_silver"], 132, GTValues.MV],
         // Lapis variants
-        ["solid", "lapis_lazuli/lapis", "lapis_lazuli", 8, "gtceu:raw_lapis", 6, 80, GTValues.MV, 1],
-        ["solid", "lapis_lazuli/lazurite", "lapis_lazuli", 8, "gtceu:raw_lazurite", 6, 80, GTValues.MV, 2],
-        ["solid", "lapis_lazuli/sodalite", "lapis_lazuli", 8, "gtceu:raw_sodalite", 6, 80, GTValues.MV, 3],
+        ["solid", "lapis_lazuli", 12, ["6x gtceu:raw_sodalite", "6x gtceu:raw_lazurite", "4x gtceu:raw_sodalite"], 80, GTValues.MV],
         // Nickel variants
-        ["solid", "nickel/nickel", "nickel", 8, "gtceu:raw_nickel", 4, 80, GTValues.MV, 1],
-        ["solid", "nickel/garnierite", "nickel", 8, "gtceu:raw_garnierite", 6, 80, GTValues.MV, 2],
-        ["solid", "nickel/pentlandite", "nickel", 8, "gtceu:raw_pentlandite", 6, 80, GTValues.MV, 3],
-        // Tungsten variants (EV tier)
-        ["solid", "tungsten/tungstate", "tungsten", 8, "gtceu:raw_tungstate", 4, 80, GTValues.EV, 1],
-        ["solid", "tungsten/scheelite", "tungsten", 8, "gtceu:raw_scheelite", 4, 80, GTValues.EV, 2],
-        // Advanced materials (EV tier)
-        ["solid", "titanium", "titanium", 8, "gtceu:raw_ilmenite", 4, 80, GTValues.EV, 1],
-        ["solid", "uranium", "uranium", 8, "gtceu:raw_uraninite", 4, 80, GTValues.EV, 1],
-        ["solid", "chrome", "chrome", 8, "gtceu:raw_chromite", 4, 80, GTValues.EV, 1],
+        ["solid", "nickel", 16, ["6x gtceu:raw_garnierite", "6x gtceu:raw_pentlandite", "4x gtceu:raw_nickel"], 80, GTValues.MV],
+        // Tungsten
+        ["solid", "tungsten", 12, ["4x gtceu:raw_tungstate", "4x gtceu:raw_scheelite"], 80, GTValues.HV],
+        // Advanced materials 
+        ["solid", "titanium", 8, "4x gtceu:raw_ilmenite", 80, GTValues.HV],
+        ["solid", "uranium", 8, "6x gtceu:raw_uraninite", 80, GTValues.HV],
+        ["solid", "chrome", 8, "4x gtceu:raw_chromite", 80, GTValues.HV],
         // Sapphire variants
-        ["solid", "sapphire/sapphire", "sapphire", 8, "gtceu:raw_sapphire", 6, 80, GTValues.MV, 1],
-        ["solid", "sapphire/green_sapphire", "sapphire", 8, "gtceu:raw_green_sapphire", 6, 80, GTValues.MV, 2],
+        ["solid", "sapphire", 12, ["6x gtceu:raw_sapphire", "6x gtceu:raw_green_sapphire"], 80, GTValues.MV],
         // High-tier materials
-        ["solid", "diamond", "diamond", 16, "gtceu:raw_diamond", 4, 80, GTValues.HV, 1],
-        ["solid", "emerald", "emerald", 16, "gtceu:raw_emerald", 4, 80, GTValues.HV, 1],
-        ["solid", "platinum", "platinum", 8, "gtceu:raw_platinum", 4, 80, GTValues.EV, 1],
-        ["solid", "netherite", "netherite", 32, "gtceu:small_netherite_dust", 2, 310, GTValues.EV, 1],
-        ["solid", "naquadah", "naquadah", 16, "gtceu:raw_naquadah", 4, 290, GTValues.EV, 1],
-        ["solid", "avisium", "avisium", 8, "gtceu:raw_trevinite", 4, 290, GTValues.EV, 1]
+        ["solid", "diamond", 8, "6x gtceu:raw_diamond", 80, GTValues.HV],
+        ["solid", "emerald", 8, "4x gtceu:raw_emerald", 80, GTValues.HV],
+        ["solid", "netherite", 24, "4x gtceu:raw_terraemantine", 230, GTValues.HV],
+        ["solid", "platinum", 8, "4x gtceu:raw_cooperite", 140, GTValues.HV],
+        ["solid", "avisium", 8, "4x gtceu:raw_trevinite", 290, GTValues.HV],
+        ["solid", "naquadah", 16, "4x gtceu:raw_naquadah", 290, GTValues.EV]
     ]
 
-    for(const [type, id, inputEssence, amountRecipe, output, amountOutput, duration, voltage, circuit] of solidEssence){
-        synthMat(type, id, inputEssence, amountRecipe, output, amountOutput, duration, voltage, circuit)
+    for(const [type, inputEssence, amountRecipe, output, duration, voltage] of solidEssence){
+        synthMat(type, inputEssence, amountRecipe, output, duration, voltage)
     }
 
     //LIFEFORM
     const lifeformEssence = [    
-        ["lifeform", "chicken/chicken", "chicken", 4, "minecraft:chicken", 8, 80, GTValues.MV, 1],
-        ["lifeform", "chicken/feather", "chicken", 8, "minecraft:feather", 12, 80, GTValues.MV, 2],
+        ["lifeform", "chicken", 8, ["12x minecraft:feather", "8x minecraft:chicken"], 80, GTValues.LV],
 
-        ["lifeform", "pig", "pig", 4, "minecraft:porkchop", 6, 80, GTValues.MV, 1],
+        ["lifeform", "pig", 4, "6x minecraft:porkchop", 80, GTValues.LV],
     
-        ["lifeform", "cow/beef", "cow", 4, "minecraft:beef", 6, 80, GTValues.MV, 1],
-        ["lifeform", "cow/leather", "cow", 8, "minecraft:leather", 12, 80, GTValues.MV, 2],
+        ["lifeform", "cow", 8, ["12x minecraft:leather", "8x minecraft:beef"], 80, GTValues.LV],
 
-        ["lifeform", "sheep/mutton", "sheep", 4, "minecraft:mutton", 6, 80, GTValues.MV, 1],
-        ["lifeform", "sheep/white_wool", "sheep", 8, "minecraft:white_wool", 12, 80, GTValues.MV, 2],
+        ["lifeform", "sheep", 8, ["8x minecraft:white_wool", "6x minecraft:mutton"], 80, GTValues.LV],
 
-        ["lifeform", "squid", "squid", 8, "minecraft:ink_sac", 6, 80, GTValues.MV, 1],
+        ["lifeform", "squid", 4, "6x minecraft:ink_sac", 80, GTValues.LV],
 
-        ["lifeform", "fish/salmon", "fish", 3, "minecraft:salmon", 6, 80, GTValues.MV, 1],
-        ["lifeform", "fish/cod", "fish", 3, "minecraft:cod", 6, 80, GTValues.MV, 2],
-        ["lifeform", "fish/pufferfish", "fish", 3, "minecraft:pufferfish", 4, 80, GTValues.MV, 3],
-        ["lifeform", "fish/tropical_fish", "fish", 3, "minecraft:tropical_fish", 6, 80, GTValues.MV, 4],
+        ["lifeform", "fish", 8, ["6x minecraft:salmon", "6x minecraft:cod", "4x minecraft:tropical_fish", "4x minecraft:pufferfish"], 80, GTValues.LV],
 
-        ["lifeform", "slime", "slime", 4, "minecraft:slime_ball", 16, 80, GTValues.MV, 1],
-        ["lifeform", "zombie", "zombie", 4, "minecraft:rotten_flesh", 24, 80, GTValues.MV, 1],
+        ["lifeform", "slime", 4, "16x minecraft:slime_ball", 80, GTValues.MV],
+        ["lifeform", "zombie", 4, "24x minecraft:rotten_flesh", 80, GTValues.MV],
     
-        ["lifeform", "skeleton/bone", "skeleton", 6, "minecraft:bone", 8, 80, GTValues.MV, 1],
-        ["lifeform", "skeleton/arrow", "skeleton", 4, "minecraft:arrow", 12, 80, GTValues.MV, 2],
+        ["lifeform", "skeleton", 10, ["12x minecraft:arrow", "8x minecraft:bone"], 80, GTValues.MV],
 
-        ["lifeform", "creeper", "creeper", 4, "minecraft:gunpowder", 12, 80, GTValues.MV, 1],
+        ["lifeform", "creeper", 6, "12x minecraft:gunpowder", 80, GTValues.MV],
 
-        ["lifeform", "spider/string", "spider", 4, "minecraft:string", 24, 80, GTValues.MV, 1],
-        ["lifeform", "spider/spider_eye", "spider", 4, "minecraft:spider_eye", 6, 80, GTValues.MV, 2],
+        ["lifeform", "spider", 4, ["24x minecraft:string", "6x minecraft:spider_eye"], 80, GTValues.MV],
 
-        ["lifeform", "prismarine/shard", "prismarine", 4, "minecraft:prismarine_shard", 8, 80, GTValues.MV, 1],
-        ["lifeform", "prismarine/crystals", "prismarine", 4, "minecraft:prismarine_crystals", 6, 80, GTValues.MV, 2],
+        ["lifeform", "prismarine", 8, ["8x minecraft:prismarine_shard", "6x minecraft:prismarine_crystals"], 80, GTValues.MV],
 
-        ["lifeform", "blaze", "blaze", 6, "minecraft:blaze_rod", 4, 80, GTValues.HV, 1],
-        ["lifeform", "ghast", "ghast", 8, "minecraft:ghast_tear", 3, 80, GTValues.MV, 1],
-        ["lifeform", "enderman", "enderman", 8, "minecraft:ender_pearl", 6, 80, GTValues.MV, 1],
-        ["lifeform", "wither_skeleton", "wither_skeleton", 32, "minecraft:wither_skeleton_skull", 1, 80, GTValues.HV, 1]
+        ["lifeform", "blaze", 6, "4x minecraft:blaze_rod", 80, GTValues.HV],
+        ["lifeform", "ghast", 8, "3x minecraft:ghast_tear", 80, GTValues.MV],
+        ["lifeform", "enderman", 8, "6x minecraft:ender_pearl", 80, GTValues.MV],
+        ["lifeform", "wither_skeleton", 32, "1x minecraft:wither_skeleton_skull", 80, GTValues.HV]
     ]
 
-    for(const [type, id, inputEssence, amountRecipe, output, amountOutput, duration, voltage, circuit] of lifeformEssence){
-        synthMat(type, id, inputEssence, amountRecipe, output, amountOutput, duration, voltage, circuit)
+    for(const [type, inputEssence, amountRecipe, output, duration, voltage] of lifeformEssence){
+        synthMat(type, inputEssence, amountRecipe, output, duration, voltage)
     }
+
+    // Essence Mixing Recipes
+    event.recipes.gtceu.mixer("kubejs:clay_from_essence_mixing")
+        .itemInputs(["2x mysticalagriculture:dirt_essence", "mysticalagriculture:water_essence"])
+        .itemOutputs("16x minecraft:clay")
+        .duration(80)
+        .EUt(GTValues.VA[GTValues.LV])
+
+    event.recipes.gtceu.mixer("kubejs:sand_from_essence_mixing")
+        .itemInputs(["2x mysticalagriculture:dirt_essence", "mysticalagriculture:fire_essence"])
+        .itemOutputs("24x minecraft:sand")
+        .duration(80)
+        .EUt(GTValues.VA[GTValues.LV])
+
+    event.recipes.gtceu.mixer("kubejs:basalt_from_essence_mixing")
+        .itemInputs(["2x mysticalagriculture:deepslate_essence", "mysticalagriculture:fire_essence"])
+        .itemOutputs("16x minecraft:basalt")
+        .duration(110)
+        .EUt(GTValues.VA[GTValues.LV])
+
+    event.recipes.gtceu.mixer("kubejs:blackstone_from_essence_mixing")
+        .itemInputs(["2x mysticalagriculture:deepslate_essence", "mysticalagriculture:stone_essence"])
+        .itemOutputs("16x minecraft:blackstone")
+        .duration(110)
+        .EUt(GTValues.VA[GTValues.LV])
+
+
 })

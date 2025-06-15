@@ -14,37 +14,6 @@ const CoilWorkableElectricMultiblockMachine = Java.loadClass("com.gregtechceu.gt
 
 GTCEuStartupEvents.registry('gtceu:recipe_type', event=>{
 
-    // GTCEu RM
-
-    
-    // Mystical Agriculture
-    event.create('synthetic_fluid')
-        .category('multiblock')
-        .setEUIO('in')
-        .setMaxIOSize(2, 0, 1, 6)
-        .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
-        .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
-        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
-        .setSound(GTSoundEntries.CHEMICAL)
-
-    event.create('synthetic_solid')
-        .category('multiblock')
-        .setEUIO('in')
-        .setMaxIOSize(2, 6, 1, 0)
-        .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
-        .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
-        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
-        .setSound(GTSoundEntries.CHEMICAL)
-
-    event.create('synthetic_lifeform')
-        .category('multiblock')
-        .setEUIO('in')
-        .setMaxIOSize(2, 6, 1, 1)
-        .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
-        .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
-        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
-        .setSound(GTSoundEntries.COMPUTATION)
-
     event.create('greenhouse')
         .category('multiblock')
         .setEUIO('in')
@@ -101,68 +70,6 @@ GTCEuStartupEvents.registry('gtceu:machine', event=>{
 
     GTRecipeTypes.get("data_collection").addDataInfo((data) => ("Transmission Tier: " + data.getByte("transmission_tier")));
     GTRecipeTypes.get("data_extraction").addDataInfo((data) => ("Transmission Tier: " + data.getByte("transmission_tier")));
-
-
-    // Synthetic Trio
-    event.create('synthetic_fluid_rig', 'multiblock')
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes('synthetic_fluid')
-        .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
-        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
-        .pattern(definition => FactoryBlockPattern.start()
-            .aisle("AAA", "#F#", "#F#", "#F#", "###", "###", "###")
-            .aisle("AAA", "FSF", "FSF", "FSF", "#F#", "#F#", "#F#")
-            .aisle("A@A", "#F#", "#F#", "#F#", "###", "###", "###")
-            .where('@', Predicates.controller(Predicates.blocks(definition.get())))
-            .where('A', Predicates.blocks(GTBlocks.CASING_STEEL_SOLID.get()).setMinGlobalLimited(3)
-                .or(Predicates.autoAbilities(definition.getRecipeTypes()))
-                .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
-                .or(Predicates.abilities(PartAbility.MAINTENANCE).setMaxGlobalLimited(1)))
-            .where('S', Predicates.blocks(GTBlocks.CASING_STEEL_SOLID.get()))
-            .where('F', Predicates.blocks("gtceu:steel_frame"))
-            .where(" ", Predicates.air())
-            .where("#", Predicates.any())
-            .build())
-        .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel", "gtceu:block/multiblock/large_chemical_reactor", false)
-
-    event.create('synthetic_solid_rig', 'multiblock')
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes('synthetic_solid')
-        .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
-        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
-        .pattern(definition => FactoryBlockPattern.start()
-            .aisle('BBB', '#F#', "#F#", "#F#", "###", "###", "###")
-            .aisle("BBB", "FSF", "FSF", "FSF", "#F#", "#F#", "#F#")
-            .aisle("B$B", "#F#", "#F#", "#F#", "###", "###", "###")
-            .where('$', Predicates.controller(Predicates.blocks(definition.get())))
-            .where('B', Predicates.blocks(GTBlocks.CASING_STEEL_SOLID.get()).setMinGlobalLimited(3)
-                .or(Predicates.autoAbilities(definition.getRecipeTypes()))
-                .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
-                .or(Predicates.abilities(PartAbility.MAINTENANCE).setMaxGlobalLimited(1)))
-            .where('S', Predicates.blocks(GTBlocks.CASING_STEEL_SOLID.get()))
-            .where('F', Predicates.blocks("gtceu:steel_frame"))
-            .where(" ", Predicates.air())
-            .where("#", Predicates.any())
-            .build())
-        .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel", "gtceu:block/multiblock/large_miner", false)
-
-    event.create('synthetic_lifeform_simulator', 'multiblock')
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes('synthetic_lifeform')
-        .recipeModifiers([GTRecipeModifiers.OC_NON_PERFECT])
-        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
-        .pattern(definition => FactoryBlockPattern.start()
-            .aisle('CCC', 'CCC', 'CCC')
-            .aisle('CCC', 'C C', 'CCC')
-            .aisle('CCC', 'C%C', 'CCC')
-            .where('%', Predicates.controller(Predicates.blocks(definition.get())))
-            .where('C', Predicates.blocks(GTBlocks.CASING_STEEL_SOLID.get()).setMinGlobalLimited(6)
-                .or(Predicates.autoAbilities(definition.getRecipeTypes()))
-                .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
-                .or(Predicates.abilities(PartAbility.MAINTENANCE).setMaxGlobalLimited(1)))
-            .where(" ", Predicates.air())
-            .build())
-        .workableCasingRenderer("gtceu:block/casings/solid/machine_casing_solid_steel", "gtceu:block/multiblock/network_switch", false)
 
     // 5x5x5 Greenhouse
     event.create('greenhouse', 'multiblock')

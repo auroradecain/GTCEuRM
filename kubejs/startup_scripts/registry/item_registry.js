@@ -47,7 +47,7 @@ StartupEvents.registry("item", event =>{
     advancedData("milky_way", "#4524a8")
     advancedData("virgo_supercluster", "#be27be")
     advancedData("observable_universe", "#931f3c")
-    advancedData("altered_reality", "#9393ec", "#4d4d4d")
+    advancedData("altered_reality", "#3c3cdd")
 
 
     function universalData(dataId){

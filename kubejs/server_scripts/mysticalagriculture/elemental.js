@@ -122,16 +122,8 @@ ServerEvents.recipes(event =>{
         .duration(180)
         .EUt(3840)
         .cleanroom(CleanroomType.STERILE_CLEANROOM)
-
-    event.recipes.gtceu.fusion_reactor('draconic_matter')
-        .inputFluids('gtceu:unstable_draconic_matter 125', 'gtceu:deuterium 375')
-        .outputFluids('gtceu:draconic_matter 125')
-        .duration(16)
-        .EUt(7680)
-        .fusionStartEU(300000000)
-
+        
     // Waste Reprocessing
-
     event.recipes.gtceu.centrifuge('elemental_sludge')
         .itemInputs('gtceu:elemental_sludge_dust')
         .chancedOutput('gtceu:small_air_elementia_dust', 7000, 750)
